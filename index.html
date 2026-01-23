@@ -2,211 +2,151 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Website 3 Ngày – Làm Website Theo Yêu Cầu</title>
-<meta name="description" content="Làm website theo yêu cầu, chọn mẫu – đặt cọc – nhận web trong 3 ngày. Liên hệ Zalo 0373453757">
-<meta name="theme-color" content="#111111">
-<link rel="preload" as="image" href="assets/img/global/logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Website 3 Ngày – Làm Website Theo Yêu Cầu</title>
+  <meta name="description" content="Làm website theo yêu cầu, chọn mẫu – đặt cọc – nhận web trong 3 ngày. Liên hệ Zalo 0373453757">
+  <meta name="theme-color" content="#111111">
+
+  <link rel="preload" as="image" href="assets/img/global/logo.png">
+
+  <!-- CORE -->
   <link rel="stylesheet" href="assets/css/core.css">
-  <link rel="stylesheet" href="pages/landing/landing.css">
+  <!-- LANDING -->
+  <link rel="stylesheet" href="assets/css/landing.css">
 </head>
+
 <body>
-<header class="site-header">
-  <div class="container header-inner">
 
-    <div class="brand">
-      <img src="assets/img/global/logo.png" alt="website 3 ngày" class="brand-logo">
-      <span class="brand-name">website 3 ngày</span>
-    </div>
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="container nav">
+    <div class="logo">website 3 ngày</div>
 
-    <!-- menu desktop -->
-    <nav class="main-nav">
+    <nav class="nav-menu">
       <a href="index.html">trang chủ</a>
       <a href="about/">giới thiệu</a>
       <a href="demos/">mẫu website</a>
       <a href="process/">quy trình</a>
       <a href="pricing/">bảng giá</a>
-      <a href="commit/">cam kết</a>
       <a href="contact/">liên hệ</a>
     </nav>
 
-    <!-- menu mobile -->
     <button class="menu-toggle" id="menuToggle">☰</button>
-
   </div>
 </header>
 
- 
-
-
-<button id="menuToggle">☰</button>
-
+<!-- =============== MOBILE MENU =============== -->
 <div id="menuOverlay">
   <div class="menu-box">
-    <button id="menuClose">×</button>
-
+    <button id="menuClose">✕</button>
     <ul class="mobile-menu">
-      <li><a href="#home">trang chủ</a></li>
-      <li><a href="#about">giới thiệu</a></li>
-      <li><a href="#pricing">bảng giá</a></li>
-      <li><a href="#contact">liên hệ</a></li>
+      <li><a href="index.html">trang chủ</a></li>
+      <li><a href="demos/">mẫu website</a></li>
+      <li><a href="process/">quy trình</a></li>
+      <li><a href="pricing/">bảng giá</a></li>
+      <li><a href="contact/">liên hệ</a></li>
     </ul>
   </div>
 </div>
 
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <h1>
+        website theo yêu cầu<br>
+        <span>nhận web trong 3 ngày</span>
+      </h1>
 
-  <!-- hero -->
-  <section class="hero">
-  <div class="container">
-    <h1>
-      website theo yêu cầu<br>
-      <span>nhận web trong 3 ngày</span>
-    </h1>
+      <p>
+        dành cho spa – quán cafe – shop bán hàng<br>
+        và các mô hình kinh doanh nhỏ cần website nhanh, gọn
+      </p>
 
-    <p class="hero-desc">
-      dành cho spa – quán cafe – shop bán hàng<br>
-      và các mô hình kinh doanh nhỏ cần website nhanh, gọn
-    </p>
-
-    <div class="cta">
-      <a href="https://zalo.me/0373453757" class="btn primary">nhắn zalo tư vấn</a>
-      <a href="#demos" class="btn outline">xem mẫu website</a>
-    </div>
-  </div>
-</section>
-<section class="fit">
-  <div class="container">
-    <h2>phù hợp với ai?</h2>
-    <ul>
-      <li>chủ spa / nail cần website nhanh</li>
-      <li>quán cafe, shop nhỏ chưa có web</li>
-      <li>người bán hàng online cần trang giới thiệu</li>
-      <li>không rành kỹ thuật, muốn làm gọn</li>
-    </ul>
-  </div>
-</section>
-  <!-- demo -->
-  <section class="demos" id="demos">
-  <div class="container">
-    <h2>chọn mẫu website phù hợp</h2>
-    <p class="section-desc">
-      chọn mẫu có sẵn – chỉnh sửa theo yêu cầu – bàn giao trong 3 ngày
-    </p>
-
-      <div class="demo-list">
-        <a href="demos/spa/" class="demo-card">spa / nail</a>
-        <a href="demos/cafe/" class="demo-card">quán cafe</a>
-        <a href="demos/shop/" class="demo-card">shop bán hàng</a>
+      <div class="hero-actions">
+        <a href="https://zalo.me/0373453757" class="btn btn-primary">
+          nhắn zalo tư vấn
+        </a>
+        <a href="#process" class="btn btn-outline" data-scroll="#process">
+          xem quy trình
+        </a>
       </div>
-      <div class="demo-list more-demos" id="moreDemos">
-  <a href="demos/nail/" class="demo-card">nail / salon</a>
-  <a href="demos/bar/" class="demo-card">bar / pub</a>
-  <a href="demos/profile/" class="demo-card">profile cá nhân</a>
-  <a href="demos/company/" class="demo-card">website công ty</a>
-  <a href="demos/course/" class="demo-card">khóa học</a>
-</div>
-
-<div class="view-more">
-  <button id="toggleDemo" class="btn outline">xem thêm</button>
-</div>
     </div>
-  </section>
-<section class="value">
-  <div class="container">
-    <h2>bạn nhận được gì?</h2>
-    <ul>
-      <li>website hoàn chỉnh, dùng được ngay</li>
-      <li>chuẩn mobile, xem đẹp trên điện thoại</li>
-      <li>chỉnh màu – nội dung theo yêu cầu</li>
-      <li>không phát sinh chi phí linh tinh</li>
-    </ul>
+
+    <div class="hero-img">
+      <img src="assets/img/landing/hero.png" alt="website 3 ngày">
+    </div>
   </div>
 </section>
-  <section class="process">
+
+<!-- ================= PROCESS ================= -->
+<section id="process" class="process">
   <div class="container">
     <h2>quy trình làm web 3 ngày</h2>
-    <ol>
-      <li>chọn mẫu website phù hợp</li>
-      <li>gửi thông tin & đặt cọc</li>
-      <li>nhận website hoàn chỉnh</li>
-    </ol>
-  </div>
-</section>
-  <section class="commit">
-  <div class="container">
-    <p>
-      cam kết giao website đúng mẫu – đúng thời gian – hỗ trợ chỉnh sửa
-    </p>
-  </div>
-</section>
-  <!-- pricing -->
-  <section class="pricing">
-  <div class="container">
-    <h2>gói dịch vụ tham khảo</h2>
-    <p class="section-desc">giá có thể điều chỉnh theo nhu cầu cụ thể</p>
 
-      <div class="price-list">
-        <div class="price-card">
-          <h3>basic</h3>
-          <p class="price">2.990.000đ</p>
-          <ul>
-            <li>1 trang</li>
-            <li>zalo / gọi</li>
-            <li>bàn giao 3 ngày</li>
-          </ul>
-        </div>
+    <div class="process-list">
+      <div class="process-item">
+        <span>1</span>
+        <h3>chọn mẫu</h3>
+        <p>chọn mẫu website phù hợp nhu cầu</p>
+      </div>
 
-        <div class="price-card highlight">
-          <h3>pro</h3>
-          <p class="price">4.990.000đ</p>
-          <ul>
-            <li>4–5 trang</li>
-            <li>form liên hệ</li>
-            <li>giao diện đẹp</li>
-          </ul>
-        </div>
+      <div class="process-item">
+        <span>2</span>
+        <h3>gửi thông tin</h3>
+        <p>gửi nội dung, màu sắc, logo</p>
+      </div>
 
-        <div class="price-card">
-          <h3>premium</h3>
-          <p class="price">7.990.000đ</p>
-          <ul>
-            <li>chuẩn seo</li>
-            <li>tối ưu tốc độ</li>
-            <li>30 ngày hỗ trợ</li>
-          </ul>
-        </div>
+      <div class="process-item">
+        <span>3</span>
+        <h3>bàn giao</h3>
+        <p>nhận website hoàn chỉnh trong 3 ngày</p>
       </div>
     </div>
-  </section>
-<section class="final-cta">
+  </div>
+</section>
+
+<!-- ================= WHY US ================= -->
+<section class="why-us">
+  <div class="container why-grid">
+    <div class="why-item">
+      <h3>nhanh</h3>
+      <p>hoàn thành chỉ trong 3 ngày</p>
+    </div>
+
+    <div class="why-item">
+      <h3>dễ dùng</h3>
+      <p>không cần rành kỹ thuật</p>
+    </div>
+
+    <div class="why-item">
+      <h3>tối ưu mobile</h3>
+      <p>xem đẹp trên điện thoại</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta">
   <div class="container">
-    <h2>bắt đầu làm website trong 3 ngày</h2>
-    <p>xem mẫu – chọn mẫu – nhận web nhanh gọn</p>
-    <a href="https://zalo.me/0373453757" class="btn primary">
-      nhắn zalo tư vấn mẫu phù hợp
+    <h2>bắt đầu làm website ngay hôm nay</h2>
+    <p>xem mẫu – chọn mẫu – nhận web trong 3 ngày</p>
+    <a href="https://zalo.me/0373453757" class="btn btn-outline">
+      nhắn zalo tư vấn
     </a>
   </div>
 </section>
-  <!-- process -->
- <section class="process-mini">
-  <div class="container">
-    <ol>
-      <li>chọn mẫu + gửi thông tin</li>
-      <li>dựng web + chỉnh sửa</li>
-      <li>bàn giao + hướng dẫn</li>
-    </ol>
-  </div>
-</section>
 
-
-  <!-- footer -->
- <footer class="site-footer">
+<!-- ================= FOOTER ================= -->
+<footer>
   <p>Website 3 Ngày © 2026</p>
   <p>Hotline / Zalo: <strong>0373453757</strong></p>
 </footer>
 
-  <script src="assets/js/core.js" defer></script>
-  <script src="pages/landing/landing.js" defer></script>
+<!-- ================= SCRIPT ================= -->
+<script src="assets/js/core.js"></script>
+<script src="assets/js/landing.js"></script>
+
 </body>
 </html>
