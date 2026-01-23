@@ -283,3 +283,36 @@
   padding: 6px 12px;
   border-radius: 999px;
 }
+/* ===== HEADER ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1000;
+  border-bottom: 1px solid #eee;
+}
+
+.header-inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  height: 60px;
+}
+
+.header-logo {
+  height: 36px;
+  width: auto;
+}
+
+.brand-text {
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+}
+
+.menu-toggle {
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
