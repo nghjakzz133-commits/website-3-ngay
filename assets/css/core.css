@@ -1,1 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #111;
+  background: #fff;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: auto;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+section {
+  padding: 60px 0;
+}
+
+.btn {
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.btn.primary {
+  background: #111;
+  color: #fff;
+}
+
+.btn.outline {
+  border: 2px solid #111;
+  color: #111;
+}
