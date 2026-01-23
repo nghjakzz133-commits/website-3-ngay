@@ -129,3 +129,31 @@ footer {
   margin: 12px 0 24px;
   opacity: 0.9;
 }
+/* =========================
+   HEADER RESPONSIVE FIX
+========================= */
+
+/* PC / tablet lớn */
+.main-nav {
+  display: flex;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .main-nav {
+    display: none !important;
+  }
+
+  .menu-toggle {
+    display: block !important;
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+}
