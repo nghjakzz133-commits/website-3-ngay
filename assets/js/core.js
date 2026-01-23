@@ -1,37 +1,18 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const toggleBtn = document.getElementById('menuToggle');
-  const overlay = document.getElementById('menuOverlay');
-  const closeBtn = document.getElementById('menuClose');
-  const menuBox = overlay?.querySelector('.menu-box');
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menuToggle");
+  const menuOverlay = document.getElementById("menuOverlay");
+  const menuClose = document.getElementById("menuClose");
 
-  if (!toggleBtn || !overlay || !menuBox) return;
-
-  // MỞ MENU
-  toggleBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    overlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  });
-
-  // ĐÓNG MENU
-  const closeMenu = () => {
-    overlay.classList.remove('active');
-    document.body.style.overflow = '';
-  };
-
-  // CLICK OVERLAY → ĐÓNG
-  overlay.addEventListener('click', closeMenu);
-
-  // CLICK NÚT X → ĐÓNG
-  if (closeBtn) {
-    closeBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      closeMenu();
+  if (menuToggle && menuOverlay) {
+    menuToggle.addEventListener("click", () => {
+      menuOverlay.classList.add("active");
     });
   }
 
-  // CLICK TRONG MENU → KHÔNG ĐÓNG
-  menuBox.addEventListener('click', (e) => {
-    e.stopPropagation();
-  });
+  if (menuClose && menuOverlay) {
+    menuClose.addEventListener("click", () => {
+      menuOverlay.classList.remove("active");
+    });
+  }
 });
+
