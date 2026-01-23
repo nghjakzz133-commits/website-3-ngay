@@ -66,7 +66,7 @@ body {
 }
 
 /* =========================
-   OVERLAY MENU (CORE FIX)
+   OVERLAY MENU (CORE)
 ========================= */
 
 /* =========================
@@ -83,7 +83,7 @@ body {
   transition: opacity 0.3s ease;
 }
 
-/* active */
+/* ACTIVE */
 #menuOverlay.active {
   opacity: 1;
   visibility: visible;
@@ -93,13 +93,13 @@ body {
 .menu-box {
   position: absolute;
   top: 0;
-  right: 0; /* ⭐ QUAN TRỌNG: nằm bên phải */
+  right: 0; /* nằm bên phải */
   width: 78%;
   max-width: 320px;
   height: 100%;
   background: #111;
   padding: 80px 24px 24px;
-  transform: translateX(100%); /* ⭐ đẩy sang phải */
+  transform: translateX(100%);
   transition: transform 0.35s ease;
 }
 
@@ -108,13 +108,13 @@ body {
   transform: translateX(0);
 }
 
-/* MENU LINK */
+/* MENU LINKS */
 .menu-box a {
   display: block;
+  padding: 16px 0;
+  font-size: 18px;
   color: #fff;
   text-decoration: none;
-  font-size: 18px;
-  padding: 16px 0;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
@@ -130,8 +130,10 @@ body {
   cursor: pointer;
 }
 
+/* =========================
+   MOBILE MENU (GIỮ NGUYÊN)
+========================= */
 
-/* MENU LINKS */
 .mobile-menu {
   list-style: none;
 }
