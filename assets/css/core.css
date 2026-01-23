@@ -106,3 +106,8 @@ section {
   color: #fff;
   cursor: pointer;
 }
+.header-inner {
+  display: flex;
+  align-items: center;
+  height: 64px;
+}
