@@ -1,0 +1,58 @@
+.process-hero {
+  padding: 90px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #111, #333);
+  color: #fff;
+}
+
+.process-hero h1 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.process-section {
+  padding: 70px 20px;
+}
+
+.process-section.gray {
+  background: #f7f7f7;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.process-step {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  padding: 28px;
+  position: relative;
+}
+
+.step-number {
+  font-size: 28px;
+  font-weight: 700;
+  color: #facc15;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.process-list {
+  padding-left: 20px;
+  margin-top: 16px;
+}
+
+.process-list li {
+  margin-bottom: 10px;
+}
+
+.process-cta {
+  padding: 80px 20px;
+  text-align: center;
+  background: #111;
+  color: #fff;
+}
