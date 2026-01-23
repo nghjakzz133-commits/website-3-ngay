@@ -72,7 +72,9 @@ section {
   transform: translateX(100%);
   transition: transform 0.35s ease;
   z-index: 10000;
+  position: relative; /* ⭐ QUAN TRỌNG */
 }
+
 
 .menu-overlay.active .menu-box {
   transform: translateX(0);
