@@ -1,30 +1,40 @@
+/* =========================
+   LANDING.JS – HOME PAGE
+   ========================= */
+
 document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("toggleDemo");
-  const moreDemos = document.getElementById("moreDemos");
+  /* ===== HERO BUTTON SCROLL ===== */
+  const heroBtns = document.querySelectorAll("[data-scroll]");
 
-  if (!btn || !moreDemos) return;
+  heroBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = btn.getAttribute("data-scroll");
+      const targetEl = document.querySelector(targetId);
 
-  btn.addEventListener("click", () => {
-    const isOpen = moreDemos.style.display === "grid";
-
-    moreDemos.style.display = isOpen ? "none" : "grid";
-    btn.textContent = isOpen ? "xem thêm" : "thu gọn";
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: "smooth" });
+      }
+    });
   });
+
+  /* ===== SIMPLE FADE-IN ON SCROLL ===== */
+  const revealEls = document.querySelectorAll(
+    ".process-item, .why-item"
+  );
+
+  const revealOnScroll = () => {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    revealEls.forEach((el) => {
+      const boxTop = el.getBoundingClientRect().top;
+
+      if (boxTop < triggerBottom) {
+        el.classList.add("show");
+      }
+    });
+  };
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll(); // run lần đầu
 });
- // mobile menu
-const menuToggle = document.getElementById("menuToggle");
-const menuOverlay = document.getElementById("menuOverlay");
-const menuClose = document.getElementById("menuClose");
-
-if (menuToggle && menuOverlay) {
-  menuToggle.addEventListener("click", () => {
-    menuOverlay.classList.add("active");
-  });
-}
-
-if (menuClose) {
-  menuClose.addEventListener("click", () => {
-    menuOverlay.classList.remove("active");
-  });
-}
-
