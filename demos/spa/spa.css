@@ -78,3 +78,40 @@
   border: 2px solid #111;
   color: #111;
 }
+.pricing {
+  background: #fff7fb;
+  padding: 60px 20px;
+}
+
+.pricing h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.price-list {
+  list-style: none;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.price-list li {
+  padding: 14px 0;
+  border-bottom: 1px dashed #ddd;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.contact {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact h2 {
+  margin-bottom: 10px;
+}
+
+.contact p {
+  margin-bottom: 20px;
+  color: #555;
+}
