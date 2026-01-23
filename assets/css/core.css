@@ -111,3 +111,37 @@ section {
   align-items: center;
   height: 64px;
 }
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+}
+
+.menu-toggle {
+  display: none; /* PC không hiện ☰ */
+}
+@media (max-width: 768px) {
+  .main-nav {
+    display: none; /* mobile ẩn menu ngang */
+  }
+
+  .menu-toggle {
+    display: block; /* mobile hiện ☰ */
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+}
