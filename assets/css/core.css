@@ -66,10 +66,6 @@ body {
 }
 
 /* =========================
-   OVERLAY MENU (CORE)
-========================= */
-
-/* =========================
    MENU OVERLAY (RIGHT SLIDE)
 ========================= */
 
@@ -83,17 +79,15 @@ body {
   transition: opacity 0.3s ease;
 }
 
-/* ACTIVE */
 #menuOverlay.active {
   opacity: 1;
   visibility: visible;
 }
 
-/* MENU BOX */
 .menu-box {
   position: absolute;
   top: 0;
-  right: 0; /* nằm bên phải */
+  right: 0;
   width: 78%;
   max-width: 320px;
   height: 100%;
@@ -103,12 +97,10 @@ body {
   transition: transform 0.35s ease;
 }
 
-/* SLIDE IN */
 #menuOverlay.active .menu-box {
   transform: translateX(0);
 }
 
-/* MENU LINKS */
 .menu-box a {
   display: block;
   padding: 16px 0;
@@ -118,7 +110,6 @@ body {
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-/* CLOSE BUTTON */
 #menuClose {
   position: absolute;
   top: 16px;
@@ -131,24 +122,7 @@ body {
 }
 
 /* =========================
-   MOBILE MENU (GIỮ NGUYÊN)
-========================= */
-
-.mobile-menu {
-  list-style: none;
-}
-
-.mobile-menu li a {
-  display: block;
-  padding: 14px 0;
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-/* =========================
-   RESPONSIVE
+   RESPONSIVE NAV
 ========================= */
 @media (max-width: 768px) {
   .main-nav {
