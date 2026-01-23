@@ -32,7 +32,26 @@
   display: flex;
   gap: 16px;
 }
-
+.hero {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+.hero-img img {
+  width: 100%;
+  max-width: 460px;
+  display: block;
+  margin: 24px auto 0;
+  border-radius: 16px;
+}
+.hero {
+  background: linear-gradient(
+    180deg,
+    #f8f9fb 0%,
+    #ffffff 70%
+  );
+  padding-bottom: 40px;
+}
 .btn {
   display: inline-block;
   padding: 12px 24px;
