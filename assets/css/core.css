@@ -1,3 +1,6 @@
+/* =========================
+   RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
@@ -6,114 +9,39 @@
 
 body {
   font-family: system-ui, -apple-system, sans-serif;
-  color: #111;
-  background: #fff;
-}
-
-.container {
-  width: min(1100px, 92%);
-  margin: auto;
-}
-
-h1, h2, h3 {
-  font-weight: 700;
-}
-
-section {
-  padding: 60px 0;
-}
-
-.btn {
-  padding: 12px 22px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  display: inline-block;
-}
-
-.btn.primary {
   background: #111;
   color: #fff;
-}
-
-.btn.outline {
-  border: 2px solid #111;
-  color: #111;
-}
-
-/* =========================
-   MENU OVERLAY – GLOBAL
-========================= */
-
-.menu-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 999;
-}
-
-.menu-overlay.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.menu-box {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 80%;
-  max-width: 320px;
-  height: 100vh;
-  background: #111;
-  padding: calc(env(safe-area-inset-top) + 64px) 24px 24px;
-  transform: translateX(100%);
-  transition: transform 0.35s ease;
-  z-index: 10000;
-  position: relative;
-}
-
-.menu-overlay.active .menu-box {
-  transform: translateX(0);
-}
-
-.menu-box a {
-  display: block;
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.menu-box a:hover {
-  opacity: 0.8;
-}
-
-.menu-close {
-  position: absolute;
-  top: calc(env(safe-area-inset-top) + 16px);
-  right: 18px;
-  font-size: 32px;
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  z-index: 10001;
-  pointer-events: auto;
 }
 
 /* =========================
    HEADER
 ========================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1500;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
 
 .header-inner {
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 64px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-name {
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
 }
 
 .main-nav {
@@ -122,31 +50,96 @@ section {
 }
 
 .main-nav a {
-  text-decoration: none;
   color: #fff;
-  font-weight: 500;
+  text-decoration: none;
+  font-size: 15px;
 }
 
-/* menu toggle */
-.menu-toggle {
+/* MENU TOGGLE */
+#menuToggle {
   font-size: 26px;
   background: none;
   border: none;
+  color: #fff;
   cursor: pointer;
   display: none;
 }
 
 /* =========================
-   MOBILE
+   OVERLAY MENU (CORE FIX)
 ========================= */
 
+/* OVERLAY */
+#menuOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+}
+
+/* ACTIVE */
+#menuOverlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* MENU BOX */
+.menu-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 78%;
+  max-width: 300px;
+  height: 100%;
+  background: #111;
+  padding: 60px 20px 20px;
+  transform: translateX(-100%);
+  transition: 0.3s ease;
+}
+
+/* SLIDE IN */
+#menuOverlay.active .menu-box {
+  transform: translateX(0);
+}
+
+/* CLOSE BUTTON */
+#menuClose {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* MENU LINKS */
+.mobile-menu {
+  list-style: none;
+}
+
+.mobile-menu li a {
+  display: block;
+  padding: 14px 0;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 768px) {
   .main-nav {
     display: none;
   }
 
-  .menu-toggle {
+  #menuToggle {
     display: block;
-    color: #fff;
   }
 }
