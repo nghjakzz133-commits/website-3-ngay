@@ -1,3 +1,33 @@
+.site-header {
+  background: #111;
+  padding: 14px 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo {
+  height: 36px;
+  width: auto;
+}
+
+.brand-name {
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.brand-name span {
+  color: #facc15;
+}
 .hero {
   background: linear-gradient(135deg, #111, #333);
   color: #fff;
