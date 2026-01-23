@@ -14,7 +14,12 @@
   font-size: 16px;
   opacity: 0.9;
 }
-
+.subtitle {
+  margin: 16px 0 24px;
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.95;
+}
 .services {
   padding: 60px 0;
 }
