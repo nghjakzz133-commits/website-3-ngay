@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Chọn mẫu website – Website 3 Ngày</title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Chọn mẫu website có sẵn – chỉnh sửa theo yêu cầu – bàn giao website trong 3 ngày">
 
   <!-- CSS -->
   <link rel="stylesheet" href="demos.css">
@@ -12,6 +14,7 @@
 <body>
 
   <main class="container">
+    <!-- HEADER -->
     <header class="page-header">
       <h1>chọn mẫu website phù hợp</h1>
       <p class="subtitle">
@@ -19,19 +22,65 @@
       </p>
     </header>
 
-    <section class="grid">
+    <!-- DEMO GRID -->
+    <section class="grid demo-grid">
+
       <!-- demo đã có -->
-      <a class="card" href="spa/">spa / nail</a>
-      <a class="card" href="cafe/">quán cafe</a>
-      <a class="card" href="shop/">shop bán hàng</a>
+      <a class="card" href="spa/">
+        <span class="title">spa / nail</span>
+        <span class="desc">phù hợp spa, nail, beauty</span>
+      </a>
+
+      <a class="card" href="cafe/">
+        <span class="title">quán cafe</span>
+        <span class="desc">cafe, trà sữa, quán nhỏ</span>
+      </a>
+
+      <a class="card" href="shop/">
+        <span class="title">shop bán hàng</span>
+        <span class="desc">bán hàng online, giới thiệu sản phẩm</span>
+      </a>
 
       <!-- demo sắp có -->
-      <a class="card coming-soon" href="#">nail / salon</a>
-      <a class="card coming-soon" href="#">bar / pub</a>
-      <a class="card coming-soon" href="#">profile cá nhân</a>
-      <a class="card coming-soon" href="#">website công ty</a>
-      <a class="card coming-soon" href="#">khóa học</a>
+      <a class="card coming-soon" href="javascript:void(0)">
+        <span class="title">nail / salon</span>
+        <span class="desc">salon tóc, làm đẹp</span>
+        <span class="badge">sắp có</span>
+      </a>
+
+      <a class="card coming-soon" href="javascript:void(0)">
+        <span class="title">bar / pub</span>
+        <span class="desc">bar, pub, lounge</span>
+        <span class="badge">sắp có</span>
+      </a>
+
+      <a class="card coming-soon" href="javascript:void(0)">
+        <span class="title">profile cá nhân</span>
+        <span class="desc">giới thiệu bản thân</span>
+        <span class="badge">sắp có</span>
+      </a>
+
+      <a class="card coming-soon" href="javascript:void(0)">
+        <span class="title">website công ty</span>
+        <span class="desc">doanh nghiệp, dịch vụ</span>
+        <span class="badge">sắp có</span>
+      </a>
+
+      <a class="card coming-soon" href="javascript:void(0)">
+        <span class="title">khóa học</span>
+        <span class="desc">khóa học online, offline</span>
+        <span class="badge">sắp có</span>
+      </a>
+
     </section>
+
+    <!-- CTA -->
+    <footer class="demo-footer">
+      <p>Bạn chưa chọn được mẫu phù hợp?</p>
+      <a href="https://zalo.me/0373453757" class="btn">
+        nhắn zalo tư vấn mẫu phù hợp
+      </a>
+    </footer>
   </main>
 
   <!-- JS -->
