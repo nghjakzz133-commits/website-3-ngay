@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
   const toggleBtn = document.getElementById('menuToggle');
   const overlay = document.getElementById('menuOverlay');
