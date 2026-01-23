@@ -1,135 +1,178 @@
 /* =========================
-   RESET
-========================= */
-* {
+   CORE.CSS – GLOBAL STYLE
+   ========================= */
+
+/* ===== RESET ===== */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: system-ui, -apple-system, sans-serif;
-  background: #111;
-  color: #fff;
+/* ===== ROOT ===== */
+:root {
+  --primary: #4f46e5;
+  --dark: #0f172a;
+  --light: #ffffff;
+  --gray: #64748b;
+  --bg: #f8fafc;
+
+  --radius: 12px;
+  --transition: 0.3s ease;
 }
 
-/* =========================
-   HEADER
-========================= */
-.site-header {
+/* ===== BASE ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ===== LAYOUT ===== */
+.container {
+  max-width: 1200px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+/* ===== HEADER / NAV ===== */
+header {
+  background: var(--light);
+  border-bottom: 1px solid #e5e7eb;
   position: sticky;
   top: 0;
-  z-index: 1500;
-  background: rgba(0,0,0,0.85);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  z-index: 100;
 }
 
-.header-inner {
-  height: 64px;
+.nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 64px;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.brand-name {
+.logo {
+  font-size: 20px;
   font-weight: 700;
-  font-size: 16px;
-  color: #fff;
+  color: var(--primary);
 }
 
-.main-nav {
+.nav-menu {
   display: flex;
   gap: 24px;
 }
 
-.main-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 15px;
+.nav-menu a {
+  font-weight: 500;
+  color: var(--dark);
+  transition: color var(--transition);
 }
 
-/* MENU TOGGLE */
-#menuToggle {
-  font-size: 26px;
+.nav-menu a:hover {
+  color: var(--primary);
+}
+
+/* ===== MENU TOGGLE (MOBILE) ===== */
+.menu-toggle {
+  display: none;
   background: none;
   border: none;
-  color: #fff;
+  font-size: 26px;
   cursor: pointer;
-  display: none;
 }
 
-/* =========================
-   MENU OVERLAY (RIGHT SLIDE)
-========================= */
-
+/* ===== MOBILE MENU OVERLAY ===== */
 #menuOverlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.55);
-  z-index: 2000;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  z-index: 999;
 }
 
 #menuOverlay.active {
-  opacity: 1;
-  visibility: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu-box {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 78%;
+  background: var(--dark);
+  color: var(--light);
+  padding: 24px;
+  border-radius: var(--radius);
+  width: 80%;
   max-width: 320px;
-  height: 100%;
-  background: #111;
-  padding: 80px 24px 24px;
-  transform: translateX(100%);
-  transition: transform 0.35s ease;
+  position: relative;
 }
 
-#menuOverlay.active .menu-box {
-  transform: translateX(0);
-}
-
-.menu-box a {
-  display: block;
-  padding: 16px 0;
-  font-size: 18px;
-  color: #fff;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-#menuClose {
+.menu-box button {
   position: absolute;
-  top: 16px;
-  right: 18px;
-  font-size: 30px;
+  top: 12px;
+  right: 12px;
   background: none;
   border: none;
-  color: #fff;
+  font-size: 24px;
+  color: var(--light);
   cursor: pointer;
 }
 
-/* =========================
-   RESPONSIVE NAV
-========================= */
+.mobile-menu {
+  margin-top: 40px;
+}
+
+.mobile-menu li + li {
+  margin-top: 16px;
+}
+
+.mobile-menu a {
+  font-size: 18px;
+  color: var(--light);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--dark);
+  color: var(--light);
+  padding: 40px 0;
+  margin-top: 80px;
+}
+
+footer p {
+  text-align: center;
+  font-size: 14px;
+  color: #cbd5f5;
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .main-nav {
+  .nav-menu {
     display: none;
   }
 
-  #menuToggle {
+  .menu-toggle {
     display: block;
   }
 }
