@@ -19,24 +19,41 @@
 <body>
 
 <!-- ================= HEADER ================= -->
-<header>
-  <div class="container nav">
-   <div class="logo">
-  <img src="assets/img/global/logo.png" alt="Website 3 Ngày">
-</div>
+<header class="site-header">
+  <div class="container header-inner">
 
-    <nav class="nav-menu">
-      <a href="index.html">trang chủ</a>
-      <a href="about/">giới thiệu</a>
-      <a href="demos/">mẫu website</a>
-      <a href="process/">quy trình</a>
-      <a href="pricing/">bảng giá</a>
-      <a href="contact/">liên hệ</a>
-    </nav>
+    <!-- LOGO LEFT -->
+    <div class="header-left">
+      <img src="assets/img/global/logo.png" alt="Website 3 Ngày" class="header-logo">
+    </div>
 
-    <button class="menu-toggle" id="menuToggle">☰</button>
+    <!-- BRAND CENTER -->
+    <div class="header-center">
+      <span class="brand-text">Website 3 Ngày</span>
+    </div>
+
+    <!-- MENU TOGGLE RIGHT -->
+    <div class="header-right">
+      <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+
   </div>
 </header>
+
+<!-- ================= MOBILE MENU ================= -->
+<div id="menuOverlay">
+  <div class="menu-box">
+    <button id="menuClose">✕</button>
+    <ul class="mobile-menu">
+      <li><a href="index.html">Trang chủ</a></li>
+      <li><a href="about/">Giới thiệu</a></li>
+      <li><a href="demos/">Mẫu website</a></li>
+      <li><a href="process/">Quy trình</a></li>
+      <li><a href="pricing/">Bảng giá</a></li>
+      <li><a href="contact/">Liên hệ</a></li>
+    </ul>
+  </div>
+</div>
 
 <!-- =============== MOBILE MENU =============== -->
 <div id="menuOverlay">
