@@ -157,3 +157,114 @@ footer {
     cursor: pointer;
   }
 }
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo {
+  width: 28px;
+  height: 28px;
+}
+
+.brand-name {
+  font-weight: 600;
+  color: #fff;
+  font-size: 15px;
+}
+.hero {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 42px;
+  line-height: 1.3;
+}
+
+.hero h1 span {
+  color: #facc15; /* vàng nổi */
+}
+
+.hero-desc {
+  margin-top: 16px;
+  color: #ddd;
+  font-size: 16px;
+}
+
+.cta {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero {
+    padding: 70px 0;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero-desc {
+    font-size: 14px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+.fit ul {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.fit li {
+  list-style: none;
+  padding: 16px;
+  border-radius: 12px;
+  background: #f8f8f8;
+  font-weight: 500;
+}
+.demo-card {
+  display: block;
+  padding: 28px;
+  border-radius: 14px;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.demo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+.final-cta {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 80px 0;
+}
+
+.final-cta p {
+  margin: 12px 0 24px;
+  color: #ccc;
+}
