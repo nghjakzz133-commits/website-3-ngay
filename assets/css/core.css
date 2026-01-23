@@ -105,7 +105,7 @@ section {
   height: 64px;
 }
 
-
+/* MENU PC */
 .main-nav {
   display: flex;
   gap: 24px;
@@ -117,23 +117,28 @@ section {
   font-weight: 500;
 }
 
-
-}
-@media (max-width: 768px) {
-  .main-nav {
-    display: none; /* mobile ẩn menu ngang */
-  }
-
+/* NÚT 3 GẠCH */
 .menu-toggle {
   font-size: 26px;
   background: none;
   border: none;
   cursor: pointer;
-  display: none; /* mặc định PC ẩn */
+  display: none; /* PC ẩn */
+  color: #fff;
 }
+
+/* MOBILE */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-    color: #fff;
+  .main-nav {
+    display: none; /* mobile ẩn menu ngang */
   }
+
+  .menu-toggle {
+    display: block; /* mobile hiện 3 gạch */
+  }
+}
+
+/* MENU TRƯỢT */
+.menu-overlay.active .menu-box {
+  transform: translateX(0);
 }
