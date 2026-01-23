@@ -103,6 +103,9 @@ section {
   color: #fff;
   cursor: pointer;
 }
+.menu-close {
+  z-index: 10001;
+}
 
 /* =========================
    HEADER
