@@ -74,6 +74,10 @@ section {
   z-index: 10000;
 }
 
+.menu-overlay.active .menu-box {
+  transform: translateX(0);
+}
+
 .menu-box a {
   display: block;
   color: #fff;
@@ -98,6 +102,10 @@ section {
   cursor: pointer;
 }
 
+/* =========================
+   HEADER
+========================= */
+
 .header-inner {
   display: flex;
   align-items: center;
@@ -116,23 +124,24 @@ section {
   font-weight: 500;
 }
 
-/* ❌ DẤU } THỪA ĐÃ BỊ XÓA Ở ĐÂY */
-
-@media (max-width: 768px) {
-  .main-nav {
-    display: none; /* mobile ẩn menu ngang */
-  }
-}
-
+/* menu toggle */
 .menu-toggle {
   font-size: 26px;
   background: none;
   border: none;
   cursor: pointer;
-  display: none; /* mặc định PC ẩn */
+  display: none; /* PC ẩn */
 }
 
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 768px) {
+  .main-nav {
+    display: none;
+  }
+
   .menu-toggle {
     display: block;
     color: #fff;
