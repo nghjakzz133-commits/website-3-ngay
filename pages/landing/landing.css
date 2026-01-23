@@ -445,3 +445,45 @@ section {
     background-position: center;
   }
 }
+#menuOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  display: none;
+  z-index: 999;
+}
+
+#menuOverlay.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-box {
+  background: #111;
+  padding: 24px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 320px;
+}
+
+.menu-box button {
+  background: none;
+  color: #fff;
+  font-size: 26px;
+  border: none;
+  float: right;
+}
+
+.mobile-menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.mobile-menu li a {
+  display: block;
+  color: #fff;
+  padding: 12px 0;
+  text-decoration: none;
+}
