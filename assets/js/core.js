@@ -6,51 +6,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!toggleBtn || !overlay || !menuBox) return;
 
-  // mở menu
-  toggleBtn.addEventListener('click', () => {
-    overlay.classList.add('active');
-  });
-
-  // chặn click trong menu box (QUAN TRỌNG)
-  menuBox.addEventListener('click', (e) => {
+  // MỞ MENU
+  toggleBtn.addEventListener('click', (e) => {
     e.stopPropagation();
-  });
-
-  // đóng menu khi click overlay
-  overlay.addEventListener('click', () => {
-    overlay.classList.remove('active');
-  });
-
-  // đóng menu bằng nút X
-  if (closeBtn) {
-    closeBtn.addEventListener('click', (e) => {
-      e.stopPropagation(); // ⭐ DÒNG QUAN TRỌNG
-      overlay.classList.remove('active');
-    });
-  }
-});
-document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.getElementById('menuToggle');
-  const overlay = document.getElementById('menuOverlay');
-  const close = document.getElementById('menuClose');
-  const box = overlay.querySelector('.menu-box');
-
-  toggle.addEventListener('click', () => {
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
   });
 
-  close.addEventListener('click', (e) => {
+  // ĐÓNG MENU
+  const closeMenu = () => {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  // CLICK OVERLAY → ĐÓNG
+  overlay.addEventListener('click', closeMenu);
+
+  // CLICK NÚT X → ĐÓNG
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeMenu();
+    });
+  }
+
+  // CLICK TRONG MENU → KHÔNG ĐÓNG
+  menuBox.addEventListener('click', (e) => {
     e.stopPropagation();
-    overlay.classList.remove('active');
-    document.body.style.overflow = '';
   });
-
-  overlay.addEventListener('click', () => {
-    overlay.classList.remove('active');
-    document.body.style.overflow = '';
-  });
-
-  box.addEventListener('click', e => e.stopPropagation());
 });
-
