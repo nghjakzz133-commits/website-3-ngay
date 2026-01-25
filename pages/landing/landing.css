@@ -194,32 +194,62 @@ li {
   color: #fff;
 }
 
-/* =====================================================
-   8. HERO
-   ===================================================== */
+/* =========================
+   HERO
+   ========================= */
+
 .hero {
-  padding-top: 96px;
-  padding-bottom: 96px;
+  padding: 72px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  gap: 32px;
   align-items: center;
+}
+
+.hero h1 {
+  font-size: 36px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.hero h1 span {
+  color: var(--primary);
+}
+
+.hero p {
+  color: var(--gray);
+  margin-bottom: 24px;
 }
 
 .hero-actions {
   display: flex;
   gap: 16px;
-  margin-top: 24px;
+  flex-wrap: wrap;
 }
 
 .hero-img img {
-  width: 100%;
-  max-width: 480px;
+  border-radius: 16px;
 }
 
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .hero-img {
+    order: -1;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+}
 /* =====================================================
    9. TRUST / IDENTITY
    ===================================================== */
