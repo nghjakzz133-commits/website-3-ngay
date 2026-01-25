@@ -1,33 +1,10 @@
-/* =====================================================
-   LANDING.CSS – WEBSITE 3 NGÀY
-   chỉ dùng cho landing page
-   ===================================================== */
+/* ===============================
+   LANDING.CSS – LANDING PAGE
+   =============================== */
 
-/* =========================
-   GLOBAL SECTION CONTROL
-   ========================= */
-section {
-  padding: 96px 0;
-}
-
-section:nth-child(even) {
-  background: #f8fafc;
-}
-
-.section-desc {
-  max-width: 720px;
-  margin: 0 auto 48px;
-  text-align: center;
-  color: #555;
-  font-size: 16px;
-}
-
-/* =========================
-   HERO
-   ========================= */
+/* HERO */
 .hero {
-  padding: 120px 0 96px;
-  background: linear-gradient(180deg, #ffffff 0%, #f5f7fb 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
 }
 
 .hero-grid {
@@ -38,19 +15,13 @@ section:nth-child(even) {
 }
 
 .hero h1 {
-  font-size: 44px;
-  line-height: 1.15;
-  margin-bottom: 20px;
-  font-weight: 800;
-}
-
-.hero h1 span {
-  color: #111;
+  font-size: 40px;
+  line-height: 1.2;
+  margin-bottom: 16px;
 }
 
 .hero p {
-  font-size: 17px;
-  color: #555;
+  color: var(--muted);
   margin-bottom: 32px;
 }
 
@@ -61,279 +32,106 @@ section:nth-child(even) {
 }
 
 .hero-img img {
-  width: 100%;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,.08);
+  border-radius: 16px;
 }
 
-/* =========================
-   TRUST + IDENTITY
-   ========================= */
+/* TRUST + IDENTITY */
 .trust,
 .identity {
-  padding: 64px 0;
-  background: #ffffff;
+  background: var(--bg-soft);
 }
 
 .trust-text,
 .identity-text {
-  max-width: 820px;
+  max-width: 760px;
   margin: 0 auto;
   text-align: center;
-  font-size: 15px;
-  color: #444;
+  font-size: 14px;
+  color: var(--muted);
 }
 
-/* =========================
-   FIT
-   ========================= */
-.fit h2 {
-  text-align: left;
-  margin-bottom: 32px;
-}
-
-.fit ul {
+/* DEMOS / PROCESS / PRICING / FAQ */
+.demo-list,
+.process-list,
+.price-list,
+.faq-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-  gap: 16px;
-}
-
-.fit li {
-  background: #fff;
-  padding: 20px 24px;
-  border-radius: 14px;
-  border: 1px solid #e5e7eb;
-  font-size: 15px;
-}
-
-/* =========================
-   DEMOS
-   ========================= */
-.demo-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
   gap: 24px;
+  margin-top: 48px;
+}
+
+.demo-card,
+.process-item,
+.price-card,
+.faq-item {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
 }
 
 .demo-card {
-  display: block;
-  padding: 28px;
-  border-radius: 18px;
-  border: 1px solid #e5e7eb;
-  background: #fff;
   text-align: center;
   font-weight: 600;
-  transition: all .25s ease;
-}
-
-.demo-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0,0,0,.08);
-}
-
-/* =========================
-   PROCESS
-   ========================= */
-.process-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-  gap: 24px;
-}
-
-.process-item {
-  background: #fff;
-  border-radius: 18px;
-  padding: 32px;
-  border: 1px solid #e5e7eb;
 }
 
 .process-item span {
-  font-size: 32px;
-  font-weight: 800;
-  color: #111;
-}
-
-.process-item h3 {
-  margin: 12px 0 8px;
-  font-size: 18px;
-}
-
-/* =========================
-   SOCIAL PROOF
-   ========================= */
-.social-proof {
-  background: #0f172a;
-  color: #fff;
-}
-
-.social-proof h2 {
-  color: #fff;
-}
-
-.social-proof p {
-  max-width: 720px;
-  margin: 0 auto;
-  text-align: center;
-  color: #cbd5f5;
-}
-
-/* =========================
-   PRICING
-   ========================= */
-.price-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-  gap: 32px;
-}
-
-.price-card {
-  background: #fff;
-  border-radius: 20px;
-  padding: 36px 32px;
-  border: 1px solid #e5e7eb;
-  text-align: center;
-  position: relative;
-}
-
-.price-card.highlight {
-  border: 2px solid #111;
-  transform: scale(1.03);
-}
-
-.price-card h3 {
-  font-size: 20px;
-  margin-bottom: 12px;
+  font-size: 28px;
+  font-weight: 700;
 }
 
 .price {
-  font-size: 32px;
-  font-weight: 800;
-  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 16px 0;
 }
 
-.price-card ul {
-  margin-bottom: 24px;
-}
-
-.price-card li {
-  margin-bottom: 10px;
-  font-size: 15px;
+.price-card.highlight {
+  border: 2px solid var(--primary);
 }
 
 .badge {
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #111;
-  color: #fff;
+  display: inline-block;
+  background: #fde047;
+  padding: 4px 10px;
   font-size: 12px;
-  padding: 6px 14px;
   border-radius: 999px;
-}
-
-/* =========================
-   FAQ
-   ========================= */
-.faq-list {
-  max-width: 900px;
-  margin: 0 auto;
-  display: grid;
-  gap: 20px;
-}
-
-.faq-item {
-  background: #fff;
-  padding: 24px 28px;
-  border-radius: 16px;
-  border: 1px solid #e5e7eb;
-}
-
-.faq-item h3 {
-  font-size: 16px;
   margin-bottom: 8px;
 }
 
-/* =========================
-   COMMIT
-   ========================= */
-.commit ul {
-  max-width: 720px;
-  margin: 0 auto;
-  display: grid;
-  gap: 12px;
-}
-
-.commit li {
-  padding: 14px 18px;
-  background: #fff;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
-}
-
-/* =========================
-   CTA
-   ========================= */
+/* CTA */
 .cta {
   background: #111;
   color: #fff;
   text-align: center;
 }
 
-.cta h2 {
+.cta p {
+  color: #d1d5db;
+}
+
+.cta .btn-outline {
+  border-color: #fff;
   color: #fff;
 }
 
-.cta p {
-  color: #d1d5db;
-  margin-bottom: 24px;
-}
-
-/* =========================
-   MOBILE MENU (FIXED)
-   ========================= */
-#menuOverlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.6);
-  opacity: 0;
-  visibility: hidden;
-  transition: .3s ease;
-  z-index: 999;
-}
-
-#menuOverlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.menu-box {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 80%;
-  max-width: 320px;
+.cta .btn-outline:hover {
   background: #fff;
-  padding: 24px;
-  transform: translateX(100%);
-  transition: .3s ease;
+  color: #111;
 }
 
-#menuOverlay.active .menu-box {
-  transform: translateX(0);
-}
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
 
-.menu-box button {
-  background: none;
-  border: none;
-  font-size: 22px;
-  margin-bottom: 24px;
-}
+  .hero h1 {
+    font-size: 28px;
+  }
 
-.mobile-menu a {
-  display: block;
-  padding: 14px 0;
-  font-weight: 600;
-  border-bottom: 1px solid #e5e7eb;
+  .hero-actions {
+    justify-content: flex-start;
+  }
 }
