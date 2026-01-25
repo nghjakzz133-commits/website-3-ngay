@@ -28,3 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+// đóng menu khi click link (menu là trang riêng)
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    menuOverlay.classList.remove('active');
+  });
+});
