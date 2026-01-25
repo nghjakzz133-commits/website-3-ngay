@@ -24,7 +24,7 @@
   --bg: #f8fafc;
 
   --radius: 12px;
-  --transition: 0.3s ease;
+  --transition: 0.25s ease;
 }
 
 /* =========================
@@ -66,7 +66,7 @@ ul {
 }
 
 /* =========================
-   5. HEADER / NAV (GLOBAL)
+   5. HEADER (GLOBAL)
    ========================= */
 .site-header {
   background: var(--light);
@@ -83,23 +83,42 @@ ul {
   height: 64px;
 }
 
+/* LEFT */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
 .header-logo {
   height: 36px;
   width: auto;
+}
+
+/* CENTER */
+.header-center {
+  text-align: center;
 }
 
 .brand-text {
   font-size: 18px;
   font-weight: 700;
   color: var(--primary);
-  text-align: center;
+  letter-spacing: -0.2px;
 }
 
+/* RIGHT */
+.header-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* MENU TOGGLE */
 .menu-toggle {
   background: none;
   border: none;
   font-size: 26px;
   cursor: pointer;
+  line-height: 1;
 }
 
 /* =========================
@@ -135,7 +154,7 @@ ul {
   right: 12px;
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 22px;
   color: var(--light);
   cursor: pointer;
 }
@@ -150,6 +169,7 @@ ul {
 
 .mobile-menu a {
   font-size: 18px;
+  font-weight: 500;
   color: var(--light);
 }
 
@@ -173,7 +193,7 @@ footer p {
    8. RESPONSIVE
    ========================= */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
+  .brand-text {
+    font-size: 16px;
   }
 }
