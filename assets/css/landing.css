@@ -290,27 +290,50 @@ section:nth-child(even) {
 }
 
 /* =========================
-   MOBILE
+   MOBILE MENU (FIXED)
    ========================= */
-@media (max-width: 768px) {
-  section {
-    padding: 64px 0;
-  }
+#menuOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s ease;
+  z-index: 999;
+}
 
-  .hero {
-    padding-top: 96px;
-  }
+#menuOverlay.active {
+  opacity: 1;
+  visibility: visible;
+}
 
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
+.menu-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 80%;
+  max-width: 320px;
+  background: #fff;
+  padding: 24px;
+  transform: translateX(100%);
+  transition: .3s ease;
+}
 
-  .hero h1 {
-    font-size: 32px;
-  }
+#menuOverlay.active .menu-box {
+  transform: translateX(0);
+}
 
-  .price-card.highlight {
-    transform: none;
-  }
+.menu-box button {
+  background: none;
+  border: none;
+  font-size: 22px;
+  margin-bottom: 24px;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 14px 0;
+  font-weight: 600;
+  border-bottom: 1px solid #e5e7eb;
 }
