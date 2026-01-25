@@ -91,15 +91,13 @@ li {
   margin-bottom: 8px;
 }
 
-/* =====================================================
-   5. HEADER
-   ===================================================== */
+/* ===== HEADER (NEW STRUCTURE) ===== */
 .site-header {
   position: sticky;
   top: 0;
   background: #fff;
-  border-bottom: 1px solid var(--border);
-  z-index: 1000;
+  border-bottom: 1px solid #e5e7eb;
+  z-index: 100;
 }
 
 .header-inner {
@@ -111,17 +109,19 @@ li {
 
 .header-logo {
   height: 36px;
+  width: auto;
 }
 
 .brand-text {
   text-align: center;
   font-weight: 700;
+  font-size: 16px;
 }
 
 .menu-toggle {
   background: none;
   border: none;
-  font-size: 22px;
+  font-size: 26px;
   cursor: pointer;
 }
 
