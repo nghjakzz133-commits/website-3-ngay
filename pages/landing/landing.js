@@ -1,40 +1,31 @@
 /* =========================
-   LANDING.JS – HOME PAGE
+   LANDING.JS – HOME ONLY
    ========================= */
 
 document.addEventListener("DOMContentLoaded", () => {
-  /* ===== HERO BUTTON SCROLL ===== */
-  const heroBtns = document.querySelectorAll("[data-scroll]");
 
-  heroBtns.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      const targetId = btn.getAttribute("data-scroll");
+  /* ===== SMOOTH SCROLL ===== */
+  const links = document.querySelectorAll('a[href^="#"]');
+
+  links.forEach(link => {
+    link.addEventListener("click", e => {
+      const targetId = link.getAttribute("href");
       const targetEl = document.querySelector(targetId);
 
       if (targetEl) {
-        targetEl.scrollIntoView({ behavior: "smooth" });
+        e.preventDefault();
+        targetEl.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
       }
     });
   });
 
-  /* ===== SIMPLE FADE-IN ON SCROLL ===== */
-  const revealEls = document.querySelectorAll(
-    ".process-item, .why-item"
-  );
+  /* ===== FUTURE EFFECTS ===== */
+  // animation hero
+  // pricing highlight
+  // demo filter
+  // (để sau, chưa cần làm gì thêm)
 
-  const revealOnScroll = () => {
-    const triggerBottom = window.innerHeight * 0.85;
-
-    revealEls.forEach((el) => {
-      const boxTop = el.getBoundingClientRect().top;
-
-      if (boxTop < triggerBottom) {
-        el.classList.add("show");
-      }
-    });
-  };
-
-  window.addEventListener("scroll", revealOnScroll);
-  revealOnScroll(); // run lần đầu
 });
