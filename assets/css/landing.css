@@ -151,3 +151,10 @@
   width: auto;
   display: block;
 }
+.cta-logo {
+  height: 56px;
+  width: auto;
+  margin: 0 auto 20px;
+  display: block;
+  opacity: 0.95;
+}
