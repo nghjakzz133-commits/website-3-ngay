@@ -422,3 +422,55 @@
     max-width: 320px;
   }
 }
+/* ================================
+   HERO BLUR BACKGROUND
+================================ */
+.hero-blur {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hero {
+  position: relative;
+}
+
+.hero-grid {
+  position: relative;
+  z-index: 2;
+}
+
+/* Blur shapes */
+.hero-blur.blur-1,
+.hero-blur.blur-2 {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.6;
+}
+
+.hero-blur.blur-1 {
+  background: #3b82f6; /* xanh chủ đạo */
+  top: -120px;
+  left: -120px;
+}
+
+.hero-blur.blur-2 {
+  background: #22c55e; /* xanh lá nhẹ */
+  bottom: -140px;
+  right: -120px;
+}
+
+/* Mobile tối ưu */
+@media (max-width: 768px) {
+  .hero-blur.blur-1,
+  .hero-blur.blur-2 {
+    width: 220px;
+    height: 220px;
+    filter: blur(90px);
+    opacity: 0.45;
+  }
+}
