@@ -344,3 +344,11 @@
     margin-bottom: -24px;
   }
 }
+.section-why {
+  padding-top: 100px;
+}
+@media (max-width: 768px) {
+  .section-why {
+    padding-top: 72px;
+  }
+}
