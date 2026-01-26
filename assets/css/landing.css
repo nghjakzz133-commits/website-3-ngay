@@ -181,7 +181,18 @@
   color: #fff;
   border-radius: 6px;
 }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
+.logo-text {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  white-space: nowrap;
+}
 /* Mobile menu */
 .nav-toggle {
   display: none;
