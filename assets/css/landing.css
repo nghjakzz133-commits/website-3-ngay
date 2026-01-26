@@ -317,31 +317,30 @@
   opacity: .95;
 }
 /* ================================
-   WAVE DIVIDER
+   WAVE DIVIDER – FIX SPACING
 ================================ */
 .wave-divider {
   position: relative;
-  height: 80px;
+  height: 100px;
   background: #f8fafc;
-  overflow: hidden;
+  margin-bottom: -40px; /* kéo section xuống mượt */
+  z-index: 1;
 }
 
 .wave-divider::before {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 100%;
+  inset: 0;
   background: #ffffff;
   clip-path: path(
-    "M0,40 C120,80 240,0 360,30 480,60 600,20 720,40 840,60 960,20 1080,30 1200,40 1320,20 1440,30 L1440,0 L0,0 Z"
+    "M0,40 C120,80 240,20 360,40 480,60 600,30 720,40 840,50 960,30 1080,40 1200,50 1320,30 1440,40 L1440,0 L0,0 Z"
   );
 }
 
 /* Mobile tối ưu */
 @media (max-width: 768px) {
   .wave-divider {
-    height: 50px;
+    height: 70px;
+    margin-bottom: -24px;
   }
 }
