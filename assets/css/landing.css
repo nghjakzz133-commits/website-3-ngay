@@ -355,3 +355,7 @@
   max-width: 520px;
   margin: 12px auto 28px;
 }
+.cta p {
+  font-size: 1.05rem;
+  letter-spacing: 0.2px;
+}
