@@ -383,3 +383,48 @@
 .hero-media img {
   box-shadow: 0 24px 60px rgba(15,23,42,.18);
 }
+@media (max-width: 768px) {
+  .hero-content {
+    text-align: left;
+  }
+
+  .hero-cta {
+    justify-content: center;
+  }
+}
+.nav-menu.show {
+  position: fixed;
+  inset: 64px 0 0 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15,23,42,.98),
+    rgba(15,23,42,.95)
+  );
+}
+.cta p {
+  color: rgba(255,255,255,.85);
+  font-size: 1rem;
+}
+.nav-menu.show {
+  padding: 24px 20px;
+}
+
+.nav-menu.show .nav-link {
+  padding: 14px 12px;
+  border-radius: 12px;
+}
+.nav-link.active {
+  background: rgba(255,255,255,.08);
+  color: #fff;
+}
+.nav-menu.show .nav-cta {
+  margin-top: 16px;
+  padding: 16px;
+  text-align: center;
+  font-size: 1rem;
+}
+.nav-desc {
+  font-size: .8rem;
+  color: rgba(255,255,255,.6);
+  margin-bottom: 12px;
+}
