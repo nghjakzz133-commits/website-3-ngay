@@ -564,3 +564,40 @@
     grid-template-columns: 1fr;
   }
 }
+.section-fit {
+  background: #f8fafc;
+}
+
+.fit-box {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.06);
+}
+
+.fit-box ul {
+  margin-top: 16px;
+  line-height: 1.8;
+}
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.process-grid div {
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.05);
+}
+
+@media (max-width: 768px) {
+  .process-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
