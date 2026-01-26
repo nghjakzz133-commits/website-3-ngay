@@ -1,8 +1,6 @@
-/* ===============================
-   CORE.CSS – GLOBAL FOUNDATION
-   =============================== */
-
-/* 1. RESET */
+/* ==================================================
+   1️⃣ RESET & BASE
+================================================== */
 *,
 *::before,
 *::after {
@@ -11,158 +9,227 @@
   box-sizing: border-box;
 }
 
-/* 2. VARIABLES */
-:root {
-  --primary: #111111;
-  --bg: #ffffff;
-  --bg-soft: #f8fafc;
-  --text: #0f172a;
-  --muted: #64748b;
-  --border: #e5e7eb;
-  --radius: 12px;
-  --transition: 0.25s ease;
-}
-
-/* 3. BASE */
 html {
-  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Helvetica, Arial, sans-serif;
-  background: var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-img {
-  max-width: 100%;
-  display: block;
+/* ==================================================
+   2️⃣ COLOR SYSTEM (Brand)
+================================================== */
+:root {
+  --primary: #0d6efd;     /* Màu chính */
+  --secondary: #0b5ed7;   /* Màu phụ */
+  --accent: #20c997;     /* CTA / điểm nhấn */
+
+  --text: #212529;
+  --text-muted: #6c757d;
+
+  --bg: #f8f9fa;
+  --white: #ffffff;
+  --border: #e5e7eb;
+}
+
+/* ==================================================
+   3️⃣ TYPOGRAPHY
+================================================== */
+h1, h2, h3, h4, h5, h6 {
+  color: #111;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+h1 { font-size: 2.4rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.4rem; }
+
+p {
+  margin-bottom: 12px;
+  color: var(--text);
 }
 
 a {
-  color: inherit;
+  color: var(--primary);
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--secondary);
 }
 
 ul {
-  list-style: none;
+  padding-left: 20px;
+}
+li {
+  margin-bottom: 8px;
 }
 
-/* 4. LAYOUT */
+/* ==================================================
+   4️⃣ LAYOUT SYSTEM
+================================================== */
 .container {
-  max-width: 1200px;
-  padding: 0 16px;
-  margin: 0 auto;
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 20px;
 }
 
-section {
-  padding: 96px 0;
+.section {
+  padding: 60px 0;
 }
 
-/* 5. HEADER */
-.site-header {
-  position: sticky;
-  top: 0;
-  background: #fff;
-  border-bottom: 1px solid var(--border);
-  z-index: 100;
-}
-
-.header-inner {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  height: 64px;
-}
-
-.header-logo {
-  height: 32px;
-}
-
-.brand-text {
-  text-align: center;
-  font-weight: 700;
-}
-
-.menu-toggle {
-  background: none;
-  border: none;
-  font-size: 26px;
-  cursor: pointer;
-}
-
-/* 6. MOBILE MENU */
-#menuOverlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.5);
-  display: none;
-  z-index: 1000;
-}
-
-#menuOverlay.active {
+.flex {
   display: flex;
 }
-
-.menu-box {
-  background: #fff;
-  width: 80%;
-  max-width: 320px;
-  height: 100%;
-  padding: 24px;
+.grid {
+  display: grid;
+}
+.gap-20 {
+  gap: 20px;
 }
 
-.menu-box button {
-  background: none;
-  border: none;
-  font-size: 22px;
-  margin-bottom: 24px;
+/* ==================================================
+   5️⃣ COMPONENT BÁN HÀNG
+================================================== */
+
+/* Card dịch vụ */
+.card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 30px;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
 }
 
-.mobile-menu a {
-  display: block;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--border);
-}
-
-/* 7. BUTTONS */
+/* Button */
 .btn {
   display: inline-block;
   padding: 12px 24px;
-  border-radius: var(--radius);
+  border-radius: 8px;
   font-weight: 600;
-  transition: var(--transition);
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .btn-primary {
   background: var(--primary);
-  color: #fff;
+  color: var(--white);
+}
+.btn-primary:hover {
+  background: var(--secondary);
 }
 
 .btn-outline {
   border: 2px solid var(--primary);
   color: var(--primary);
+  background: transparent;
 }
-
 .btn-outline:hover {
   background: var(--primary);
-  color: #fff;
+  color: var(--white);
 }
 
-/* 8. FOOTER */
-footer {
-  background: #0f172a;
-  color: #cbd5f5;
-  padding: 48px 0;
+/* Badge */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--white);
+}
+
+/* Box giá */
+.price-box {
+  border: 2px solid var(--primary);
+  border-radius: 12px;
+  padding: 30px;
   text-align: center;
-  font-size: 14px;
 }
 
-/* 9. RESPONSIVE */
+/* ==================================================
+   6️⃣ FORM & CONTACT
+================================================== */
+form {
+  max-width: 600px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 1rem;
+  margin-bottom: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(13,110,253,0.15);
+}
+
+button {
+  border: none;
+}
+
+/* ==================================================
+   7️⃣ RESPONSIVE
+================================================== */
+@media (max-width: 1024px) {
+  h1 { font-size: 2rem; }
+}
+
 @media (max-width: 768px) {
-  section {
-    padding: 64px 0;
+  .container {
+    padding: 40px 16px;
+  }
+  h1 { font-size: 1.7rem; }
+  h2 { font-size: 1.4rem; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.5rem; }
+}
+
+/* ==================================================
+   8️⃣ ANIMATION NHẸ
+================================================== */
+.fade-up {
+  animation: fadeUp 0.6s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
+/* ==================================================
+   9️⃣ UTILITY CLASS
+================================================== */
+.text-center { text-align: center; }
+.mt-20 { margin-top: 20px; }
+.mb-40 { margin-bottom: 40px; }
+.hidden { display: none !important; }
