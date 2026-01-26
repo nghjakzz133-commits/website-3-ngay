@@ -190,3 +190,8 @@
 .header {
   background: #0f172a;
 }
+
+.nav-link,
+.nav-toggle {
+  color: #fff;
+}
