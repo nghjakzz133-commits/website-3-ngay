@@ -278,12 +278,17 @@
    SECTION
 ================================ */
 .section {
-  padding: 90px 0;
+  padding: 120px 0;
+  position: relative;
+  z-index: 2;
 }
 
 .section-fit,
 .section-value {
   background: var(--bg-soft);
+  position: relative;
+  z-index: 2;
+  padding-top: 140px; /* đẩy nội dung xuống khỏi wave */
 }
 
 .section-title {
@@ -292,17 +297,15 @@
   margin-bottom: 44px;
   color: var(--ink);
 }
-.section-fit,
-.section-value {
-  position: relative;
-  z-index: 2;
-  padding-top: 120px;
-}
 
 @media (max-width: 768px) {
+  .section {
+    padding: 96px 0;
+  }
+
   .section-fit,
   .section-value {
-    padding-top: 96px;
+    padding-top: 110px;
   }
 }
 /* Cards */
