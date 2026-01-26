@@ -7,7 +7,36 @@
   padding: 100px 0;
   text-align: center;
 }
+.hero {
+  display: flex;
+  align-items: center;
+}
 
+.hero .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+.hero img {
+  max-width: 100%;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 0;
+  }
+
+  .hero .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero img {
+    max-width: 220px;
+    margin: 0 auto 20px;
+  }
+}
 /* Card dịch vụ */
 .card {
   background: var(--white);
