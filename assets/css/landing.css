@@ -22,7 +22,10 @@
   position: relative;
   overflow: hidden;
 }
-
+.hero {
+  position: relative;
+  z-index: 2;
+}
 /* ================================
    HEADER / NAV
 ================================ */
@@ -258,7 +261,8 @@
 .wave-divider {
   position: relative;
   height: 90px;
-  margin-top: -40px; /* FIX KHÔNG ĂN HERO */
+  margin-top: 0;          /* QUAN TRỌNG */
+  margin-bottom: -40px;  /* chỉ đẩy section sau xuống */
   z-index: 1;
 }
 
@@ -266,10 +270,10 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,50 C120,80 240,80 360,60 C480,40 600,10 720,10 C840,10 960,40 1080,50 C1200,60 1320,50 1440,42 L1440,0 L0,0 Z' fill='%23f8fafc'/%3E%3C/svg%3E") no-repeat bottom center;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,50 C120,80 240,80 360,60 C480,40 600,10 720,10 C840,10 960,40 1080,50 C1200,60 1320,50 1440,42 L1440,0 L0,0 Z' fill='%23f8fafc'/%3E%3C/svg%3E")
+    no-repeat bottom center;
   background-size: cover;
 }
-
 /* ================================
    SECTION
 ================================ */
@@ -288,7 +292,19 @@
   margin-bottom: 44px;
   color: var(--ink);
 }
+.section-fit,
+.section-value {
+  position: relative;
+  z-index: 2;
+  padding-top: 120px;
+}
 
+@media (max-width: 768px) {
+  .section-fit,
+  .section-value {
+    padding-top: 96px;
+  }
+}
 /* Cards */
 .card {
   background: var(--bg-white);
