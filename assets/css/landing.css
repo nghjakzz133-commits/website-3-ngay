@@ -359,3 +359,27 @@
   font-size: 1.05rem;
   letter-spacing: 0.2px;
 }
+.hero h1 {
+  letter-spacing: -0.3px;
+}
+
+.hero-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+.hero-cta .btn-primary {
+  box-shadow: 0 12px 30px rgba(37,99,235,.35);
+}
+
+.hero-cta .btn-outline {
+  opacity: .9;
+}
+.hero-trust span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+.hero-media img {
+  box-shadow: 0 24px 60px rgba(15,23,42,.18);
+}
