@@ -328,3 +328,30 @@
     z-index: 99;
   }
 }
+/* ================= CTA FIX ================= */
+.cta .container {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.cta-logo {
+  display: block;
+  margin: 0 auto 24px;
+  opacity: 0.9;
+}
+
+/* nếu còn logo thừa (svg / img) lọt vào CTA */
+.cta img:not(.cta-logo) {
+  display: none;
+}
+/* ================= CTA TEXT FIX ================= */
+.cta h2 {
+  color: #ffffff;
+}
+
+.cta p {
+  color: rgba(255, 255, 255, 0.85);
+  opacity: 1;
+  max-width: 520px;
+  margin: 12px auto 28px;
+}
