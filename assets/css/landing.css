@@ -2,14 +2,28 @@
    LANDING PAGE – SERVICE
 ================================ */
 
-/* Hero */
+/* ================================
+   HERO
+================================ */
 .hero {
   padding: 100px 0;
+  background: #f8fafc;       /* nền sáng tách header */
+  color: #111;               /* chặn kế thừa màu trắng */
   text-align: center;
-}
-.hero {
   display: flex;
   align-items: center;
+}
+
+.hero h1 {
+  color: #111;
+}
+
+.hero p {
+  color: #444;
+}
+
+.hero a {
+  color: inherit;
 }
 
 .hero .container {
@@ -18,13 +32,16 @@
   align-items: center;
   gap: 40px;
 }
+
 .hero img {
   max-width: 100%;
   height: auto;
 }
+
+/* Mobile hero */
 @media (max-width: 768px) {
   .hero {
-    padding: 60px 0;
+    padding: 40px 0;
   }
 
   .hero .container {
@@ -37,7 +54,10 @@
     margin: 0 auto 20px;
   }
 }
-/* Card dịch vụ */
+
+/* ================================
+   CARD / CONTENT
+================================ */
 .card {
   background: var(--white);
   border-radius: 12px;
@@ -70,7 +90,9 @@
   color: var(--white);
 }
 
-/* CTA */
+/* ================================
+   CTA
+================================ */
 .cta {
   background: var(--primary);
   color: var(--white);
@@ -78,7 +100,21 @@
   text-align: center;
 }
 
-/* Animation */
+.cta a {
+  color: var(--white);
+}
+
+.cta-logo {
+  height: 56px;
+  width: auto;
+  margin: 0 auto 20px;
+  display: block;
+  opacity: 0.95;
+}
+
+/* ================================
+   ANIMATION
+================================ */
 .fade-up {
   opacity: 0;
   transform: translateY(20px);
@@ -94,25 +130,18 @@
 }
 
 /* ================================
-   RESPONSIVE LANDING
-================================ */
-@media (max-width: 768px) {
-  .hero { padding: 60px 0; }
-}
-/* ================================
    HEADER / MENU
 ================================ */
 .header {
   position: sticky;
   top: 0;
-  background: var(--white);
-  border-bottom: 1px solid var(--border);
+  background: #0f172a;       /* nền tối cho logo trắng */
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   z-index: 100;
 }
+
 .nav {
   position: relative;
-}
-.nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -122,7 +151,13 @@
 .logo {
   font-weight: 700;
   font-size: 1.2rem;
-  color: var(--text);
+  color: #fff;
+}
+
+.logo img {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 
 .nav-menu {
@@ -132,27 +167,28 @@
 }
 
 .nav-link {
-  color: var(--text);
+  color: #fff;
   font-weight: 500;
 }
 
 .nav-link:hover {
-  color: var(--primary);
+  color: #e5e7eb;
 }
 
 .nav-cta {
   padding: 8px 16px;
   background: var(--primary);
-  color: var(--white);
+  color: #fff;
   border-radius: 6px;
 }
 
-/* Mobile */
+/* Mobile menu */
 .nav-toggle {
   display: none;
   font-size: 1.4rem;
   background: none;
   border: none;
+  color: #fff;
 }
 
 @media (max-width: 768px) {
@@ -161,7 +197,7 @@
     top: 64px;
     left: 0;
     right: 0;
-    background: var(--white);
+    background: #0f172a;
     flex-direction: column;
     padding: 20px;
     display: none;
@@ -174,27 +210,4 @@
   .nav-toggle {
     display: block;
   }
-}
-.logo img {
-  height: 36px;
-  width: auto;
-  display: block;
-}
-.cta-logo {
-  height: 56px;
-  width: auto;
-  margin: 0 auto 20px;
-  display: block;
-  opacity: 0.95;
-}
-.header {
-  background: #0f172a;
-}
-
-.nav-link,
-.nav-toggle {
-  color: #fff;
-}
-.hero {
-  background: #f8fafc;
 }
