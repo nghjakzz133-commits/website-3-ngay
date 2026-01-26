@@ -1,167 +1,67 @@
-/* ===============================
-   LANDING.CSS – LANDING PAGE
-   =============================== */
+/* ================================
+   LANDING PAGE – SERVICE
+================================ */
 
-/* HERO */
+/* Hero */
 .hero {
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 48px;
-  align-items: center;
-}
-
-.hero h1 {
-  font-size: 40px;
-  line-height: 1.2;
-  margin-bottom: 16px;
-}
-
-.hero p {
-  color: var(--muted);
-  margin-bottom: 32px;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.hero-img img {
-  border-radius: 16px;
-}
-
-/* TRUST + IDENTITY */
-.trust,
-.identity {
-  background: var(--bg-soft);
-}
-
-.trust-text,
-.identity-text {
-  max-width: 760px;
-  margin: 0 auto;
+  padding: 100px 0;
   text-align: center;
-  font-size: 14px;
-  color: var(--muted);
 }
 
-/* DEMOS / PROCESS / PRICING / FAQ */
-.demo-list,
-.process-list,
-.price-list,
-.faq-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-  gap: 24px;
-  margin-top: 48px;
-}
-
-.demo-card,
-.process-item,
-.price-card,
-.faq-item {
-  background: #fff;
+/* Card dịch vụ */
+.card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 30px;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
 }
 
-.demo-card {
-  text-align: center;
-  font-weight: 600;
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
 }
 
-.process-item span {
-  font-size: 28px;
-  font-weight: 700;
-}
-
-.price {
-  font-size: 28px;
-  font-weight: 700;
-  margin: 16px 0;
-}
-
-.price-card.highlight {
+/* Pricing */
+.price-box {
   border: 2px solid var(--primary);
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
 }
 
+/* Badge */
 .badge {
   display: inline-block;
-  background: #fde047;
   padding: 4px 10px;
-  font-size: 12px;
+  font-size: 0.75rem;
   border-radius: 999px;
-  margin-bottom: 8px;
+  background: var(--accent);
+  color: var(--white);
 }
 
 /* CTA */
 .cta {
-  background: #111;
-  color: #fff;
+  background: var(--primary);
+  color: var(--white);
+  padding: 60px 20px;
   text-align: center;
 }
 
-.cta p {
-  color: #d1d5db;
+/* Animation */
+.fade-up {
+  animation: fadeUp 0.6s ease both;
 }
 
-.cta .btn-outline {
-  border-color: #fff;
-  color: #fff;
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.cta .btn-outline:hover {
-  background: #fff;
-  color: #111;
-}
-
-/* ===============================
-   MOBILE HERO FIX – LANDING
-   =============================== */
+/* ================================
+   RESPONSIVE LANDING
+================================ */
 @media (max-width: 768px) {
-
-  .hero {
-    padding: 56px 0;
-  }
-
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .hero h1 {
-    font-size: 28px;
-    line-height: 1.25;
-    letter-spacing: -0.3px;
-  }
-
-  .hero p {
-    font-size: 15px;
-    line-height: 1.6;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .hero-actions .btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  .hero-img {
-    text-align: center;
-  }
-
-  .hero-img img {
-    max-width: 90%;
-    margin: 0 auto;
-  }
+  .hero { padding: 60px 0; }
 }
