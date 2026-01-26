@@ -317,31 +317,29 @@
   opacity: .95;
 }
 /* ================================
-   WAVE DIVIDER – FIX SPACING
+   WAVE DIVIDER – HERO → SECTION
 ================================ */
 .wave-divider {
   position: relative;
-  height: 100px;
-  background: #f8fafc;
-  margin-bottom: -40px; /* kéo section xuống mượt */
-  z-index: 1;
+  height: 90px;
+  margin-top: -60px; /* kéo wave ăn vào hero */
+  z-index: 3;
 }
 
 .wave-divider::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: #ffffff;
-  clip-path: path(
-    "M0,40 C120,80 240,20 360,40 480,60 600,30 720,40 840,50 960,30 1080,40 1200,50 1320,30 1440,40 L1440,0 L0,0 Z"
-  );
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 90' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,40 C120,70 240,70 360,52 C480,34 600,6 720,6 C840,6 960,34 1080,44 C1200,54 1320,40 1440,32 L1440,0 L0,0 Z' fill='%23f8fafc'/%3E%3C/svg%3E")
+    no-repeat bottom center;
+  background-size: cover;
 }
 
 /* Mobile tối ưu */
 @media (max-width: 768px) {
   .wave-divider {
-    height: 70px;
-    margin-bottom: -24px;
+    height: 64px;
+    margin-top: -40px;
   }
 }
 .section-why {
