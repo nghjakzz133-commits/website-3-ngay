@@ -260,19 +260,26 @@
 ================================ */
 .wave-divider {
   position: relative;
-  height: 90px;
-  margin-top: 0;          /* QUAN TRỌNG */
-  margin-bottom: -40px;  /* chỉ đẩy section sau xuống */
+  height: 120px;
+  margin-top: -40px; /* GIẢM kéo lên */
   z-index: 1;
+  pointer-events: none;
 }
 
 .wave-divider::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,50 C120,80 240,80 360,60 C480,40 600,10 720,10 C840,10 960,40 1080,50 C1200,60 1320,50 1440,42 L1440,0 L0,0 Z' fill='%23f8fafc'/%3E%3C/svg%3E")
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,60 C120,90 240,90 360,70 C480,50 600,20 720,20 C840,20 960,50 1080,60 C1200,70 1320,60 1440,52 L1440,0 L0,0 Z' fill='%23f8fafc'/%3E%3C/svg%3E")
     no-repeat bottom center;
   background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .wave-divider {
+    height: 90px;
+    margin-top: -28px;
+  }
 }
 /* ================================
    SECTION
@@ -378,7 +385,3 @@
     margin: 32px auto 0;
   }
 
-  .wave-divider {
-    margin-top: -24px;
-  }
-}
