@@ -54,6 +54,7 @@
   white-space: nowrap;
 }
 
+/* Nav menu */
 .nav-menu {
   display: flex;
   gap: 28px;
@@ -94,6 +95,7 @@
   color: #fff;
 }
 
+/* Mobile nav */
 @media (max-width: 768px) {
   .nav-menu {
     position: absolute;
@@ -126,7 +128,7 @@
   grid-template-columns: 1.15fr 0.85fr;
   gap: 48px;
   align-items: center;
-  z-index: 3;
+  z-index: 2;
 }
 
 .hero-eyebrow {
@@ -193,7 +195,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
 }
 
 .blur-1,
@@ -226,7 +228,7 @@
   100% { transform: translateY(0) scale(1); }
 }
 
-/* ================= WAVE DIVIDER (KHÔNG ĐẨY LAYOUT) ================= */
+/* ================= WAVE DIVIDER ================= */
 .wave-divider {
   position: relative;
   height: 110px;
@@ -244,7 +246,7 @@
   background-size: cover;
 }
 
-/* ================= SECTION – FINAL ================= */
+/* ================= SECTION ================= */
 .section {
   padding: 80px 0;
   position: relative;
@@ -256,7 +258,6 @@
   background: var(--bg-soft);
 }
 
-/* Section title */
 .section-title {
   text-align: center;
   font-size: 2.1rem;
@@ -283,12 +284,6 @@
   box-shadow: 0 24px 60px rgba(15,23,42,.08);
 }
 
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
-  .section {
-    padding: 64px 0;
-  }
-}
 /* ================= CTA ================= */
 .cta {
   background: linear-gradient(180deg, var(--brand), #1d4ed8);
@@ -304,7 +299,11 @@
 }
 
 /* ================= MOBILE ================= */
-
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;
+    padding: 80px 0 96px;
+  }
 
   .hero-grid {
     grid-template-columns: 1fr;
@@ -322,10 +321,5 @@
 
   .section {
     padding: 56px 0;
-  }
-
-  .section-fit,
-  .section-value {
-    padding-top: 48px;
   }
 }
