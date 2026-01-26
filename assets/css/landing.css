@@ -379,3 +379,46 @@
   position: relative;
   z-index: 1;
 }
+/* ================================
+   HERO GRADIENT OVERLAY
+================================ */
+.hero-premium::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(248,250,252,0.85) 0%,
+    rgba(248,250,252,1) 70%
+  );
+  z-index: 0;
+}
+.hero-premium .hero-grid {
+  position: relative;
+  z-index: 2;
+}
+/* ================================
+   HERO MOCKUP
+================================ */
+.hero-mockup {
+  max-width: 520px;
+  width: 100%;
+  margin-left: auto;
+  filter: drop-shadow(0 40px 80px rgba(15,23,42,0.35));
+  animation: floatHero 6s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes floatHero {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-14px); }
+  100% { transform: translateY(0); }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-mockup {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+}
