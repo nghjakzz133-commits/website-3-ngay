@@ -601,3 +601,46 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+.hero-blur,
+.hero-bg,
+.blur-shape {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.hero .container,
+.hero-grid,
+.hero-content,
+.hero-media {
+  position: relative;
+  z-index: 2;
+}
+.blur-shape {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.35;
+}
+
+.blur-1 {
+  background: #3b82f6;
+  top: -120px;
+  left: -120px;
+}
+
+.blur-2 {
+  background: #22c55e;
+  bottom: -120px;
+  right: -120px;
+}
+.section {
+  position: relative;
+  z-index: 1;
+}
