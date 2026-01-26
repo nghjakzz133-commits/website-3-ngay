@@ -6,12 +6,6 @@
 /* ================================
    RESET / BASE
 ================================ */
-.hero,
-.section {
-  position: relative;
-  overflow: hidden;
-}
-
 :root {
   --ink: #0f172a;
   --ink-soft: #334155;
@@ -21,6 +15,12 @@
   --brand: #2563eb;
   --brand-soft: #38bdf8;
   --radius-lg: 20px;
+}
+
+.hero,
+.section {
+  position: relative;
+  overflow: hidden;
 }
 
 /* ================================
@@ -52,9 +52,7 @@
   font-weight: 600;
 }
 
-.logo img {
-  height: 36px;
-}
+.logo img { height: 36px; }
 
 .logo-text {
   font-size: 1rem;
@@ -86,9 +84,7 @@
   transition: width .3s ease;
 }
 
-.nav-link:hover::after {
-  width: 100%;
-}
+.nav-link:hover::after { width: 100%; }
 
 .nav-cta {
   background: var(--brand);
@@ -124,11 +120,15 @@
 }
 
 /* ================================
-   HERO – SIGNATURE
+   HERO – SIGNATURE (FIX CHIỀU CAO)
 ================================ */
 .hero {
   background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  min-height: calc(100vh - 72px); /* FIX GỐC */
+  display: flex;
+  align-items: center;
   padding: 110px 0 120px;
+  z-index: 2;
 }
 
 .hero-grid {
@@ -137,7 +137,7 @@
   gap: 56px;
   align-items: center;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .hero-eyebrow {
@@ -249,18 +249,16 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .blur-1, .blur-2, .hero-mockup {
-    animation: none;
-  }
+  .blur-1, .blur-2, .hero-mockup { animation: none; }
 }
 
 /* ================================
-   WAVE DIVIDER – SIGNATURE
+   WAVE DIVIDER – FIX
 ================================ */
 .wave-divider {
   position: relative;
-  height: 100px;
-  margin-top: -70px;
+  height: 90px;
+  margin-top: -40px; /* FIX KHÔNG ĂN HERO */
   z-index: 1;
 }
 
@@ -268,8 +266,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,50 C120,80 240,80 360,60 C480,40 600,10 720,10 C840,10 960,40 1080,50 C1200,60 1320,50 1440,42 L1440,0 L0,0 Z' fill='%23f8fafc'/%3E%3C/svg%3E")
-    no-repeat bottom center;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,50 C120,80 240,80 360,60 C480,40 600,10 720,10 C840,10 960,40 1080,50 C1200,60 1320,50 1440,42 L1440,0 L0,0 Z' fill='%23f8fafc'/%3E%3C/svg%3E") no-repeat bottom center;
   background-size: cover;
 }
 
@@ -339,16 +336,13 @@
   opacity: .95;
 }
 
-.cta a {
-  color: #fff;
-}
-
 /* ================================
    MOBILE
 ================================ */
 @media (max-width: 768px) {
   .hero {
-    padding: 80px 0 96px;
+    min-height: 100vh;
+    padding: 96px 0 120px;
   }
 
   .hero-grid {
@@ -363,5 +357,9 @@
   .hero-mockup {
     max-width: 320px;
     margin: 32px auto 0;
+  }
+
+  .wave-divider {
+    margin-top: -24px;
   }
 }
