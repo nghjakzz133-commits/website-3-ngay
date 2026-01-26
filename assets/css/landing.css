@@ -311,6 +311,10 @@
   }
 }
 @media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+
   .nav-menu.show {
     display: flex;
     flex-direction: column;
@@ -321,5 +325,6 @@
     background: rgba(15,23,42,.95);
     padding: 20px;
     gap: 16px;
+    z-index: 99;
   }
 }
