@@ -80,7 +80,9 @@
   border-bottom: 1px solid var(--border);
   z-index: 100;
 }
-
+.nav {
+  position: relative;
+}
 .nav {
   display: flex;
   align-items: center;
