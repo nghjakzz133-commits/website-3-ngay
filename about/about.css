@@ -195,3 +195,15 @@ footer {
     padding: 72px 20px;
   }
 }
+.about-hero {
+  padding: 96px 0 72px;
+  background: linear-gradient(180deg, var(--bg-soft), #fff);
+}
+
+.about-section {
+  padding: 72px 0;
+}
+
+.about-section.gray {
+  background: var(--bg-soft);
+}
