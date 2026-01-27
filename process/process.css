@@ -1,178 +1,6 @@
 /* =================================================
    PROCESS.CSS – WEBSITE 3 NGÀY
-   AGENCY / TECH / CLEAR FLOW
-================================================= */
-
-/* ================= HERO PROCESS ================= */
-.hero-process {
-  position: relative;
-  padding: 96px 0 120px;
-  background: linear-gradient(
-    180deg,
-    #eef2ff 0%,
-    #ffffff 100%
-  );
-  overflow: hidden;
-}
-
-.hero-process .hero-eyebrow {
-  color: #4f46e5;
-}
-
-.hero-process .highlight {
-  background: linear-gradient(90deg, #4f46e5, #38bdf8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hero-process .hero-desc {
-  max-width: 540px;
-}
-
-/* blur riêng cho process */
-.hero-process .blur-1 {
-  background: #818cf8;
-  opacity: .35;
-}
-
-.hero-process .blur-2 {
-  background: #38bdf8;
-  opacity: .25;
-}
-
-/* ================= SECTION TUNING ================= */
-.section-head p {
-  max-width: 560px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ================= EXPLAIN BOX ================= */
-.fit-box p {
-  margin-bottom: 14px;
-  line-height: 1.75;
-}
-
-/* ================= PROCESS GRID ================= */
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 24px;
-}
-
-.process-grid .card {
-  padding: 32px 24px;
-  border-radius: var(--radius-lg);
-  background: #fff;
-  text-align: left;
-  box-shadow: 0 20px 50px rgba(15,23,42,.08);
-  transition: transform .35s ease, box-shadow .35s ease;
-}
-
-.process-grid .card h3 {
-  font-size: 1.05rem;
-  margin-bottom: 10px;
-}
-
-.process-grid .card p {
-  font-size: .95rem;
-  line-height: 1.6;
-}
-
-.process-grid .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 34px 90px rgba(15,23,42,.15);
-}
-
-/* ================= VALUE GRID (CHECKLIST) ================= */
-.value-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 28px;
-}
-
-.value-item {
-  background: #fff;
-  padding: 28px;
-  border-radius: var(--radius-lg);
-  text-align: center;
-  box-shadow: 0 18px 45px rgba(15,23,42,.08);
-  transition: transform .35s ease, box-shadow .35s ease;
-}
-
-.value-item h3 {
-  font-size: 1rem;
-  margin-bottom: 8px;
-}
-
-.value-item p {
-  font-size: .95rem;
-}
-
-.value-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 30px 80px rgba(15,23,42,.15);
-}
-
-/* ================= CTA ================= */
-.cta {
-  background: linear-gradient(
-    180deg,
-    #4f46e5,
-    #4338ca
-  );
-}
-
-.cta h2 {
-  color: #fff;
-}
-
-.cta p {
-  color: rgba(255,255,255,.85);
-}
-
-/* ================= ANIMATION ================= */
-@keyframes fadeUpSoft {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero-process .hero-content > * {
-  animation: fadeUpSoft .8s ease forwards;
-}
-
-.hero-process .hero-content > *:nth-child(1){animation-delay:.1s}
-.hero-process .hero-content > *:nth-child(2){animation-delay:.2s}
-.hero-process .hero-content > *:nth-child(3){animation-delay:.3s}
-.hero-process .hero-content > *:nth-child(4){animation-delay:.4s}
-
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
-  .process-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .value-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-process {
-    padding: 88px 0 96px;
-  }
-
-  .hero-process .hero-media img {
-    display: none;
-  }
-}
-/* =================================================
-   PROCESS.CSS – WEBSITE 3 NGÀY
-   CLEAR / TRUST / STEP-BY-STEP
+   CLEAR FLOW / TRUST / AGENCY STYLE
 ================================================= */
 
 /* ================= HERO ================= */
@@ -181,18 +9,9 @@
   background: linear-gradient(
     135deg,
     #ecfeff 0%,
-    #f0f9ff 50%,
+    #f0f9ff 55%,
     #ffffff 100%
   );
-}
-
-.process-eyebrow {
-  font-size: .75rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #0891b2;
-  margin-bottom: 12px;
 }
 
 .process-hero h1 {
@@ -201,43 +20,69 @@
   margin-bottom: 16px;
 }
 
-.process-desc {
+.process-hero p {
   max-width: 560px;
   font-size: 1.05rem;
-  margin-bottom: 22px;
+  line-height: 1.7;
+  color: var(--text-muted);
 }
 
-.process-trust {
-  display: flex;
-  gap: 18px;
-  font-size: .85rem;
-  color: var(--text-muted);
+/* ================= SECTION ================= */
+.process-section {
+  padding: 88px 0;
+}
+
+.process-section.gray {
+  background: var(--bg-soft);
+}
+
+.process-section h2 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.process-section > .container > p {
+  max-width: 640px;
+  margin: 0 auto 48px;
+  text-align: center;
 }
 
 /* ================= STEPS ================= */
 .process-steps {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
 }
 
 .process-step {
   background: #fff;
-  padding: 28px;
+  padding: 32px 28px;
   border-radius: var(--radius-lg);
   box-shadow: 0 20px 50px rgba(15,23,42,.08);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.process-step:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 34px 90px rgba(15,23,42,.15);
 }
 
 .step-number {
   display: inline-block;
   font-weight: 800;
+  font-size: .9rem;
   color: #0891b2;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .process-step h3 {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   font-size: 1.1rem;
+}
+
+.process-step p {
+  font-size: .95rem;
+  line-height: 1.65;
 }
 
 /* ================= LIST ================= */
@@ -252,9 +97,45 @@
   font-weight: 500;
 }
 
+/* ================= CTA ================= */
+.process-cta {
+  padding: 96px 0;
+  background: linear-gradient(
+    180deg,
+    #0891b2,
+    #0e7490
+  );
+  color: #fff;
+  text-align: center;
+}
+
+.process-cta h2 {
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.process-cta p {
+  margin-bottom: 28px;
+  color: rgba(255,255,255,.9);
+}
+
+.process-cta .btn {
+  background: #fff;
+  color: #0891b2;
+  border: none;
+}
+
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
   .process-steps {
     grid-template-columns: 1fr;
+  }
+
+  .process-hero {
+    padding: 88px 0 72px;
+  }
+
+  .process-section {
+    padding: 72px 0;
   }
 }
