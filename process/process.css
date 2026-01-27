@@ -140,3 +140,37 @@
     padding: 72px 0;
   }
 }
+/* ================= HERO PROCESS OVERRIDE ================= */
+.hero.hero-process {
+  background: linear-gradient(
+    180deg,
+    #0f172a 0%,
+    #020617 100%
+  );
+}
+
+.hero.hero-process .hero-eyebrow {
+  color: #38bdf8;
+}
+
+.hero.hero-process h1,
+.hero.hero-process .hero-desc,
+.hero.hero-process .hero-trust span {
+  color: #e5e7eb;
+}
+
+.hero.hero-process .highlight {
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero.hero-process .blur-1 {
+  background: #38bdf8;
+  opacity: .25;
+}
+
+.hero.hero-process .blur-2 {
+  background: #818cf8;
+  opacity: .2;
+}
