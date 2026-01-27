@@ -1,16 +1,15 @@
 /* =================================================
    PROCESS.CSS – WEBSITE 3 NGÀY
-   CLEAR FLOW / TRUST / AGENCY STYLE
+   SCALE SAFE / CORE FRIENDLY
 ================================================= */
 
 /* ================= HERO ================= */
 .process-hero {
   padding: 96px 0 88px;
   background: linear-gradient(
-    135deg,
-    #ecfeff 0%,
-    #f0f9ff 55%,
-    #ffffff 100%
+    180deg,
+    rgba(37,99,235,.06),
+    rgba(248,250,252,1)
   );
 }
 
@@ -45,33 +44,34 @@
   max-width: 640px;
   margin: 0 auto 48px;
   text-align: center;
+  color: var(--text-muted);
 }
 
 /* ================= STEPS ================= */
 .process-steps {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,1fr);
   gap: 28px;
 }
 
 .process-step {
-  background: #fff;
+  background: var(--white);
   padding: 32px 28px;
   border-radius: var(--radius-lg);
-  box-shadow: 0 20px 50px rgba(15,23,42,.08);
-  transition: transform .35s ease, box-shadow .35s ease;
+  border: 1px solid rgba(15,23,42,.06);
+  transition: transform .3s ease, box-shadow .3s ease;
 }
 
 .process-step:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 34px 90px rgba(15,23,42,.15);
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(15,23,42,.12);
 }
 
 .step-number {
   display: inline-block;
-  font-weight: 800;
+  font-weight: 700;
   font-size: .9rem;
-  color: #0891b2;
+  color: var(--primary);
   margin-bottom: 10px;
 }
 
@@ -83,6 +83,7 @@
 .process-step p {
   font-size: .95rem;
   line-height: 1.65;
+  color: var(--text-muted);
 }
 
 /* ================= LIST ================= */
@@ -95,6 +96,7 @@
 .process-list li {
   margin-bottom: 12px;
   font-weight: 500;
+  color: var(--text);
 }
 
 /* ================= CTA ================= */
@@ -102,26 +104,25 @@
   padding: 96px 0;
   background: linear-gradient(
     180deg,
-    #0891b2,
-    #0e7490
+    var(--primary),
+    var(--primary-dark)
   );
-  color: #fff;
   text-align: center;
 }
 
 .process-cta h2 {
-  color: #fff;
+  color: var(--white);
   margin-bottom: 12px;
 }
 
 .process-cta p {
   margin-bottom: 28px;
-  color: rgba(255,255,255,.9);
+  color: rgba(255,255,255,.85);
 }
 
 .process-cta .btn {
-  background: #fff;
-  color: #0891b2;
+  background: var(--white);
+  color: var(--primary);
   border: none;
 }
 
