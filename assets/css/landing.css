@@ -516,3 +516,53 @@
   gap: 24px;
   align-items: center;
 }
+/* ===== NAV LEVEL SYSTEM ===== */
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-top {
+  margin-right: auto;
+}
+
+.nav-desc {
+  font-size: .85rem;
+  color: rgba(255,255,255,.7);
+  white-space: nowrap;
+}
+
+.nav-main {
+  display: flex;
+  gap: 26px;
+}
+
+.nav-bottom {
+  margin-left: 12px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .nav-menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px;
+  }
+
+  .nav-main {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .nav-bottom {
+    width: 100%;
+  }
+
+  .nav-bottom .nav-cta {
+    width: 100%;
+    text-align: center;
+  }
+}
