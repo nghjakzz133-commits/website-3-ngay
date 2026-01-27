@@ -6,24 +6,31 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!navToggle || !navMenu) return;
 
   // Toggle menu
-  navToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("show");
+  navToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    navMenu.classList.toggle("active");
     navToggle.classList.toggle("active");
+
+    // Lock scroll khi mở menu
+    document.body.style.overflow =
+      navMenu.classList.contains("active") ? "hidden" : "";
   });
 
-  // Click link -> auto close menu (UX chuẩn agency)
+  // Click link -> đóng menu
   navLinks.forEach(link => {
     link.addEventListener("click", () => {
-      navMenu.classList.remove("show");
+      navMenu.classList.remove("active");
       navToggle.classList.remove("active");
+      document.body.style.overflow = "";
     });
   });
 
   // Click ngoài menu -> đóng
   document.addEventListener("click", (e) => {
     if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
-      navMenu.classList.remove("show");
+      navMenu.classList.remove("active");
       navToggle.classList.remove("active");
+      document.body.style.overflow = "";
     }
   });
 });
