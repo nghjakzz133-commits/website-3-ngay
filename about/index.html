@@ -1,124 +1,154 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Giới thiệu | Website 3 Ngày</title>
 
-  <link rel="stylesheet" href="../assets/css/core.css">
-  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="/website-3-ngay/assets/css/core.css" />
+  <link rel="stylesheet" href="/website-3-ngay/assets/css/landing.css" />
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="../index.html" class="back-home">← Trang chủ</a>
+<!-- ================= HEADER (CHUNG HOME) ================= -->
+<header class="header">
+  <div class="container nav">
+    <a href="/website-3-ngay/" class="logo">
+      <img src="/website-3-ngay/assets/img/global/logo.png" alt="Website 3 Ngày">
+      <span class="logo-text">Website 3 Ngày</span>
+    </a>
+
+    <nav class="nav-menu" id="navMenu">
+      <div class="nav-top">
+        <p class="nav-desc">Thiết kế website trọn gói trong 3 ngày</p>
+      </div>
+
+      <div class="nav-main">
+        <a class="nav-link" href="/website-3-ngay/">Trang chủ</a>
+        <a class="nav-link active" href="/website-3-ngay/about/">Giới thiệu</a>
+        <a class="nav-link" href="/website-3-ngay/process/">Quy trình</a>
+        <a class="nav-link" href="/website-3-ngay/demos/">Demo</a>
+        <a class="nav-link" href="/website-3-ngay/pricing/">Bảng giá</a>
+      </div>
+
+      <div class="nav-bottom">
+        <a class="nav-link nav-cta" href="/website-3-ngay/contact/">Liên hệ</a>
+      </div>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle">☰</button>
   </div>
 </header>
 
-<section class="about-hero">
-  <div class="container">
-    <h1>Chúng tôi là Website 3 Ngày</h1>
-    <p>
-      Giải pháp thiết kế website nhanh – gọn – dùng được ngay  
-      cho mô hình kinh doanh nhỏ và vừa
-    </p>
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-blur blur-1"></div>
+  <div class="hero-blur blur-2"></div>
+
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <p class="hero-eyebrow">VỀ WEBSITE 3 NGÀY</p>
+      <h1>
+        Làm website<br>
+        <span class="highlight">nhanh – gọn – dùng ra tiền</span>
+      </h1>
+      <p class="hero-desc">
+        Website 3 Ngày ra đời để giúp cá nhân và doanh nghiệp nhỏ
+        có một website <strong>chạy được – dùng được – bán được</strong>
+        mà không tốn thời gian và công sức.
+      </p>
+
+      <div class="hero-trust">
+        <span>⚡ Hoàn thiện trong 3 ngày</span>
+        <span>🧠 Tối ưu theo ngành nghề</span>
+      </div>
+    </div>
+
+    <div class="hero-media">
+      <img src="/website-3-ngay/assets/img/global/hero-mockup.png" alt="">
+    </div>
   </div>
 </section>
 
-<section class="about-section">
+<div class="wave-divider"></div>
+
+<!-- ================= SECTION ================= -->
+<section class="section section-soft">
   <div class="container">
-    <h2>Website 3 Ngày là gì?</h2>
-    <p>
-      Website 3 Ngày là dịch vụ thiết kế website theo mẫu có sẵn,
-      được tối ưu lại theo từng ngành nghề cụ thể như spa, quán cafe,
-      shop bán hàng, doanh nghiệp nhỏ, profile cá nhân…
-    </p>
-    <p>
-      Thay vì mất hàng tuần làm việc phức tạp, chúng tôi rút gọn quy trình,
-      tập trung vào thứ quan trọng nhất: <strong>website phải dùng được và ra khách</strong>.
-    </p>
+    <div class="section-head">
+      <h2>Website 3 Ngày là gì?</h2>
+      <p>Không phải web phức tạp – mà là web để sử dụng thật</p>
+    </div>
+
+    <div class="fit-box">
+      <p>
+        Website 3 Ngày là dịch vụ thiết kế website theo mẫu đã được kiểm chứng,
+        sau đó tinh chỉnh lại nội dung, bố cục và CTA cho từng ngành nghề cụ thể
+        như spa, quán café, shop bán hàng, doanh nghiệp nhỏ hoặc cá nhân kinh doanh.
+      </p>
+      <p>
+        Thay vì làm web mất hàng tuần, chúng tôi rút gọn quy trình,
+        tập trung vào thứ quan trọng nhất:
+        <strong>website phải dễ hiểu – dễ dùng – và ra khách</strong>.
+      </p>
+    </div>
   </div>
 </section>
 
-<section class="about-section gray">
+<!-- ================= VALUE ================= -->
+<section class="section section-light">
   <div class="container">
-    <h2>Chúng tôi giải quyết vấn đề gì?</h2>
-    <ul class="about-list">
-      <li>❌ Không biết bắt đầu làm website từ đâu</li>
-      <li>❌ Làm web tốn thời gian, phát sinh chi phí</li>
-      <li>❌ Website làm xong nhưng không dùng được</li>
-      <li>❌ Giao diện rối, không phù hợp khách hàng</li>
-    </ul>
+    <div class="section-head">
+      <h2>Vấn đề chúng tôi giải quyết</h2>
+      <p>Những thứ khách hàng thường gặp khi làm website</p>
+    </div>
 
-    <p class="highlight">
-      Website 3 Ngày được tạo ra để giải quyết triệt để những vấn đề đó.
-    </p>
-  </div>
-</section>
-
-<section class="about-section">
-  <div class="container">
-    <h2>Chúng tôi làm khác gì?</h2>
-    <div class="about-grid">
-      <div class="about-card">
-        <h3>Chọn mẫu trước</h3>
-        <p>Khách xem demo thật, chọn đúng mẫu phù hợp rồi mới làm.</p>
+    <div class="value-grid">
+      <div class="value-item">
+        <h3>❌ Không biết bắt đầu</h3>
+        <p>Không rành kỹ thuật, không biết cần làm gì trước.</p>
       </div>
-      <div class="about-card">
-        <h3>Tối ưu theo ngành</h3>
-        <p>Mỗi website được chỉnh nội dung, bố cục theo ngành nghề.</p>
+      <div class="value-item">
+        <h3>❌ Web làm xong không dùng</h3>
+        <p>Giao diện đẹp nhưng không ra đơn, không hiệu quả.</p>
       </div>
-      <div class="about-card">
-        <h3>Bàn giao nhanh</h3>
-        <p>Website hoàn chỉnh trong 3 ngày, dùng được ngay.</p>
-      </div>
-      <div class="about-card">
-        <h3>Không phát sinh</h3>
-        <p>Rõ ràng chi phí, không mập mờ, không bán thêm linh tinh.</p>
+      <div class="value-item">
+        <h3>❌ Phát sinh chi phí</h3>
+        <p>Báo giá ban đầu một kiểu, làm xong một kiểu khác.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="about-section gray">
+<!-- ================= DIFFERENT ================= -->
+<section class="section section-soft">
   <div class="container">
-    <h2>Chúng tôi phù hợp với ai?</h2>
-    <ul class="about-list">
-      <li>Chủ spa, nail, salon cần website nhanh</li>
-      <li>Quán cafe, shop nhỏ chưa có website</li>
-      <li>Người bán hàng online cần trang giới thiệu</li>
-      <li>Người không rành kỹ thuật, muốn làm gọn</li>
-    </ul>
+    <div class="section-head">
+      <h2>Chúng tôi làm khác như thế nào?</h2>
+      <p>Đơn giản – rõ ràng – đúng cam kết</p>
+    </div>
+
+    <div class="process-grid">
+      <div class="card">Chọn mẫu trước – xem demo thật</div>
+      <div class="card">Tối ưu theo ngành nghề</div>
+      <div class="card">Hoàn thiện trong 3 ngày</div>
+      <div class="card">Không phát sinh chi phí</div>
+    </div>
   </div>
 </section>
 
-<section class="about-section">
-  <div class="container">
-    <h2>Cam kết của chúng tôi</h2>
-    <ul class="about-list">
-      <li>✔ Giao website đúng mẫu đã chọn</li>
-      <li>✔ Đúng thời gian cam kết</li>
-      <li>✔ Hỗ trợ chỉnh sửa sau bàn giao</li>
-      <li>✔ Website chạy ổn định, xem đẹp trên điện thoại</li>
-    </ul>
+<!-- ================= CTA ================= -->
+<section class="cta">
+  <div class="container text-center">
+    <img src="/website-3-ngay/assets/img/global/logo.png" class="cta-logo" alt="">
+    <h2>Bạn cần một website làm nghiêm túc?</h2>
+    <p>Chat Zalo để được tư vấn rõ ràng trước khi quyết định.</p>
+    <a href="https://zalo.me/0373453757" class="btn btn-outline">Chat Zalo ngay</a>
+    <small class="cta-note">🔒 Tư vấn miễn phí – Không ràng buộc</small>
   </div>
 </section>
 
-<section class="about-cta">
-  <div class="container">
-    <h2>Bắt đầu làm website trong 3 ngày</h2>
-    <p>Xem mẫu – chọn mẫu – nhận website hoàn chỉnh</p>
-    <a href="https://zalo.me/0373453757" class="btn primary">
-      Nhắn Zalo tư vấn miễn phí
-    </a>
-  </div>
-</section>
-
-<footer>
-  <p>Hotline / Zalo: <strong>0373453757</strong></p>
-</footer>
-
-<script src="about.js"></script>
+<script src="/website-3-ngay/assets/js/main.js"></script>
 </body>
 </html>
