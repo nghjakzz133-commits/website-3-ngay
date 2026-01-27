@@ -1,66 +1,197 @@
-.about-hero {
-  padding: 90px 20px;
-  text-align: center;
-  background: linear-gradient(135deg, #111, #333);
+/* =================================================
+   ABOUT.CSS – WEBSITE 3 NGÀY
+   AGENCY / TRUST / CONVERSION
+================================================= */
+
+/* ================= HEADER ================= */
+.site-header {
+  background: linear-gradient(
+    180deg,
+    rgba(15,23,42,.95),
+    rgba(15,23,42,.85)
+  );
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.back-home {
+  color: #e5e7eb;
+  font-weight: 500;
+  transition: color .25s ease;
+}
+
+.back-home:hover {
   color: #fff;
+}
+
+/* ================= HERO ================= */
+.about-hero {
+  padding: 96px 0 88px;
+  background: linear-gradient(
+    180deg,
+    #f8fafc,
+    #ffffff
+  );
+  text-align: center;
+  position: relative;
 }
 
 .about-hero h1 {
-  font-size: 32px;
-  margin-bottom: 12px;
+  font-size: clamp(2.2rem, 4vw, 2.8rem);
+  margin-bottom: 16px;
+  letter-spacing: -0.4px;
 }
 
+.about-hero p {
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* ================= SECTION ================= */
 .about-section {
-  padding: 70px 20px;
+  padding: 88px 0;
 }
 
 .about-section.gray {
-  background: #f7f7f7;
+  background: var(--bg-soft);
 }
 
 .about-section h2 {
-  margin-bottom: 16px;
+  font-size: 1.9rem;
+  margin-bottom: 20px;
+  letter-spacing: -0.3px;
 }
 
 .about-section p {
-  max-width: 700px;
+  max-width: 760px;
+  margin-bottom: 16px;
 }
 
+/* ================= LIST ================= */
 .about-list {
-  margin-top: 16px;
-  padding-left: 20px;
+  list-style: none;
+  margin-top: 20px;
 }
 
 .about-list li {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  font-weight: 500;
+  color: var(--text);
 }
 
-.highlight {
-  margin-top: 20px;
+/* highlight sentence */
+.about-section .highlight {
+  margin-top: 24px;
   font-weight: 600;
+  color: var(--primary);
 }
 
+/* ================= GRID ================= */
 .about-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  margin-top: 30px;
+  grid-template-columns: repeat(4,1fr);
+  gap: 24px;
+  margin-top: 40px;
 }
 
 .about-card {
-  padding: 24px;
-  border: 1px solid #ddd;
-  border-radius: 12px;
   background: #fff;
+  padding: 28px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 50px rgba(15,23,42,.08);
+  transition: .35s ease;
 }
 
 .about-card h3 {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
 }
 
+.about-card p {
+  font-size: .95rem;
+}
+
+.about-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 70px rgba(15,23,42,.15);
+}
+
+/* ================= CTA ================= */
 .about-cta {
-  padding: 80px 20px;
-  text-align: center;
-  background: #111;
+  background: linear-gradient(
+    180deg,
+    var(--primary),
+    var(--primary-dark)
+  );
   color: #fff;
+  padding: 96px 20px;
+  text-align: center;
+}
+
+.about-cta h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.about-cta p {
+  color: rgba(255,255,255,.85);
+  margin-bottom: 28px;
+}
+
+.about-cta .btn.primary {
+  background: #fff;
+  color: var(--primary);
+  border-radius: 999px;
+  padding: 14px 26px;
+  font-weight: 600;
+  box-shadow: 0 14px 36px rgba(0,0,0,.25);
+  transition: .25s ease;
+}
+
+.about-cta .btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 48px rgba(0,0,0,.35);
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background: #020617;
+  color: #cbd5f5;
+  padding: 24px;
+  text-align: center;
+  font-size: .9rem;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 72px 0 64px;
+  }
+
+  .about-section {
+    padding: 64px 0;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero h1 {
+    font-size: 2rem;
+  }
+
+  .about-cta {
+    padding: 72px 20px;
+  }
 }
