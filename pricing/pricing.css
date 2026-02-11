@@ -1,91 +1,344 @@
-.hero {
-  background: linear-gradient(135deg, #000, #222);
-  color: #fff;
-  padding: 80px 0;
+/* ================= ROOT ================= */
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  --text: #1f2937;
+  --text-light: #6b7280;
+  --bg: #ffffff;
+  --bg-soft: #f3f4f6;
+  --border: #e5e7eb;
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.text-center {
   text-align: center;
 }
 
-.pricing {
-  padding: 80px 0;
+/* ================= HEADER ================= */
+.header {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
 }
 
-.price-card {
-  border: 1px solid #eee;
-  padding: 40px 30px;
-  border-radius: 14px;
-  text-align: center;
-  position: relative;
+.logo img {
+  height: 40px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav-main {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--text);
   transition: 0.3s;
 }
 
-.price-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+.nav-link:hover {
+  color: var(--primary);
 }
 
-.price-card h2 {
+.nav-link.active {
+  color: var(--primary);
+}
+
+.nav-cta {
+  background: var(--primary);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 999px;
+  transition: 0.3s;
+}
+
+.nav-cta:hover {
+  background: var(--primary-dark);
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================= SECTION ================= */
+.section {
+  padding: 80px 0;
+}
+
+.section-soft {
+  background: var(--bg-soft);
+}
+
+.section-light {
+  background: white;
+}
+
+.section-head {
+  margin-bottom: 50px;
+}
+
+.section-head h1,
+.section-head h2 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.section-head p {
+  color: var(--text-light);
+}
+
+/* ================= PRICING GRID ================= */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* ================= CARD ================= */
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px;
+  box-shadow: var(--shadow);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card.highlight {
+  border: 2px solid var(--primary);
+  transform: scale(1.03);
+}
+
+.card h3 {
   font-size: 22px;
   margin-bottom: 10px;
 }
 
 .price {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: bold;
-  margin: 15px 0;
+  color: var(--primary);
+  margin-bottom: 8px;
 }
 
-.desc {
-  color: #666;
+.price-desc {
+  color: var(--text-light);
   margin-bottom: 20px;
 }
 
-.price-card ul {
-  text-align: left;
-  margin-bottom: 30px;
+.price-list {
+  list-style: none;
+  margin-bottom: 20px;
 }
 
-.price-card li {
+.price-list li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* ================= FIT BOX ================= */
+.fit-box {
+  background: var(--bg-soft);
+  padding: 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.fit-box h4 {
   margin-bottom: 10px;
 }
 
-.highlight {
-  border: 2px solid #000;
+.fit-box ul {
+  list-style: disc;
+  padding-left: 18px;
 }
 
-.badge {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #000;
-  color: #fff;
-  padding: 6px 16px;
+.fit-box li {
+  margin-bottom: 6px;
   font-size: 14px;
-  border-radius: 20px;
 }
 
-.note {
-  background: #f7f7f7;
-  padding: 40px 0;
+/* ================= BUTTON ================= */
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 600;
   text-align: center;
-  color: #555;
+  transition: 0.3s;
 }
 
-.footer {
-  background: #000;
-  color: #aaa;
-  text-align: center;
-  padding: 20px 0;
+.btn-primary {
+  background: var(--primary);
+  color: white;
 }
 
-@media (max-width: 900px) {
-  .pricing-grid {
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* ================= TABLE ================= */
+table {
+  font-size: 14px;
+}
+
+th {
+  font-weight: 600;
+}
+
+/* ================= SPLIT ================= */
+.split {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.split.reverse {
+  direction: rtl;
+}
+
+.split.reverse .split-content {
+  direction: ltr;
+}
+
+.split-content h3 {
+  margin-bottom: 10px;
+}
+
+.split-content p {
+  color: var(--text-light);
+}
+
+/* ================= CTA ================= */
+.cta {
+  padding: 80px 0;
+  background: var(--primary);
+  color: white;
+}
+
+.cta .btn-outline {
+  border-color: white;
+  color: white;
+}
+
+.cta .btn-outline:hover {
+  background: white;
+  color: var(--primary);
+}
+
+.cta-note {
+  display: block;
+  margin-top: 10px;
+  opacity: 0.8;
+  font-size: 13px;
+}
+
+/* ================= UTIL ================= */
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 260px;
+    height: 100%;
+    background: white;
+    flex-direction: column;
+    padding: 30px;
+    transition: 0.3s;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-main {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .split {
     grid-template-columns: 1fr;
   }
 }
