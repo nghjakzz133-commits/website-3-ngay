@@ -1,474 +1,1120 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Website 3 Ngày – Thiết kế website bán hàng hiệu quả từ 1.3 triệu</title>
-  <meta name="description" content="Thiết kế website chuẩn bán hàng – hoàn thiện trọn gói trong 3 ngày – giao diện xịn – tối ưu chuyển đổi – Tặng tên miền & hosting – Giá từ 1.3 triệu." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#080810">
+<title>PixelForge Studio – Thiết Kế Website Chuyên Nghiệp</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{font-size:16px;scroll-behavior:smooth;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:'Outfit',sans-serif;background:#080810;color:#ede9e0;line-height:1.6;overflow-x:hidden;width:100%;max-width:100vw}
+*{max-width:100%}
+img,video,iframe,svg{max-width:100%;height:auto}
 
-  <link rel="stylesheet" href="/assets/css/core.css" />
-<link rel="stylesheet" href="/assets/css/landing.css" />
-<base href="/" />
+/* ===== TYPOGRAPHY ===== */
+.font-display{font-family:'Cormorant Garamond',serif;font-weight:700;letter-spacing:-0.02em;line-height:1.05}
+.text-xl{font-size:clamp(2.4rem,10vw,3.6rem)}
+.text-lg{font-size:clamp(1.8rem,7.5vw,2.6rem)}
+.text-md{font-size:clamp(1.3rem,5.5vw,1.8rem)}
+.text-gold{background:linear-gradient(135deg,#c8963c,#eab96a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ===== LAYOUT ===== */
+.wrap{width:100%;padding-left:20px;padding-right:20px}
+section{padding:68px 0}
+
+/* ===== SECTION LABEL ===== */
+.sec-label{display:inline-flex;align-items:center;gap:8px;font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#c8963c;margin-bottom:12px}
+.sec-label::before{content:'';display:block;width:18px;height:1px;background:#c8963c;flex-shrink:0}
+
+/* ===== BUTTONS ===== */
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:16px 20px;border-radius:16px;font-family:'Outfit',sans-serif;font-weight:600;font-size:.93rem;text-decoration:none;border:none;cursor:pointer;transition:transform .18s,box-shadow .18s;-webkit-appearance:none}
+.btn:active{transform:scale(.96)}
+.btn-primary{background:linear-gradient(135deg,#c8963c,#eab96a);color:#080810;box-shadow:0 6px 28px rgba(200,150,60,.30)}
+.btn-ghost{background:#1c1c2e;color:#ede9e0;border:1px solid rgba(255,255,255,.12)}
+.btn-zalo{background:#0068ff;color:#fff;box-shadow:0 6px 28px rgba(0,104,255,.28)}
+
+/* ===== NOISE ===== */
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23f)'/%3E%3C/svg%3E")}
+
+/* ===== NAVBAR ===== */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:500}
+.navbar-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:rgba(8,8,16,.85);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);border-bottom:1px solid rgba(255,255,255,.06);transition:background .3s}
+.logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.45rem;letter-spacing:-.02em;background:linear-gradient(135deg,#c8963c,#eab96a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.logo-dot{color:#e84d2a;-webkit-text-fill-color:#e84d2a}
+.nav-btn{display:flex;align-items:center;gap:6px;padding:9px 16px;background:linear-gradient(135deg,#c8963c,#eab96a);color:#080810;font-family:'Outfit',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.03em;border-radius:100px;text-decoration:none;border:none;white-space:nowrap}
+
+/* ===== HERO ===== */
+.hero{min-height:100svh;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding-top:80px;padding-bottom:44px;position:relative;overflow:hidden}
+.hero-glow-top{position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:320px;height:320px;background:radial-gradient(circle,rgba(200,150,60,.12) 0%,transparent 70%);border-radius:50%;pointer-events:none;animation:glow-pulse 6s ease-in-out infinite}
+.hero-glow-bot{position:absolute;bottom:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(232,77,42,.07) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+@keyframes glow-pulse{0%,100%{opacity:.6;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.15)}}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:52px 52px;mask-image:radial-gradient(ellipse 80% 60% at 50% 30%,black 10%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 30%,black 10%,transparent 70%);pointer-events:none}
+.hero-content{position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;padding:6px 13px;border:1px solid rgba(200,150,60,.28);background:rgba(200,150,60,.06);border-radius:100px;font-size:.71rem;font-weight:500;color:#eab96a;letter-spacing:.05em;margin-bottom:22px;animation:fade-up .6s both}
+.live-dot{width:6px;height:6px;border-radius:50%;background:#c8963c;animation:dot-blink 2s infinite;flex-shrink:0}
+@keyframes dot-blink{0%,100%{opacity:1}50%{opacity:.25}}
+.hero-title{margin-bottom:18px;animation:fade-up .6s .07s both}
+.hero-desc{font-size:.92rem;color:#8a8a9a;line-height:1.75;margin-bottom:30px;animation:fade-up .6s .14s both}
+.hero-ctas{display:flex;flex-direction:column;gap:10px;margin-bottom:36px;animation:fade-up .6s .21s both}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(255,255,255,.12);border-radius:20px;overflow:hidden;animation:fade-up .6s .28s both}
+.stat-cell{padding:16px 8px;text-align:center;background:#1c1c2e}
+.stat-cell+.stat-cell{border-left:1px solid rgba(255,255,255,.06)}
+.stat-num{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.65rem;line-height:1;margin-bottom:4px;background:linear-gradient(135deg,#c8963c,#eab96a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-lbl{font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:#5a5a6e;line-height:1.3}
+@keyframes fade-up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+/* ===== MARQUEE ===== */
+.marquee-section{width:100%;overflow:hidden;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);background:rgba(200,150,60,.02);padding:13px 0}
+.marquee-track{display:flex;width:max-content;animation:marquee-run 22s linear infinite}
+.marquee-item{display:inline-flex;align-items:center;gap:22px;padding:0 22px;font-size:.75rem;font-weight:500;color:#8a8a9a;white-space:nowrap}
+.marquee-item::after{content:'\2726';color:#c8963c;font-size:.55rem;flex-shrink:0}
+@keyframes marquee-run{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ===== SERVICES ===== */
+.services-bg{background:#0f0f1a}
+.svc-list{display:flex;flex-direction:column;gap:2px;margin-top:32px;border-radius:28px;overflow:hidden}
+.svc-row{display:flex;align-items:center;gap:16px;padding:20px 18px;background:#080810;border:1px solid rgba(255,255,255,.06);margin-bottom:-1px;position:relative;overflow:hidden;transition:background .25s}
+.svc-row:first-child{border-radius:28px 28px 0 0}
+.svc-row:last-child{border-radius:0 0 28px 28px;margin-bottom:0}
+.svc-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,#c8963c,transparent);transform:scaleY(0);transform-origin:top;transition:transform .3s}
+.svc-row.touched::before{transform:scaleY(1)}
+.svc-row.touched{background:rgba(200,150,60,.04)}
+.svc-ico{width:46px;height:46px;border-radius:14px;background:rgba(200,150,60,.10);border:1px solid rgba(200,150,60,.18);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.svc-text{flex:1;min-width:0}
+.svc-text h3{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:700;margin-bottom:4px;line-height:1.2}
+.svc-text p{font-size:.82rem;color:#8a8a9a;line-height:1.55}
+.svc-arrow{color:#5a5a6e;font-size:1.1rem;flex-shrink:0;transition:color .25s,transform .25s}
+.svc-row.touched .svc-arrow{color:#c8963c;transform:translateX(3px)}
+
+/* ===== FUNNEL / PRICING ===== */
+.funnel-bg{background:#080810}
+.funnel-note{font-size:.87rem;color:#8a8a9a;line-height:1.7;margin-top:12px;margin-bottom:28px}
+
+/* Tab switcher */
+.pkg-tabs{display:flex;gap:0;background:#1c1c2e;border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:4px;margin-bottom:16px;overflow:hidden}
+.pkg-tab{flex:1;background:none;border:none;color:#8a8a9a;font-family:'Outfit',sans-serif;font-size:.68rem;font-weight:600;padding:9px 4px;border-radius:10px;cursor:pointer;transition:background .25s,color .25s;text-align:center;line-height:1.3;-webkit-appearance:none}
+.pkg-tab.active{background:linear-gradient(135deg,#c8963c,#eab96a);color:#080810}
+
+/* Accordion list */
+.pkg-list{display:flex;flex-direction:column;gap:12px}
+.pkg-item{border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.12);background:#1c1c2e;transition:border-color .3s}
+.pkg-item.is-hot{border-color:rgba(200,150,60,.4);background:linear-gradient(160deg,rgba(200,150,60,.07) 0%,#1c1c2e 50%)}
+.pkg-item.is-open{border-color:rgba(200,150,60,.45)}
+
+/* Header */
+.pkg-head{width:100%;background:none;border:none;cursor:pointer;padding:18px 16px;display:flex;align-items:center;gap:12px;text-align:left;-webkit-appearance:none}
+.pkg-head-left{flex:1;min-width:0}
+.pkg-emoji{font-size:1.35rem;flex-shrink:0;width:44px;height:44px;background:rgba(200,150,60,.10);border:1px solid rgba(200,150,60,.2);border-radius:12px;display:flex;align-items:center;justify-content:center}
+.pkg-name{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.05rem;color:#ede9e0;line-height:1.2;margin-bottom:4px}
+.pkg-tagline{font-size:.74rem;color:#8a8a9a;line-height:1.3}
+.pkg-head-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0}
+.pkg-price-main{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.25rem;line-height:1;background:linear-gradient(135deg,#c8963c,#eab96a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.pkg-price-free{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.3rem;line-height:1;color:#4ade80}
+.pkg-price-old{font-size:.7rem;color:#5a5a6e;text-decoration:line-through}
+.pkg-badges{display:flex;gap:4px;align-items:center}
+.badge-hot{background:#e84d2a;color:#fff;font-size:.56rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:100px}
+.badge-best{background:rgba(200,150,60,.15);color:#eab96a;font-size:.56rem;font-weight:700;letter-spacing:.06em;padding:2px 7px;border-radius:100px;border:1px solid rgba(200,150,60,.3)}
+.badge-free{background:rgba(74,222,128,.15);color:#4ade80;font-size:.56rem;font-weight:700;letter-spacing:.06em;padding:2px 7px;border-radius:100px;border:1px solid rgba(74,222,128,.3)}
+.pkg-chevron{color:#5a5a6e;font-size:.85rem;transition:transform .3s;flex-shrink:0;margin-left:4px}
+.pkg-item.is-open .pkg-chevron{transform:rotate(180deg);color:#c8963c}
+
+/* Body */
+.pkg-body{display:none;padding:0 16px 22px;border-top:1px solid rgba(255,255,255,.06)}
+.pkg-item.is-open .pkg-body{display:block}
+
+/* ===== PROMO BANNER (per package) ===== */
+.promo-banner{margin:16px 0;border-radius:16px;padding:14px 16px;display:flex;align-items:flex-start;gap:12px;position:relative;overflow:hidden}
+.promo-banner-free{background:linear-gradient(135deg,rgba(74,222,128,.12),rgba(74,222,128,.04));border:1px solid rgba(74,222,128,.3)}
+.promo-banner-basic{background:linear-gradient(135deg,rgba(200,150,60,.15),rgba(200,150,60,.04));border:1px solid rgba(200,150,60,.35)}
+.promo-banner-pro{background:linear-gradient(135deg,rgba(139,92,246,.15),rgba(139,92,246,.04));border:1px solid rgba(139,92,246,.35)}
+.promo-banner-premium{background:linear-gradient(135deg,rgba(232,77,42,.15),rgba(232,77,42,.04));border:1px solid rgba(232,77,42,.35)}
+.promo-banner-ecom{background:linear-gradient(135deg,rgba(59,130,246,.15),rgba(59,130,246,.04));border:1px solid rgba(59,130,246,.35)}
+.promo-banner-shine{position:absolute;top:0;right:-30px;width:80px;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.03),transparent);transform:skewX(-20deg)}
+.promo-ico{font-size:1.5rem;flex-shrink:0;margin-top:1px}
+.promo-content{}
+.promo-title{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
+.promo-title-free{color:#4ade80}
+.promo-title-basic{color:#eab96a}
+.promo-title-pro{color:#a78bfa}
+.promo-title-premium{color:#fb7052}
+.promo-title-ecom{color:#60a5fa}
+.promo-desc{font-size:.8rem;color:#c5c0b8;line-height:1.5}
+.promo-timer{display:inline-flex;align-items:center;gap:5px;margin-top:6px;background:rgba(0,0,0,.25);padding:4px 10px;border-radius:100px;font-size:.68rem;font-weight:600;color:#eab96a}
+
+/* quick info row */
+.pkg-meta{display:flex;gap:0;margin:16px 0 18px;background:#161625;border:1px solid rgba(255,255,255,.06);border-radius:16px;overflow:hidden}
+.meta-cell{flex:1;padding:10px 6px;text-align:center;border-right:1px solid rgba(255,255,255,.06)}
+.meta-cell:last-child{border-right:none}
+.meta-val{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:.95rem;color:#eab96a;line-height:1;margin-bottom:4px}
+.meta-lbl{font-size:.6rem;color:#5a5a6e;letter-spacing:.05em;text-transform:uppercase;font-weight:500}
+
+/* WHO IS THIS FOR */
+.who-box{background:#161625;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:14px 16px;margin-bottom:18px}
+.who-title{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8a8a9a;margin-bottom:10px}
+.who-tags{display:flex;flex-wrap:wrap;gap:6px}
+.who-tag{display:flex;align-items:center;gap:5px;font-size:.74rem;font-weight:500;padding:5px 11px;border-radius:100px;background:rgba(200,150,60,.08);border:1px solid rgba(200,150,60,.2);color:#eab96a}
+
+/* section title */
+.pkg-section-title{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#c8963c;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.pkg-section-title::before{content:'';width:14px;height:1px;background:#c8963c;flex-shrink:0}
+
+/* checklist */
+.checklist{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
+.check-item{display:flex;align-items:flex-start;gap:10px;font-size:.83rem;color:#ede9e0;line-height:1.5}
+.check-icon{width:18px;height:18px;border-radius:50%;background:rgba(200,150,60,.15);border:1px solid rgba(200,150,60,.3);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:#eab96a;flex-shrink:0;margin-top:1px}
+.check-icon.no{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.06);color:#5a5a6e}
+.check-item.dimmed{color:#8a8a9a}
+
+/* highlight feature */
+.check-item.star .check-icon{background:rgba(232,77,42,.15);border-color:rgba(232,77,42,.3);color:#fb7052}
+.check-item.star{color:#ede9e0;font-weight:500}
+
+/* tech stack */
+.tech-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.tech-chip{font-size:.68rem;font-weight:600;padding:4px 11px;border-radius:100px;background:#161625;border:1px solid rgba(255,255,255,.12);color:#8a8a9a}
+
+/* warranty */
+.warranty-box{background:#161625;border:1px solid rgba(200,150,60,.2);border-radius:16px;padding:14px 14px;margin-bottom:18px;display:flex;gap:12px;align-items:flex-start}
+.warranty-ico{font-size:1.3rem;flex-shrink:0;margin-top:1px}
+.warranty-text{font-size:.81rem;color:#8a8a9a;line-height:1.65}
+.warranty-text strong{color:#eab96a;font-weight:600}
+
+/* CTA inside accordion */
+.pkg-cta{display:flex;gap:8px}
+.pkg-cta-call{flex:1}
+.pkg-cta-zalo{display:flex;align-items:center;justify-content:center;width:50px;height:50px;border-radius:16px;background:#0068ff;font-size:1.2rem;text-decoration:none;flex-shrink:0;transition:transform .15s}
+.pkg-cta-zalo:active{transform:scale(.94)}
+
+/* divider */
+.pkg-divider{height:1px;background:rgba(255,255,255,.06);margin:16px 0}
+
+/* compare table */
+.compare-wrap{margin-top:36px}
+.compare-toggle{width:100%;background:none;border:1px solid rgba(255,255,255,.12);color:#8a8a9a;font-family:'Outfit',sans-serif;font-size:.82rem;font-weight:600;padding:13px 18px;border-radius:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:border-color .25s,color .25s;-webkit-appearance:none}
+.compare-toggle:active{border-color:#c8963c;color:#c8963c}
+.compare-table-wrap{display:none;margin-top:16px;border:1px solid rgba(255,255,255,.12);border-radius:20px;overflow:hidden}
+.compare-table-wrap.show{display:block}
+.cmp-table{width:100%;border-collapse:collapse}
+.cmp-table th,.cmp-table td{padding:10px 7px;font-size:.7rem;text-align:center;border-bottom:1px solid rgba(255,255,255,.06);vertical-align:middle}
+.cmp-table th{font-weight:700;background:#161625;color:#8a8a9a;font-size:.62rem;letter-spacing:.05em;text-transform:uppercase;line-height:1.3}
+.cmp-table th.highlight{background:rgba(200,150,60,.1);color:#eab96a}
+.cmp-table td:first-child{text-align:left;color:#8a8a9a;font-size:.73rem;padding-left:12px}
+.cmp-table tr:last-child td{border-bottom:none}
+.cmp-table tr:nth-child(even) td{background:rgba(255,255,255,.015)}
+.cmp-yes{color:#c8963c;font-size:.9rem}
+.cmp-no{color:#5a5a6e;font-size:.9rem}
+.cmp-val{color:#ede9e0;font-weight:600;font-size:.72rem}
+.cmp-val-gold{font-weight:700;font-size:.75rem;background:linear-gradient(135deg,#c8963c,#eab96a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cmp-table td.highlight-col{background:rgba(200,150,60,.05)}
+
+.funnel-cta{margin-top:28px;display:flex;flex-direction:column;gap:10px}
+.cta-note{text-align:center;font-size:.75rem;color:#5a5a6e;margin-top:6px}
+
+/* ===== PROCESS ===== */
+.process-bg{background:#0f0f1a}
+.steps-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px}
+.step-card{background:#161625;border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:20px 16px;position:relative;overflow:hidden}
+.step-glow{position:absolute;top:0;left:0;width:80px;height:80px;background:radial-gradient(circle,rgba(200,150,60,.08) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.step-n{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:2.6rem;line-height:1;color:rgba(200,150,60,.10);position:absolute;top:10px;right:12px}
+.step-ico{font-size:1.4rem;margin-bottom:12px;display:block}
+.step-card h4{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:700;margin-bottom:8px;line-height:1.2}
+.step-card p{font-size:.77rem;color:#8a8a9a;line-height:1.6}
+
+/* ===== PORTFOLIO ===== */
+.port-bg{background:#080810}
+.port-cards{margin-top:28px;display:flex;flex-direction:column;gap:14px}
+.port-card{background:#1c1c2e;border:1px solid rgba(255,255,255,.06);border-radius:28px;overflow:hidden}
+.port-thumb{height:160px;background:#161625;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;position:relative;overflow:hidden}
+.port-thumb-emoji{font-size:2rem;position:relative;z-index:1}
+.port-thumb-hint{font-size:.68rem;color:#5a5a6e;letter-spacing:.07em;text-transform:uppercase;font-weight:500;position:relative;z-index:1}
+.port-thumb-shine{position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,150,60,.05) 0%,rgba(232,77,42,.04) 100%)}
+.port-cat{position:absolute;top:12px;left:12px;background:rgba(8,8,16,.80);border:1px solid rgba(200,150,60,.28);color:#eab96a;font-size:.63rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:4px 10px;border-radius:100px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.port-body{padding:16px 18px 20px}
+.port-body h4{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:700;margin-bottom:5px;line-height:1.25}
+.port-body p{font-size:.79rem;color:#8a8a9a;line-height:1.5}
+
+/* ===== TESTIMONIALS ===== */
+.testi-bg{background:#0f0f1a}
+.testi-cards{display:flex;flex-direction:column;gap:14px;margin-top:28px}
+.testi-card{background:#161625;border:1px solid rgba(255,255,255,.06);border-radius:28px;padding:22px 20px}
+.t-stars{color:#c8963c;letter-spacing:2px;font-size:.82rem;margin-bottom:14px}
+.t-big-quote{font-family:'Cormorant Garamond',serif;font-size:3rem;color:rgba(200,150,60,.18);line-height:.7;margin-bottom:10px;display:block}
+.t-text{font-size:.88rem;color:#c5c0b8;line-height:1.75;font-style:italic;margin-bottom:18px}
+.t-author{display:flex;align-items:center;gap:12px}
+.t-ava{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#c8963c,#e84d2a);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem;color:#fff;flex-shrink:0}
+.t-name{font-size:.88rem;font-weight:600;line-height:1.2;margin-bottom:3px}
+.t-role{font-size:.73rem;color:#5a5a6e}
+
+/* ===== FAQ ===== */
+.faq-bg{background:#080810}
+.faq-list{display:flex;flex-direction:column;gap:8px;margin-top:32px}
+.faq-item{background:#1c1c2e;border:1px solid rgba(255,255,255,.06);border-radius:16px;overflow:hidden;transition:border-color .3s}
+.faq-item.open{border-color:rgba(200,150,60,.28)}
+.faq-q{width:100%;background:none;border:none;color:#ede9e0;font-family:'Outfit',sans-serif;font-size:.9rem;font-weight:600;padding:18px;text-align:left;display:flex;justify-content:space-between;align-items:flex-start;gap:14px;cursor:pointer;line-height:1.4;-webkit-appearance:none}
+.faq-icon{width:26px;height:26px;border-radius:50%;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:1rem;color:#5a5a6e;flex-shrink:0;transition:transform .3s,background .3s,color .3s;margin-top:1px}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:#c8963c;color:#080810;border-color:#c8963c}
+.faq-a{display:none;padding:0 18px 18px;font-size:.84rem;color:#8a8a9a;line-height:1.78}
+.faq-item.open .faq-a{display:block}
+
+/* ===== CTA BAND ===== */
+.cta-bg{background:#0f0f1a;text-align:center;padding:80px 0;position:relative;overflow:hidden}
+.cta-halo{position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:280px;height:280px;background:radial-gradient(circle,rgba(200,150,60,.10) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.cta-label{justify-content:center}
+.cta-label::before{display:none}
+.cta-sub{font-size:.88rem;color:#8a8a9a;line-height:1.75;margin:14px 0 32px}
+.cta-btns{display:flex;flex-direction:column;gap:10px}
+.trust-row{display:flex;justify-content:center;gap:0;margin-top:36px}
+.trust-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;padding:0 6px}
+.trust-ico{font-size:1.3rem}
+.trust-txt{font-size:.67rem;color:#8a8a9a;letter-spacing:.03em;text-align:center;line-height:1.4;font-weight:500}
+
+/* ===== FOOTER ===== */
+.site-footer{background:#04040a;padding:44px 20px 24px;border-top:1px solid rgba(255,255,255,.06)}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.55rem;letter-spacing:-.02em;background:linear-gradient(135deg,#c8963c,#eab96a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;margin-bottom:10px}
+.footer-logo-dot{color:#e84d2a;-webkit-text-fill-color:#e84d2a}
+.footer-desc{font-size:.84rem;color:#8a8a9a;line-height:1.7;margin-bottom:28px}
+.footer-cols{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:32px}
+.footer-col h5{font-size:.67rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#c8963c;margin-bottom:14px}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:10px}
+.footer-col a{color:#8a8a9a;text-decoration:none;font-size:.84rem}
+.footer-hr{height:1px;background:rgba(255,255,255,.06);margin-bottom:20px}
+.footer-copy{text-align:center;font-size:.73rem;color:#5a5a6e;line-height:1.7}
+
+/* ===== FLOAT BAR ===== */
+.float-bar{position:fixed;left:20px;right:20px;bottom:16px;z-index:800;display:flex;gap:10px;transition:opacity .3s,transform .3s}
+.float-bar.hidden{opacity:0;transform:translateY(10px);pointer-events:none}
+.float-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:15px 10px;border-radius:16px;font-family:'Outfit',sans-serif;font-weight:700;font-size:.86rem;text-decoration:none;border:none;cursor:pointer;box-shadow:0 6px 28px rgba(0,0,0,.45);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:transform .15s;-webkit-appearance:none}
+.float-btn:active{transform:scale(.96)}
+.float-call{background:linear-gradient(135deg,#c8963c,#eab96a);color:#080810;box-shadow:0 6px 24px rgba(200,150,60,.35)}
+.float-zalo-btn{background:#0068ff;color:#fff;box-shadow:0 6px 24px rgba(0,104,255,.30)}
+.float-ava{width:27px;height:27px;border-radius:50%;background:rgba(0,0,0,.15);border:2px solid rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
+.float-label{line-height:1}
+.float-label small{display:block;font-size:.62rem;font-weight:400;opacity:.72;margin-top:2px}
+.float-spacer{height:82px}
+
+/* ===== SCROLL REVEAL ===== */
+.sr{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+.sr.on{opacity:1;transform:translateY(0)}
+.sr.d1{transition-delay:.08s}
+.sr.d2{transition-delay:.16s}
+.sr.d3{transition-delay:.24s}
+
+/* ===== SAFE AREA ===== */
+@supports (padding-bottom:env(safe-area-inset-bottom)){
+  .float-bar{bottom:calc(env(safe-area-inset-bottom) + 14px)}
+  .float-spacer{height:calc(env(safe-area-inset-bottom) + 82px)}
+  .hero{padding-top:calc(env(safe-area-inset-top) + 80px)}
+  .navbar-inner{padding-top:calc(env(safe-area-inset-top) + 12px)}
+}
+</style>
 </head>
-
 <body>
 
-<!-- ================= HEADER ================= -->
-<header class="header">
-  <div class="container nav">
-    
-    <!-- LOGO -->
-    <a href="/" class="logo">
-      <img src="/assets/img/global/logo.png" alt="Website 3 Ngày">
-      <span class="logo-text">Website 3 Ngày</span>
-    </a>
-
-    <!-- NAV -->
-    <nav class="nav-menu" id="navMenu">
-      
-      <div class="nav-top">
-        <p class="nav-desc">
-          Thiết kế website chuẩn bán hàng 
-        </p>
-      </div>
-
-     <div class="nav-main">
- <a class="nav-link" href="/">Trang chủ</a>
-<a class="nav-link" href="/about/">Giới thiệu</a>
-<a class="nav-link" href="/commit/">Quy trình</a>
-<a class="nav-link" href="/demos/">Demo</a>
-<a class="nav-link" href="/pricing/">Bảng giá</a>
-<a class="nav-link nav-cta" href="/contact/">Liên hệ</a>
-</div>
-
-
-
-      <div class="nav-bottom">
-        <a class="nav-link nav-cta" href="/contact/">Liên hệ</a>
-      </div>
-
-    </nav>
-
-    <!-- MOBILE TOGGLE -->
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-      ☰
-    </button>
-
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="navbar-inner">
+    <div class="logo">Pixel<span class="logo-dot">.</span>Forge</div>
+    <a href="tel:0373453757" class="nav-btn">📞 Gọi Ngay</a>
   </div>
 </header>
 
-
-
-
-
-<!-- ================= HERO ================= -->
-<section class="hero">
-  <div class="hero-blur blur-1"></div>
-  <div class="hero-blur blur-2"></div>
-
-  <div class="container hero-grid">
-    <div class="hero-content">
-      <p class="hero-eyebrow">🚀 ĐÃ LÀM HƠN 150+ WEBSITE BÁN HÀNG THÀNH CÔNG</p>
-
-      <h1>
-        Website bán hàng hiệu quả<br>
-        <span class="highlight">Hoàn thiện trong 3-7 ngày</span>
-      </h1>
-
-      <p class="hero-desc">
-        Thiết kế website chuẩn UI/UX – tốc độ cao – tối ưu chuyển đổi – giá từ <strong>1.3 triệu</strong>.
-        Dành cho người <strong>muốn có website xịn để bán hàng thật</strong>, không làm cho có.
-        <strong>Tặng kèm tên miền + hosting + SSL miễn phí.</strong>
-      </p>
-
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="/website-3-ngay/demos/">Xem website mẫu</a>
-        <a class="btn btn-outline" href="/website-3-ngay/pricing/">Xem bảng giá từ 1.3tr</a>
-      </div>
-
-      <div class="hero-trust">
-        <span>✅ Hoàn tiền 100% nếu không đúng cam kết</span>
-        <span>⚡ Làm nhanh – rõ ràng – không phát sinh</span>
-        <span>🎁 Tặng tên miền + hosting miễn phí</span>
-      </div>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-glow-top"></div>
+  <div class="hero-glow-bot"></div>
+  <div class="hero-grid-bg"></div>
+  <div class="hero-content wrap">
+    <div class="hero-badge"><span class="live-dot"></span>PixelForge Studio · Hà Nội</div>
+    <h1 class="hero-title font-display text-xl">Biến <em class="text-gold">Ý Tưởng</em><br>Thành Website<br>Đỉnh Cao</h1>
+    <p class="hero-desc">Thiết kế website chuẩn SEO, tốc độ cao, giao diện độc bản — giúp doanh nghiệp bứt phá doanh thu từ kênh online.</p>
+    <div class="hero-ctas">
+      <a href="#funnel" class="btn btn-primary">🔥 Xem Bảng Giá Chi Tiết</a>
+      <a href="#portfolio" class="btn btn-ghost">✨ Xem Portfolio</a>
     </div>
-
-    <div class="hero-media">
-      <img src="/website-3-ngay/assets/img/global/hero-mockup.png" class="hero-mockup" alt="Mockup website bán hàng">
+    <div class="hero-stats">
+      <div class="stat-cell"><div class="stat-num" data-target="150" data-suffix="+">0+</div><div class="stat-lbl">Dự Án</div></div>
+      <div class="stat-cell"><div class="stat-num" data-target="98" data-suffix="%">0%</div><div class="stat-lbl">Hài Lòng</div></div>
+      <div class="stat-cell"><div class="stat-num" data-target="5" data-suffix="+">0+</div><div class="stat-lbl">Năm KN</div></div>
     </div>
   </div>
 </section>
 
-<div class="wave-divider"></div>
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item">Landing Page</span><span class="marquee-item">Web Doanh Nghiệp</span><span class="marquee-item">E-Commerce</span><span class="marquee-item">Chuẩn SEO</span><span class="marquee-item">Tốc Độ Cao</span><span class="marquee-item">Mobile First</span><span class="marquee-item">Bảo Hành 12T</span><span class="marquee-item">UI/UX Cao Cấp</span>
+    <span class="marquee-item">Landing Page</span><span class="marquee-item">Web Doanh Nghiệp</span><span class="marquee-item">E-Commerce</span><span class="marquee-item">Chuẩn SEO</span><span class="marquee-item">Tốc Độ Cao</span><span class="marquee-item">Mobile First</span><span class="marquee-item">Bảo Hành 12T</span><span class="marquee-item">UI/UX Cao Cấp</span>
+  </div>
+</div>
 
-<!-- ================= SOCIAL PROOF ================= -->
-<section class="section section-soft">
-  <div class="container text-center">
-    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 24px;">
-      <strong>150+ khách hàng</strong> đã tin tưởng và sử dụng dịch vụ
-    </p>
-    <div class="value-grid">
-      <div class="card" style="padding: 20px;">
-        <h3 style="font-size: 2rem; color: var(--primary); margin-bottom: 8px;">150+</h3>
-        <p style="margin: 0;">Website hoàn thành</p>
-      </div>
-      <div class="card" style="padding: 20px;">
-        <h3 style="font-size: 2rem; color: var(--primary); margin-bottom: 8px;">3-7 ngày</h3>
-        <p style="margin: 0;">Thời gian triển khai</p>
-      </div>
-      <div class="card" style="padding: 20px;">
-        <h3 style="font-size: 2rem; color: var(--primary); margin-bottom: 8px;">98%</h3>
-        <p style="margin: 0;">Khách hàng hài lòng</p>
-      </div>
+<!-- SERVICES -->
+<section class="services-bg" id="services">
+  <div class="wrap">
+    <div class="sec-label sr">Dịch Vụ</div>
+    <h2 class="font-display text-lg sr d1">Chúng Tôi<br>Làm <em class="text-gold">Gì?</em></h2>
+    <div class="svc-list sr d2">
+      <div class="svc-row"><div class="svc-ico">🎨</div><div class="svc-text"><h3>Thiết Kế UI/UX Độc Bản</h3><p>Không template, giao diện riêng theo thương hiệu — đẹp và khác biệt.</p></div><div class="svc-arrow">›</div></div>
+      <div class="svc-row"><div class="svc-ico">⚡</div><div class="svc-text"><h3>Lập Trình Tốc Độ Cao</h3><p>PageSpeed 90+, tải dưới 2 giây, mượt trên mọi thiết bị.</p></div><div class="svc-arrow">›</div></div>
+      <div class="svc-row"><div class="svc-ico">🔍</div><div class="svc-text"><h3>SEO Kỹ Thuật Chuẩn</h3><p>Schema, sitemap, meta, Core Web Vitals tối ưu từ đầu.</p></div><div class="svc-arrow">›</div></div>
+      <div class="svc-row"><div class="svc-ico">🛒</div><div class="svc-text"><h3>Web Bán Hàng &amp; E-Commerce</h3><p>Giỏ hàng, thanh toán VNPay/Momo, quản lý đơn đầy đủ.</p></div><div class="svc-arrow">›</div></div>
+      <div class="svc-row"><div class="svc-ico">🔒</div><div class="svc-text"><h3>Hosting &amp; Bảo Mật</h3><p>SSL, backup tự động, giám sát uptime 24/7, vá lỗi định kỳ.</p></div><div class="svc-arrow">›</div></div>
+      <div class="svc-row"><div class="svc-ico">🔄</div><div class="svc-text"><h3>Bảo Trì &amp; Nâng Cấp</h3><p>Hỗ trợ sau bàn giao, thêm tính năng, cập nhật lâu dài.</p></div><div class="svc-arrow">›</div></div>
     </div>
   </div>
 </section>
 
-<!-- ================= FIT ================= -->
-<section class="section section-light">
-  <div class="container">
-    <div class="section-head">
-      <h2>Dịch vụ này dành cho ai?</h2>
-      <p>Website 3 Ngày sinh ra cho những người cần hiệu quả thật, không màu mè dư thừa.</p>
+<!-- ==================== FUNNEL / PRICING ==================== -->
+<section class="funnel-bg" id="funnel">
+  <div class="wrap">
+    <div class="sec-label sr">Bảng Giá Chi Tiết</div>
+    <h2 class="font-display text-lg sr d1">Chọn Gói<br><em class="text-gold">Phù Hợp Bạn</em></h2>
+    <p class="funnel-note sr d2">Bấm vào từng gói để xem đầy đủ tính năng, ưu đãi riêng, đối tượng phù hợp và chính sách bảo hành. Không phí ẩn, không ràng buộc.</p>
+
+    <div class="pkg-tabs sr d2">
+      <button class="pkg-tab active" onclick="filterPkg('all',this)">Tất Cả</button>
+      <button class="pkg-tab" onclick="filterPkg('basic',this)">Cơ Bản</button>
+      <button class="pkg-tab" onclick="filterPkg('pro',this)">Pro</button>
+      <button class="pkg-tab" onclick="filterPkg('ecom',this)">Shop</button>
     </div>
 
-    <div class="fit-box">
-      <ul>
-        <li>✔ <strong>Cá nhân kinh doanh, freelancer</strong> cần website gọn gàng, dễ bán hàng, không phức tạp</li>
-        <li>✔ <strong>Shop nhỏ, doanh nghiệp mới</strong> muốn có website chuyên nghiệp để chạy quảng cáo Facebook/Google</li>
-        <li>✔ <strong>Người không rành kỹ thuật</strong> nhưng vẫn muốn làm chủ website, tự cập nhật nội dung</li>
-        <li>✔ <strong>Người đã từng làm web ở nơi khác</strong> nhưng kết quả không như mong đợi, muốn tìm đơn vị uy tín</li>
-        <li>✔ <strong>Người cần gấp</strong> – có deadline cụ thể – muốn bàn giao nhanh để kịp triển khai marketing</li>
-      </ul>
+    <div class="pkg-list sr d3">
+
+      <!-- ===== GÓI 0: TƯ VẤN MIỄN PHÍ ===== -->
+      <div class="pkg-item" data-cat="basic">
+        <button class="pkg-head" onclick="togglePkg(this)">
+          <div class="pkg-emoji">🎁</div>
+          <div class="pkg-head-left">
+            <div class="pkg-name">Tư Vấn &amp; Audit</div>
+            <div class="pkg-tagline">Phân tích + báo giá hoàn toàn miễn phí</div>
+          </div>
+          <div class="pkg-head-right">
+            <div class="pkg-badges"><span class="badge-free">MIỄN PHÍ</span></div>
+            <div class="pkg-price-free">0 đ</div>
+          </div>
+          <span class="pkg-chevron">▼</span>
+        </button>
+        <div class="pkg-body">
+
+          <!-- PROMO BANNER -->
+          <div class="promo-banner promo-banner-free">
+            <div class="promo-banner-shine"></div>
+            <span class="promo-ico">🎉</span>
+            <div class="promo-content">
+              <div class="promo-title promo-title-free">✦ Hoàn Toàn Miễn Phí — Không Điều Kiện</div>
+              <div class="promo-desc">Nhận tư vấn 1-1 qua Zalo hoặc gặp trực tiếp. Bao gồm audit website hiện tại, phân tích đối thủ và đề xuất chiến lược miễn phí. <strong style="color:#4ade80">Không cần đặt cọc, không ràng buộc.</strong></div>
+            </div>
+          </div>
+
+          <div class="pkg-meta">
+            <div class="meta-cell"><div class="meta-val">0 đ</div><div class="meta-lbl">Chi phí</div></div>
+            <div class="meta-cell"><div class="meta-val">30 phút</div><div class="meta-lbl">Phản hồi</div></div>
+            <div class="meta-cell"><div class="meta-val">T2–T7</div><div class="meta-lbl">Hỗ trợ</div></div>
+          </div>
+
+          <div class="who-box">
+            <div class="who-title">👥 Phù Hợp Với</div>
+            <div class="who-tags">
+              <span class="who-tag">🆕 Startup mới bắt đầu</span>
+              <span class="who-tag">💼 Doanh nghiệp cần cải thiện web</span>
+              <span class="who-tag">🤔 Chưa biết chọn gói nào</span>
+              <span class="who-tag">💰 Muốn tối ưu ngân sách</span>
+            </div>
+          </div>
+
+          <div class="pkg-section-title">Bao Gồm</div>
+          <ul class="checklist">
+            <li class="check-item"><span class="check-icon">✓</span>Phân tích website hiện tại (nếu có) — SEO, tốc độ, UI/UX</li>
+            <li class="check-item"><span class="check-icon">✓</span>Báo cáo điểm mạnh / điểm yếu website đối thủ</li>
+            <li class="check-item"><span class="check-icon">✓</span>Đề xuất giải pháp phù hợp ngân sách thực tế</li>
+            <li class="check-item"><span class="check-icon">✓</span>Báo giá chi tiết từng hạng mục — không phí ẩn</li>
+            <li class="check-item"><span class="check-icon">✓</span>Tư vấn qua Zalo / Call / Gặp trực tiếp tại Hà Nội</li>
+            <li class="check-item"><span class="check-icon">✓</span>Không ràng buộc — không cần đặt cọc</li>
+          </ul>
+
+          <div class="pkg-cta">
+            <a href="tel:0373453757" class="btn btn-primary pkg-cta-call">📞 Gọi Tư Vấn Ngay</a>
+            <a href="https://zalo.me/0373453757" target="_blank" rel="noopener" class="pkg-cta-zalo">💬</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== GÓI 1: LANDING PAGE ===== -->
+      <div class="pkg-item" data-cat="basic">
+        <button class="pkg-head" onclick="togglePkg(this)">
+          <div class="pkg-emoji">🚀</div>
+          <div class="pkg-head-left">
+            <div class="pkg-name">Landing Page Cơ Bản</div>
+            <div class="pkg-tagline">1 trang bán hàng · Tối ưu chuyển đổi</div>
+          </div>
+          <div class="pkg-head-right">
+            <div class="pkg-badges"><span class="badge-best">SALE -40%</span></div>
+            <div class="pkg-price-main">1.500.000 đ</div>
+            <div class="pkg-price-old">2.500.000 đ</div>
+          </div>
+          <span class="pkg-chevron">▼</span>
+        </button>
+        <div class="pkg-body">
+
+          <!-- PROMO BANNER -->
+          <div class="promo-banner promo-banner-basic">
+            <div class="promo-banner-shine"></div>
+            <span class="promo-ico">🎯</span>
+            <div class="promo-content">
+              <div class="promo-title promo-title-basic">✦ Ưu Đãi Tháng Này — Tiết Kiệm 1.000.000đ</div>
+              <div class="promo-desc">Đặt gói trong tháng được <strong style="color:#eab96a">miễn phí hosting 3 tháng + SSL trọn đời + chỉnh sửa nội dung 2 lần</strong> sau bàn giao. Gói lý tưởng chạy ads Facebook/TikTok ngay.</div>
+              <div class="promo-timer">⏰ Còn 8 suất ưu đãi tháng này</div>
+            </div>
+          </div>
+
+          <div class="pkg-meta">
+            <div class="meta-cell"><div class="meta-val">1</div><div class="meta-lbl">Số trang</div></div>
+            <div class="meta-cell"><div class="meta-val">3–5 ngày</div><div class="meta-lbl">Bàn giao</div></div>
+            <div class="meta-cell"><div class="meta-val">3 tháng</div><div class="meta-lbl">Bảo hành</div></div>
+            <div class="meta-cell"><div class="meta-val">90+</div><div class="meta-lbl">PageSpeed</div></div>
+          </div>
+
+          <div class="who-box">
+            <div class="who-title">👥 Phù Hợp Với</div>
+            <div class="who-tags">
+              <span class="who-tag">👗 Chủ shop online</span>
+              <span class="who-tag">📣 Người chạy quảng cáo Facebook/TikTok</span>
+              <span class="who-tag">🧑‍💼 Freelancer, cá nhân</span>
+              <span class="who-tag">🏪 Hộ kinh doanh nhỏ</span>
+              <span class="who-tag">🎓 Trung tâm đào tạo nhỏ</span>
+            </div>
+          </div>
+
+          <div class="pkg-section-title">Tính Năng Chính</div>
+          <ul class="checklist">
+            <li class="check-item star"><span class="check-icon">★</span>Thiết kế theo layout tối ưu chuyển đổi (CRO-focused)</li>
+            <li class="check-item"><span class="check-icon">✓</span>1 landing page: Hero – USP – Dịch vụ – Chứng minh – CTA – Liên hệ</li>
+            <li class="check-item"><span class="check-icon">✓</span>Responsive chuẩn mobile (Mobile-First)</li>
+            <li class="check-item"><span class="check-icon">✓</span>Form liên hệ gửi email thông báo realtime</li>
+            <li class="check-item"><span class="check-icon">✓</span>Nút Zalo / Hotline cố định màn hình (sticky)</li>
+            <li class="check-item"><span class="check-icon">✓</span>Tích hợp Google Analytics 4 cơ bản</li>
+            <li class="check-item"><span class="check-icon">✓</span>Cài SSL (HTTPS) miễn phí</li>
+            <li class="check-item"><span class="check-icon">✓</span>Tối ưu tốc độ — PageSpeed 85+</li>
+            <li class="check-item dimmed"><span class="check-icon no">✗</span>Thiết kế UI/UX Figma riêng hoàn toàn</li>
+            <li class="check-item dimmed"><span class="check-icon no">✗</span>Facebook Pixel / Tracking nâng cao</li>
+            <li class="check-item dimmed"><span class="check-icon no">✗</span>Hệ thống quản trị nội dung (CMS)</li>
+            <li class="check-item dimmed"><span class="check-icon no">✗</span>Blog SEO</li>
+          </ul>
+
+          <div class="pkg-section-title">Công Nghệ</div>
+          <div class="tech-row">
+            <span class="tech-chip">HTML5</span><span class="tech-chip">CSS3 / Tailwind</span><span class="tech-chip">JavaScript</span><span class="tech-chip">GitHub</span><span class="tech-chip">Netlify / VPS</span>
+          </div>
+
+          <div class="pkg-section-title">Chính Sách Bảo Hành</div>
+          <div class="warranty-box">
+            <span class="warranty-ico">🛡️</span>
+            <div class="warranty-text"><strong>Bảo hành 3 tháng:</strong> Sửa lỗi kỹ thuật phát sinh miễn phí. Hỗ trợ Zalo T2–T7 (8h–18h). Không bao gồm thay đổi giao diện lớn hoặc thêm tính năng mới.</div>
+          </div>
+
+          <div class="pkg-cta">
+            <a href="tel:0373453757" class="btn btn-primary pkg-cta-call">📞 Đặt Gói Này</a>
+            <a href="https://zalo.me/0373453757" target="_blank" rel="noopener" class="pkg-cta-zalo">💬</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== GÓI 2: LANDING PAGE PRO ===== -->
+      <div class="pkg-item" data-cat="basic">
+        <button class="pkg-head" onclick="togglePkg(this)">
+          <div class="pkg-emoji">⚡</div>
+          <div class="pkg-head-left">
+            <div class="pkg-name">Landing Page Pro</div>
+            <div class="pkg-tagline">Thiết kế riêng · Pixel tracking · Tối ưu ads</div>
+          </div>
+          <div class="pkg-head-right">
+            <div class="pkg-badges"><span class="badge-best">SALE</span></div>
+            <div class="pkg-price-main">2.500.000 đ</div>
+            <div class="pkg-price-old">4.000.000 đ</div>
+          </div>
+          <span class="pkg-chevron">▼</span>
+        </button>
+        <div class="pkg-body">
+
+          <!-- PROMO BANNER -->
+          <div class="promo-banner promo-banner-basic">
+            <div class="promo-banner-shine"></div>
+            <span class="promo-ico">🚀</span>
+            <div class="promo-content">
+              <div class="promo-title promo-title-basic">✦ Combo Ads-Ready — Triển Khai Ngay Hôm Nay</div>
+              <div class="promo-desc">Đặt hôm nay nhận thêm <strong style="color:#eab96a">setup Facebook Pixel + sự kiện mua hàng + A/B testing 2 banner quảng cáo</strong> miễn phí (trị giá 800.000đ).</div>
+              <div class="promo-timer">🔥 Ưu đãi chỉ áp dụng T2-T6 hàng tuần</div>
+            </div>
+          </div>
+
+          <div class="pkg-meta">
+            <div class="meta-cell"><div class="meta-val">1–2</div><div class="meta-lbl">Số trang</div></div>
+            <div class="meta-cell"><div class="meta-val">5–7 ngày</div><div class="meta-lbl">Bàn giao</div></div>
+            <div class="meta-cell"><div class="meta-val">6 tháng</div><div class="meta-lbl">Bảo hành</div></div>
+            <div class="meta-cell"><div class="meta-val">90+</div><div class="meta-lbl">PageSpeed</div></div>
+          </div>
+
+          <div class="who-box">
+            <div class="who-title">👥 Phù Hợp Với</div>
+            <div class="who-tags">
+              <span class="who-tag">📢 Agency marketing</span>
+              <span class="who-tag">🏋️ Gym, spa, thẩm mỹ</span>
+              <span class="who-tag">🏠 Môi giới bất động sản</span>
+              <span class="who-tag">📱 Khóa học online</span>
+              <span class="who-tag">🎪 Sự kiện, ra mắt sản phẩm</span>
+            </div>
+          </div>
+
+          <div class="pkg-section-title">Tính Năng Chính</div>
+          <ul class="checklist">
+            <li class="check-item star"><span class="check-icon">★</span>Thiết kế Figma mockup riêng — duyệt trước khi code</li>
+            <li class="check-item star"><span class="check-icon">★</span>Facebook Pixel + cài đặt sự kiện chuẩn (ViewContent, Lead, Purchase)</li>
+            <li class="check-item"><span class="check-icon">✓</span>Tất cả tính năng Landing Page Cơ Bản</li>
+            <li class="check-item"><span class="check-icon">✓</span>Popup thu thập email / ưu đãi (exit intent)</li>
+            <li class="check-item"><span class="check-icon">✓</span>Countdown timer tạo urgency</li>
+            <li class="check-item"><span class="check-icon">✓</span>Tích hợp TikTok Pixel</li>
+            <li class="check-item"><span class="check-icon">✓</span>Google Tag Manager cài đặt</li>
+            <li class="check-item"><span class="check-icon">✓</span>Live chat Zalo widget tùy chỉnh</li>
+            <li class="check-item"><span class="check-icon">✓</span>Section social proof: review, số liệu, logo đối tác</li>
+            <li class="check-item"><span class="check-icon">✓</span>PageSpeed 90+ cả mobile và desktop</li>
+            <li class="check-item dimmed"><span class="check-icon no">✗</span>CMS / tự chỉnh nội dung</li>
+            <li class="check-item dimmed"><span class="check-icon no">✗</span>Blog SEO</li>
+          </ul>
+
+          <div class="pkg-section-title">Công Nghệ</div>
+          <div class="tech-row">
+            <span class="tech-chip">React / Next.js</span><span class="tech-chip">Tailwind CSS</span><span class="tech-chip">FB Pixel</span><span class="tech-chip">TikTok Pixel</span><span class="tech-chip">GTM</span><span class="tech-chip">GA4</span>
+          </div>
+
+          <div class="pkg-section-title">Chính Sách Bảo Hành</div>
+          <div class="warranty-box">
+            <span class="warranty-ico">🛡️</span>
+            <div class="warranty-text"><strong>Bảo hành 6 tháng:</strong> Sửa lỗi kỹ thuật, pixel tracking miễn phí. Hỗ trợ Zalo T2–T7 (8h–20h). Chỉnh sửa nội dung nhỏ 3 lần/tháng. Sau 6 tháng phí bảo trì 300.000đ/tháng.</div>
+          </div>
+
+          <div class="pkg-cta">
+            <a href="tel:0373453757" class="btn btn-primary pkg-cta-call">📞 Đặt Gói Này</a>
+            <a href="https://zalo.me/0373453757" target="_blank" rel="noopener" class="pkg-cta-zalo">💬</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== GÓI 3: WEB DOANH NGHIỆP SEO ===== -->
+      <div class="pkg-item" data-cat="pro">
+        <button class="pkg-head" onclick="togglePkg(this)">
+          <div class="pkg-emoji">🏢</div>
+          <div class="pkg-head-left">
+            <div class="pkg-name">Web Doanh Nghiệp SEO</div>
+            <div class="pkg-tagline">5–7 trang · Chuẩn Google · CMS WordPress</div>
+          </div>
+          <div class="pkg-head-right">
+            <div class="pkg-badges"><span class="badge-best">SALE -40%</span></div>
+            <div class="pkg-price-main">3.000.000 đ</div>
+            <div class="pkg-price-old">5.000.000 đ</div>
+          </div>
+          <span class="pkg-chevron">▼</span>
+        </button>
+        <div class="pkg-body">
+
+          <!-- PROMO BANNER -->
+          <div class="promo-banner promo-banner-pro">
+            <div class="promo-banner-shine"></div>
+            <span class="promo-ico">🔍</span>
+            <div class="promo-content">
+              <div class="promo-title promo-title-pro">✦ Gói SEO Kickstart — Tặng Ngay Khi Đặt</div>
+              <div class="promo-desc">Nhận thêm <strong style="color:#a78bfa">setup Google Search Console + Bing Webmaster + phân tích 10 từ khóa tiềm năng + hosting 6 tháng</strong> miễn phí (trị giá 1.200.000đ).</div>
+              <div class="promo-timer">📅 Áp dụng cho 5 khách hàng đăng ký trong tháng</div>
+            </div>
+          </div>
+
+          <div class="pkg-meta">
+            <div class="meta-cell"><div class="meta-val">5–7</div><div class="meta-lbl">Số trang</div></div>
+            <div class="meta-cell"><div class="meta-val">7–10 ngày</div><div class="meta-lbl">Bàn giao</div></div>
+            <div class="meta-cell"><div class="meta-val">6 tháng</div><div class="meta-lbl">Bảo hành</div></div>
+            <div class="meta-cell"><div class="meta-val">80+</div><div class="meta-lbl">PageSpeed</div></div>
+          </div>
+
+          <div class="who-box">
+            <div class="who-title">👥 Phù Hợp Với</div>
+            <div class="who-tags">
+              <span class="who-tag">🏭 Doanh nghiệp vừa và nhỏ</span>
+              <span class="who-tag">🏥 Phòng khám, nha khoa</span>
+              <span class="who-tag">⚖️ Văn phòng luật, kế toán</span>
+              <span class="who-tag">🏗️ Xây dựng, nội thất</span>
+              <span class="who-tag">🚗 Ô tô, garage</span>
+              <span class="who-tag">🍜 Nhà hàng, chuỗi F&B</span>
+            </div>
+          </div>
+
+          <div class="pkg-section-title">Tính Năng Chính</div>
+          <ul class="checklist">
+            <li class="check-item star"><span class="check-icon">★</span>Thiết kế UI/UX riêng theo bộ nhận diện thương hiệu</li>
+            <li class="check-item star"><span class="check-icon">★</span>Hệ thống CMS WordPress tiếng Việt — tự cập nhật dễ dàng</li>
+            <li class="check-item"><span class="check-icon">✓</span>5–7 trang: Trang chủ, Giới thiệu, Dịch vụ, Bảng giá, Blog, Liên hệ</li>
+            <li class="check-item"><span class="check-icon">✓</span>SEO On-page: thẻ meta, URL chuẩn, heading structure, alt text</li>
+            <li class="check-item"><span class="check-icon">✓</span>Schema Markup (LocalBusiness, Service, BreadcrumbList)</li>
+            <li class="check-item"><span class="check-icon">✓</span>Sitemap XML + robots.txt tối ưu</li>
+            <li class="check-item"><span class="check-icon">✓</span>Google Search Console + Analytics 4 cài đặt</li>
+            <li class="check-item"><span class="check-icon">✓</span>Zalo OA tích hợp + chat widget</li>
+            <li class="check-item"><span class="check-icon">✓</span>Facebook Pixel + sự kiện chuẩn</li>
+            <li class="check-item"><span class="check-icon">✓</span>Form liên hệ + thông báo email realtime</li>
+            <li class="check-item"><span class="check-icon">✓</span>SSL + backup hàng tuần</li>
+            <li class="check-item"><span class="check-icon">✓</span>Đào tạo sử dụng WordPress (1 buổi)</li>
+            <li class="check-item dimmed"><span class="check-icon no">✗</span>Blog SEO có hệ thống (có ở gói Premium)</li>
+            <li class="check-item dimmed"><span class="check-icon no">✗</span>Hệ thống bán hàng online</li>
+          </ul>
+
+          <div class="pkg-section-title">Công Nghệ</div>
+          <div class="tech-row">
+            <span class="tech-chip">WordPress</span><span class="tech-chip">Elementor Pro</span><span class="tech-chip">Yoast SEO</span><span class="tech-chip">Zalo API</span><span class="tech-chip">GA4</span><span class="tech-chip">Search Console</span>
+          </div>
+
+          <div class="pkg-section-title">Chính Sách Bảo Hành</div>
+          <div class="warranty-box">
+            <span class="warranty-ico">🛡️</span>
+            <div class="warranty-text"><strong>Bảo hành 6 tháng:</strong> Sửa lỗi phát sinh miễn phí. Cập nhật plugin bảo mật. Hỗ trợ kỹ thuật qua Zalo T2–T7 (8h–18h). Chỉnh sửa nội dung nhỏ 3 lần/tháng. Sau 6 tháng: phí bảo trì 350.000đ/tháng.</div>
+          </div>
+
+          <div class="pkg-cta">
+            <a href="tel:0373453757" class="btn btn-primary pkg-cta-call">📞 Đặt Gói Này</a>
+            <a href="https://zalo.me/0373453757" target="_blank" rel="noopener" class="pkg-cta-zalo">💬</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== GÓI 4: PREMIUM HOT ===== -->
+      <div class="pkg-item is-hot" data-cat="pro">
+        <button class="pkg-head" onclick="togglePkg(this)">
+          <div class="pkg-emoji">⭐</div>
+          <div class="pkg-head-left">
+            <div class="pkg-name">Web Premium + Blog SEO</div>
+            <div class="pkg-tagline">Chuẩn sản xuất · Tự động thu lead · Bán hàng</div>
+          </div>
+          <div class="pkg-head-right">
+            <div class="pkg-badges"><span class="badge-hot">HOT</span><span class="badge-best">BEST</span></div>
+            <div class="pkg-price-main">5.000.000 đ</div>
+            <div class="pkg-price-old">8.000.000 đ</div>
+          </div>
+          <span class="pkg-chevron">▼</span>
+        </button>
+        <div class="pkg-body">
+
+          <!-- PROMO BANNER -->
+          <div class="promo-banner promo-banner-premium">
+            <div class="promo-banner-shine"></div>
+            <span class="promo-ico">🏆</span>
+            <div class="promo-content">
+              <div class="promo-title promo-title-premium">✦ Gói Đỉnh Nhất — Tặng Bộ Marketing Tools</div>
+              <div class="promo-desc">Khách hàng gói Premium nhận thêm <strong style="color:#fb7052">3 tháng báo cáo SEO hàng tuần + setup email marketing Mailchimp + 10 bài viết chuẩn SEO đầu tiên</strong> (trị giá 3.000.000đ). Bảo hành 12 tháng toàn diện.</div>
+              <div class="promo-timer">🔥 Chỉ còn 3 slot ưu đãi đặc biệt tháng này</div>
+            </div>
+          </div>
+
+          <div class="pkg-meta">
+            <div class="meta-cell"><div class="meta-val">10+</div><div class="meta-lbl">Số trang</div></div>
+            <div class="meta-cell"><div class="meta-val">14–20 ngày</div><div class="meta-lbl">Bàn giao</div></div>
+            <div class="meta-cell"><div class="meta-val">12 tháng</div><div class="meta-lbl">Bảo hành</div></div>
+            <div class="meta-cell"><div class="meta-val">90+</div><div class="meta-lbl">PageSpeed</div></div>
+          </div>
+
+          <div class="who-box">
+            <div class="who-title">👥 Phù Hợp Với</div>
+            <div class="who-tags">
+              <span class="who-tag">🏢 Công ty muốn dẫn đầu SEO</span>
+              <span class="who-tag">🎓 Trung tâm đào tạo, giáo dục</span>
+              <span class="who-tag">🏨 Khách sạn, resort, homestay</span>
+              <span class="who-tag">🔧 Dịch vụ B2B chuyên nghiệp</span>
+              <span class="who-tag">💄 Thương hiệu beauty, wellness</span>
+              <span class="who-tag">📊 Agency, công ty tư vấn</span>
+            </div>
+          </div>
+
+          <div class="pkg-section-title">Tính Năng Chính</div>
+          <ul class="checklist">
+            <li class="check-item star"><span class="check-icon">★</span>Tất cả tính năng gói Doanh Nghiệp SEO</li>
+            <li class="check-item star"><span class="check-icon">★</span>Giao diện UI/UX cao cấp — thiết kế Figma riêng trước khi code</li>
+            <li class="check-item star"><span class="check-icon">★</span>Hệ thống blog SEO: danh mục, tag, phân trang, related posts, AMP</li>
+            <li class="check-item"><span class="check-icon">✓</span>10+ trang: Pricing, Case study, FAQ, Careers, Policy, Partners...</li>
+            <li class="check-item"><span class="check-icon">✓</span>PageSpeed 90+ cả mobile và desktop (WP Rocket + Cloudflare)</li>
+            <li class="check-item"><span class="check-icon">✓</span>Lazy loading, CDN, cache nâng cao</li>
+            <li class="check-item"><span class="check-icon">✓</span>Popup ưu đãi + exit intent popup thông minh</li>
+            <li class="check-item"><span class="check-icon">✓</span>Hệ thống review / đánh giá khách hàng có sao</li>
+            <li class="check-item"><span class="check-icon">✓</span>Live chat Zalo + Messenger tích hợp</li>
+            <li class="check-item"><span class="check-icon">✓</span>Email marketing form + Mailchimp/GetResponse kết nối</li>
+            <li class="check-item"><span class="check-icon">✓</span>Google Tag Manager cài đặt sự kiện chuyển đổi</li>
+            <li class="check-item"><span class="check-icon">✓</span>Backup tự động hàng ngày</li>
+            <li class="check-item"><span class="check-icon">✓</span>Đào tạo WordPress nâng cao (2 buổi)</li>
+            <li class="check-item"><span class="check-icon">✓</span>Báo cáo SEO hàng tháng (3 tháng đầu)</li>
+          </ul>
+
+          <div class="pkg-section-title">Công Nghệ</div>
+          <div class="tech-row">
+            <span class="tech-chip">WordPress</span><span class="tech-chip">Elementor Pro</span><span class="tech-chip">Yoast SEO Premium</span><span class="tech-chip">WP Rocket</span><span class="tech-chip">GA4 + GTM</span><span class="tech-chip">Cloudflare CDN</span><span class="tech-chip">Mailchimp</span><span class="tech-chip">Zalo OA</span>
+          </div>
+
+          <div class="pkg-section-title">Chính Sách Bảo Hành</div>
+          <div class="warranty-box">
+            <span class="warranty-ico">🛡️</span>
+            <div class="warranty-text"><strong>Bảo hành 12 tháng:</strong> Sửa lỗi, cập nhật bảo mật, hỗ trợ kỹ thuật 7 ngày/tuần (8h–22h). Cập nhật nội dung nhỏ không giới hạn lần. Review SEO hàng quý. Sau 12 tháng: gói bảo trì 500.000đ/tháng (ưu tiên khách cũ).</div>
+          </div>
+
+          <div class="pkg-cta">
+            <a href="tel:0373453757" class="btn btn-primary pkg-cta-call">📞 Đặt Gói Này</a>
+            <a href="https://zalo.me/0373453757" target="_blank" rel="noopener" class="pkg-cta-zalo">💬</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== GÓI 5: E-COMMERCE ===== -->
+      <div class="pkg-item" data-cat="ecom">
+        <button class="pkg-head" onclick="togglePkg(this)">
+          <div class="pkg-emoji">🛒</div>
+          <div class="pkg-head-left">
+            <div class="pkg-name">E-Commerce Full Stack</div>
+            <div class="pkg-tagline">Hệ thống bán hàng trực tuyến hoàn chỉnh</div>
+          </div>
+          <div class="pkg-head-right">
+            <div class="pkg-price-main">7.000.000 đ</div>
+            <div class="pkg-price-old">&nbsp;</div>
+          </div>
+          <span class="pkg-chevron">▼</span>
+        </button>
+        <div class="pkg-body">
+
+          <!-- PROMO BANNER -->
+          <div class="promo-banner promo-banner-ecom">
+            <div class="promo-banner-shine"></div>
+            <span class="promo-ico">💳</span>
+            <div class="promo-content">
+              <div class="promo-title promo-title-ecom">✦ Gói Shop Hoàn Chỉnh — Tặng Toàn Bộ Tích Hợp</div>
+              <div class="promo-desc">Đặt trong tháng nhận <strong style="color:#60a5fa">miễn phí kết nối GHTK + GHN + setup Google Merchant Center + cài ZaloPay + đào tạo nhân viên 3 buổi</strong> (trị giá 2.500.000đ). Không cần biết kỹ thuật vẫn vận hành được.</div>
+              <div class="promo-timer">⚡ Bao gồm hỗ trợ vận hành 30 ngày đầu</div>
+            </div>
+          </div>
+
+          <div class="pkg-meta">
+            <div class="meta-cell"><div class="meta-val">15+</div><div class="meta-lbl">Số trang</div></div>
+            <div class="meta-cell"><div class="meta-val">20–30 ngày</div><div class="meta-lbl">Bàn giao</div></div>
+            <div class="meta-cell"><div class="meta-val">12 tháng</div><div class="meta-lbl">Bảo hành</div></div>
+            <div class="meta-cell"><div class="meta-val">90+</div><div class="meta-lbl">PageSpeed</div></div>
+          </div>
+
+          <div class="who-box">
+            <div class="who-title">👥 Phù Hợp Với</div>
+            <div class="who-tags">
+              <span class="who-tag">👗 Thời trang, phụ kiện</span>
+              <span class="who-tag">🛋️ Nội thất, đồ gia dụng</span>
+              <span class="who-tag">💊 Dược phẩm, thực phẩm chức năng</span>
+              <span class="who-tag">📱 Điện tử, phụ kiện</span>
+              <span class="who-tag">🌿 Mỹ phẩm, skincare</span>
+              <span class="who-tag">🐾 Thú cưng, pet shop</span>
+            </div>
+          </div>
+
+          <div class="pkg-section-title">Tính Năng Chính</div>
+          <ul class="checklist">
+            <li class="check-item star"><span class="check-icon">★</span>Tất cả tính năng gói Premium</li>
+            <li class="check-item star"><span class="check-icon">★</span>Hệ thống sản phẩm: danh mục, lọc, tìm kiếm AJAX, biến thể màu/size</li>
+            <li class="check-item star"><span class="check-icon">★</span>Thanh toán: VNPay, Momo, ZaloPay, COD, Chuyển khoản ngân hàng</li>
+            <li class="check-item"><span class="check-icon">✓</span>Giỏ hàng + quy trình đặt hàng tối ưu (1-click checkout)</li>
+            <li class="check-item"><span class="check-icon">✓</span>Quản lý đơn hàng + trạng thái vận chuyển realtime</li>
+            <li class="check-item"><span class="check-icon">✓</span>Quản lý tồn kho — cảnh báo hết hàng tự động</li>
+            <li class="check-item"><span class="check-icon">✓</span>Mã giảm giá / voucher / flash sale / deal của ngày</li>
+            <li class="check-item"><span class="check-icon">✓</span>Hệ thống đánh giá sản phẩm (có ảnh)</li>
+            <li class="check-item"><span class="check-icon">✓</span>Dashboard báo cáo doanh thu trực tiếp</li>
+            <li class="check-item"><span class="check-icon">✓</span>Xuất báo cáo Excel / CSV</li>
+            <li class="check-item"><span class="check-icon">✓</span>Tích hợp GHTK / GHN giao hàng tự động</li>
+            <li class="check-item"><span class="check-icon">✓</span>Email xác nhận đơn hàng + SMS tự động</li>
+            <li class="check-item"><span class="check-icon">✓</span>Trang cá nhân khách hàng — lịch sử mua hàng</li>
+            <li class="check-item"><span class="check-icon">✓</span>Google Merchant Center + Shopping Ads setup</li>
+            <li class="check-item"><span class="check-icon">✓</span>Upsell / Cross-sell thông minh</li>
+          </ul>
+
+          <div class="pkg-section-title">Công Nghệ</div>
+          <div class="tech-row">
+            <span class="tech-chip">WordPress</span><span class="tech-chip">WooCommerce</span><span class="tech-chip">VNPay</span><span class="tech-chip">Momo</span><span class="tech-chip">ZaloPay</span><span class="tech-chip">GHTK API</span><span class="tech-chip">GHN API</span><span class="tech-chip">WP Rocket</span><span class="tech-chip">GA4 + GTM</span>
+          </div>
+
+          <div class="pkg-section-title">Chính Sách Bảo Hành</div>
+          <div class="warranty-box">
+            <span class="warranty-ico">🛡️</span>
+            <div class="warranty-text"><strong>Bảo hành 12 tháng:</strong> Sửa lỗi payment, lỗi hệ thống miễn phí. Cập nhật bảo mật. Hỗ trợ khẩn cấp qua Zalo 7 ngày (8h–22h). Đào tạo sử dụng đầy đủ cho nhân viên (2–3 buổi). Hỗ trợ vận hành 30 ngày đầu. Sau 12 tháng: gói bảo trì 800.000đ/tháng.</div>
+          </div>
+
+          <div class="pkg-cta">
+            <a href="tel:0373453757" class="btn btn-primary pkg-cta-call">📞 Đặt Gói Này</a>
+            <a href="https://zalo.me/0373453757" target="_blank" rel="noopener" class="pkg-cta-zalo">💬</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end pkg-list -->
+
+    <!-- SO SÁNH GÓI -->
+    <div class="compare-wrap sr">
+      <button class="compare-toggle" id="cmpToggle" onclick="toggleCompare()">📊 Xem Bảng So Sánh Tính Năng</button>
+      <div class="compare-table-wrap" id="cmpTable">
+        <table class="cmp-table">
+          <thead>
+            <tr>
+              <th>Tính năng</th>
+              <th>Landing</th>
+              <th>LP Pro</th>
+              <th>DN SEO</th>
+              <th class="highlight">Premium</th>
+              <th>E-Com</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Giá</td><td><span class="cmp-val">1.5tr</span></td><td><span class="cmp-val">2.5tr</span></td><td><span class="cmp-val">3tr</span></td><td class="highlight-col"><span class="cmp-val-gold">5tr</span></td><td><span class="cmp-val">7tr</span></td></tr>
+            <tr><td>Số trang</td><td><span class="cmp-val">1</span></td><td><span class="cmp-val">1–2</span></td><td><span class="cmp-val">5–7</span></td><td class="highlight-col"><span class="cmp-val-gold">10+</span></td><td><span class="cmp-val">15+</span></td></tr>
+            <tr><td>Bàn giao</td><td>3-5 ng</td><td>5-7 ng</td><td>7-10 ng</td><td class="highlight-col"><span class="cmp-val">14-20 ng</span></td><td>20-30 ng</td></tr>
+            <tr><td>Figma riêng</td><td><span class="cmp-no">✗</span></td><td><span class="cmp-yes">✓</span></td><td><span class="cmp-yes">✓</span></td><td class="highlight-col"><span class="cmp-yes">✓</span></td><td><span class="cmp-yes">✓</span></td></tr>
+            <tr><td>CMS tự sửa</td><td><span class="cmp-no">✗</span></td><td><span class="cmp-no">✗</span></td><td><span class="cmp-yes">✓</span></td><td class="highlight-col"><span class="cmp-yes">✓</span></td><td><span class="cmp-yes">✓</span></td></tr>
+            <tr><td>SEO On-page</td><td>Cơ bản</td><td>Cơ bản</td><td><span class="cmp-yes">✓</span></td><td class="highlight-col"><span class="cmp-val-gold">Nâng cao</span></td><td><span class="cmp-yes">✓</span></td></tr>
+            <tr><td>Blog SEO</td><td><span class="cmp-no">✗</span></td><td><span class="cmp-no">✗</span></td><td><span class="cmp-no">✗</span></td><td class="highlight-col"><span class="cmp-yes">✓</span></td><td><span class="cmp-yes">✓</span></td></tr>
+            <tr><td>FB/TikTok Pixel</td><td><span class="cmp-no">✗</span></td><td><span class="cmp-yes">✓</span></td><td><span class="cmp-yes">✓</span></td><td class="highlight-col"><span class="cmp-yes">✓</span></td><td><span class="cmp-yes">✓</span></td></tr>
+            <tr><td>PageSpeed</td><td>85+</td><td>90+</td><td>80+</td><td class="highlight-col"><span class="cmp-val-gold">90+</span></td><td>90+</td></tr>
+            <tr><td>Email Marketing</td><td><span class="cmp-no">✗</span></td><td><span class="cmp-no">✗</span></td><td><span class="cmp-no">✗</span></td><td class="highlight-col"><span class="cmp-yes">✓</span></td><td><span class="cmp-yes">✓</span></td></tr>
+            <tr><td>Bán hàng online</td><td><span class="cmp-no">✗</span></td><td><span class="cmp-no">✗</span></td><td><span class="cmp-no">✗</span></td><td class="highlight-col"><span class="cmp-no">✗</span></td><td><span class="cmp-yes">✓</span></td></tr>
+            <tr><td>Thanh toán online</td><td><span class="cmp-no">✗</span></td><td><span class="cmp-no">✗</span></td><td><span class="cmp-no">✗</span></td><td class="highlight-col"><span class="cmp-no">✗</span></td><td><span class="cmp-yes">✓</span></td></tr>
+            <tr><td>Bảo hành</td><td>3 tháng</td><td>6 tháng</td><td>6 tháng</td><td class="highlight-col"><span class="cmp-val-gold">12 tháng</span></td><td>12 tháng</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
-    <div class="text-center mt-40">
-      <p style="font-size: 1.05rem; color: var(--text);">
-        <strong>Chưa chắc phù hợp?</strong> Chat Zalo để được tư vấn miễn phí – nói thẳng có làm được hay không.
-      </p>
-      <a href="https://zalo.me/0373453757" class="btn btn-primary mt-20">Tư vấn miễn phí qua Zalo</a>
+    <div class="funnel-cta sr">
+      <a href="tel:0373453757" class="btn btn-primary">📞 Gọi Tư Vấn Chọn Gói — Miễn Phí</a>
+      <a href="https://zalo.me/0373453757" target="_blank" rel="noopener" class="btn btn-zalo">💬 Nhắn Zalo Báo Giá</a>
+      <p class="cta-note">Phản hồi trong 30 phút · Không ràng buộc · Thanh toán linh hoạt</p>
     </div>
   </div>
 </section>
 
-<!-- ================= VALUE ================= -->
-<section class="section section-soft">
-  <div class="container">
-    <div class="section-head">
-      <h2>Vì sao 150+ khách hàng chọn Website 3 Ngày?</h2>
-      <p>Không làm cho có. Mọi thứ đều xoay quanh hiệu quả và chuyển đổi thật.</p>
-    </div>
-
-    <div class="value-grid">
-
-      <div class="value-item">
-        <img src="/website-3-ngay/assets/img/icons/fast.svg" alt="">
-        <h3>Hoàn thành cực nhanh</h3>
-        <p>Có website hoàn chỉnh chỉ sau 3-7 ngày, đúng tiến độ đã hẹn. Không kéo dài – không hứa suông.</p>
-      </div>
-
-      <div class="value-item">
-        <img src="/website-3-ngay/assets/img/icons/sale.svg" alt="">
-        <h3>Chuẩn bán hàng</h3>
-        <p>Bố cục tập trung CTA, dẫn hành vi người dùng, tối ưu tỉ lệ chuyển đổi. Mọi chi tiết đều hướng đến bán hàng.</p>
-      </div>
-
-      <div class="value-item">
-        <img src="/website-3-ngay/assets/img/icons/easy.svg" alt="">
-        <h3>Dễ dùng – dễ quản lý</h3>
-        <p>Không rối kỹ thuật, tự cập nhật nội dung mà không cần dev. Tiết kiệm chi phí vận hành lâu dài.</p>
-      </div>
-
+<!-- PROCESS -->
+<section class="process-bg" id="process">
+  <div class="wrap">
+    <div class="sec-label sr">Quy Trình</div>
+    <h2 class="font-display text-lg sr d1"><em class="text-gold">4 Bước</em><br>Web Đỉnh Cao</h2>
+    <div class="steps-grid sr d2">
+      <div class="step-card"><div class="step-glow"></div><div class="step-n">01</div><span class="step-ico">💬</span><h4>Tiếp Nhận &amp; Tư Vấn</h4><p>Gặp online/offline, lắng nghe nhu cầu, phân tích đối thủ.</p></div>
+      <div class="step-card"><div class="step-glow"></div><div class="step-n">02</div><span class="step-ico">🎨</span><h4>Thiết Kế Mockup</h4><p>Phác thảo Figma, chỉnh sửa đến khi ưng ý 100%.</p></div>
+      <div class="step-card"><div class="step-glow"></div><div class="step-n">03</div><span class="step-ico">⚙️</span><h4>Lập Trình &amp; Test</h4><p>Code theo thiết kế, test đa thiết bị, tối ưu tốc độ.</p></div>
+      <div class="step-card"><div class="step-glow"></div><div class="step-n">04</div><span class="step-ico">🚀</span><h4>Bàn Giao &amp; Hỗ Trợ</h4><p>Đưa lên hosting, đào tạo dùng, hỗ trợ dài hạn qua Zalo.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ================= FEATURE 1 ================= -->
-<section class="section section-light">
-  <div class="container split">
-    <div class="split-content">
-      <h3>Thiết kế chuẩn UI/UX theo hành vi người dùng</h3>
-      <p>
-        Không chỉ đẹp mắt – mà còn <strong>dẫn dắt hành động</strong>.  
-        Giao diện được thiết kế theo ngành nghề, dẫn mắt – dẫn hành động,
-        giúp khách ở lại lâu hơn và bấm nút hành động nhiều hơn.
-      </p>
-      <p>
-        <strong>Kết quả:</strong> Tỉ lệ chuyển đổi từ khách truy cập thành khách hàng tăng cao hơn hẳn.
-      </p>
-    </div>
-
-    <div class="split-media">
-      <img src="/website-3-ngay/assets/img/sections/uiux.png" alt="Thiết kế UI/UX chuẩn bán hàng">
+<!-- PORTFOLIO -->
+<section class="port-bg" id="portfolio">
+  <div class="wrap">
+    <div class="sec-label sr">Dự Án</div>
+    <h2 class="font-display text-lg sr d1">Portfolio<br><em class="text-gold">Nổi Bật</em></h2>
+    <div class="port-cards">
+      <div class="port-card sr d1"><div class="port-thumb"><div class="port-thumb-shine"></div><span class="port-thumb-emoji">🛍️</span><span class="port-thumb-hint">Thêm ảnh tại đây</span><span class="port-cat">E-Commerce</span></div><div class="port-body"><h4>Cửa Hàng Thời Trang Online</h4><p>WooCommerce · 300+ sản phẩm · Thanh toán đa kênh · Quản lý tồn kho</p></div></div>
+      <div class="port-card sr d2"><div class="port-thumb"><div class="port-thumb-shine"></div><span class="port-thumb-emoji">🏥</span><span class="port-thumb-hint">Thêm ảnh tại đây</span><span class="port-cat">Y Tế</span></div><div class="port-body"><h4>Phòng Khám Nha Khoa</h4><p>Đặt lịch online · CRM tích hợp · Chuẩn SEO y tế · Zalo OA</p></div></div>
+      <div class="port-card sr d3"><div class="port-thumb"><div class="port-thumb-shine"></div><span class="port-thumb-emoji">🏗️</span><span class="port-thumb-hint">Thêm ảnh tại đây</span><span class="port-cat">Bất Động Sản</span></div><div class="port-body"><h4>Dự Án BDS Cao Cấp</h4><p>Landing page · Video hero · Lead form · CRM tích hợp</p></div></div>
+      <div class="port-card sr"><div class="port-thumb"><div class="port-thumb-shine"></div><span class="port-thumb-emoji">📚</span><span class="port-thumb-hint">Thêm ảnh tại đây</span><span class="port-cat">Giáo Dục</span></div><div class="port-body"><h4>Trung Tâm Anh Ngữ</h4><p>Đăng ký khóa học · Blog SEO · Cổng học viên</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- ================= FEATURE 2 ================= -->
-<section class="section section-soft">
-  <div class="container split reverse">
-    <div class="split-content">
-      <h3>Kỹ thuật ổn định – tải nhanh – sẵn sàng chạy ads</h3>
-      <p>
-        Code gọn, tối ưu tốc độ, hiển thị mượt trên mọi thiết bị.
-        Không lỗi vặt – không vỡ layout – yên tâm vận hành lâu dài.
-      </p>
-      <p>
-        <strong>Đặc biệt:</strong> Tối ưu tốc độ tải trang giúp <strong>giảm chi phí quảng cáo</strong> 
-        khi chạy Facebook Ads/Google Ads – trang load nhanh = điểm chất lượng cao = chi phí thấp hơn.
-      </p>
-    </div>
-
-    <div class="split-media">
-      <img src="/website-3-ngay/assets/img/sections/tech.png" alt="Kỹ thuật tối ưu tốc độ">
+<!-- TESTIMONIALS -->
+<section class="testi-bg" id="testimonials">
+  <div class="wrap">
+    <div class="sec-label sr">Khách Hàng Nói Gì</div>
+    <h2 class="font-display text-lg sr d1">Họ Tin<br><em class="text-gold">PixelForge</em></h2>
+    <div class="testi-cards">
+      <div class="testi-card sr d1"><div class="t-stars">★★★★★</div><span class="t-big-quote">"</span><p class="t-text">Website làm xong đẹp hơn tôi tưởng tượng rất nhiều. Team nhiệt tình, phản hồi nhanh, chỉnh sửa ngay. Doanh thu online tăng 40% sau 2 tháng bàn giao.</p><div class="t-author"><div class="t-ava">T</div><div><div class="t-name">Chị Thanh Hà</div><div class="t-role">CEO · Thời trang HANA</div></div></div></div>
+      <div class="testi-card sr d2"><div class="t-stars">★★★★★</div><span class="t-big-quote">"</span><p class="t-text">Đã làm qua 3 đơn vị khác nhưng đây là lần đầu tôi thực sự hài lòng. Code sạch, tốc độ rất nhanh và hỗ trợ sau bàn giao rất tốt.</p><div class="t-author"><div class="t-ava" style="background:linear-gradient(135deg,#0068ff,#00aaff)">M</div><div><div class="t-name">Anh Minh Tuấn</div><div class="t-role">Chủ phòng khám · NhaTiên Dental</div></div></div></div>
+      <div class="testi-card sr d3"><div class="t-stars">★★★★★</div><span class="t-big-quote">"</span><p class="t-text">Landing page làm lead về ào ào, chi phí quảng cáo giảm 30% vì tỉ lệ chuyển đổi tăng mạnh. PixelForge thực sự hiểu marketing chuyên sâu.</p><div class="t-author"><div class="t-ava" style="background:linear-gradient(135deg,#e84d2a,#ff8c00)">P</div><div><div class="t-name">Anh Phúc Nguyễn</div><div class="t-role">Marketing Manager · EduPlus</div></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- ================= FEATURE 3 ================= -->
-<section class="section section-light">
-  <div class="container split">
-    <div class="split-content">
-      <h3>Dễ quản lý – dễ mở rộng về sau</h3>
-      <p>
-        Website được xây dựng đơn giản, logic rõ ràng.
-        Phù hợp cho người không rành kỹ thuật nhưng vẫn làm chủ hệ thống.
-      </p>
-      <p>
-        <strong>Tương lai:</strong> Khi doanh nghiệp phát triển, bạn có thể dễ dàng mở rộng thêm:
-        giỏ hàng, đặt lịch online, tích hợp CRM, chatbot AI... mà không cần làm lại từ đầu.
-      </p>
-    </div>
-
-    <div class="split-media">
-      <img src="/website-3-ngay/assets/img/sections/manage.png" alt="Quản lý website dễ dàng">
+<!-- FAQ -->
+<section class="faq-bg" id="faq">
+  <div class="wrap">
+    <div class="sec-label sr">FAQ</div>
+    <h2 class="font-display text-lg sr d1">Câu Hỏi<br><em class="text-gold">Thường Gặp</em></h2>
+    <div class="faq-list sr d2">
+      <div class="faq-item open"><button class="faq-q" onclick="toggleFaq(this)">Làm website mất bao lâu?<span class="faq-icon">+</span></button><div class="faq-a">Landing page 3–5 ngày, web doanh nghiệp 7–14 ngày, e-commerce 20–30 ngày. Thời gian thực tế có thể thay đổi nếu cần nhiều lần chỉnh thiết kế.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Tự chỉnh sửa nội dung được không?<span class="faq-icon">+</span></button><div class="faq-a">Được! Web dùng WordPress tiếng Việt dễ dùng. Chúng tôi đào tạo sau bàn giao và hỗ trợ qua Zalo khi cần thêm.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Website có chuẩn SEO không?<span class="faq-icon">+</span></button><div class="faq-a">Có. Tất cả web đều có SEO kỹ thuật cơ bản: thẻ meta, URL chuẩn, schema markup, sitemap XML và Google Search Console. Gói Premium có SEO nâng cao hơn.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Hosting và domain tính riêng không?<span class="faq-icon">+</span></button><div class="faq-a">Tính riêng khoảng 1.200.000–2.000.000 đồng/năm tùy cấu hình. Chúng tôi tư vấn và hỗ trợ đăng ký, không phí ẩn. Một số gói được tặng hosting miễn phí.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Có bảo hành không?<span class="faq-icon">+</span></button><div class="faq-a">Bảo hành 3–12 tháng tùy gói: sửa lỗi, cập nhật bảo mật, hỗ trợ kỹ thuật qua Zalo. Sau bảo hành có gói bảo trì hàng tháng với giá ưu đãi.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Thanh toán như thế nào?<span class="faq-icon">+</span></button><div class="faq-a">50% khi ký hợp đồng và bắt đầu, 50% sau khi duyệt thiết kế xong. Hỗ trợ chuyển khoản, Momo, ZaloPay.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Có thể xem ví dụ website đã làm không?<span class="faq-icon">+</span></button><div class="faq-a">Có! Liên hệ qua Zalo hoặc gọi điện để nhận link portfolio đầy đủ theo từng ngành. Chúng tôi sẽ chia sẻ các dự án phù hợp với lĩnh vực của bạn.</div></div>
     </div>
   </div>
 </section>
 
-<!-- ================= PRICING TEASER ================= -->
-<section class="section section-soft">
-  <div class="container">
-    <div class="section-head">
-      <h2>Bảng giá minh bạch – Không phát sinh</h2>
-      <p>4 gói từ thấp đến cao phù hợp mọi nhu cầu – Tặng kèm tên miền + hosting</p>
+<!-- CTA BAND -->
+<section class="cta-bg" id="contact">
+  <div class="cta-halo"></div>
+  <div class="wrap">
+    <div class="sec-label cta-label sr">Bắt Đầu Ngay</div>
+    <h2 class="font-display text-lg sr d1">Sẵn Sàng Đưa<br><em class="text-gold">Doanh Nghiệp</em><br>Lên Online?</h2>
+    <p class="cta-sub sr d2">Tư vấn 1–1 hoàn toàn miễn phí. PixelForge phản hồi trong 30 phút.</p>
+    <div class="cta-btns sr d3">
+      <a href="tel:0373453757" class="btn btn-primary">📞 Gọi: 037.345.3757</a>
+      <a href="https://zalo.me/0373453757" target="_blank" rel="noopener" class="btn btn-zalo">💬 Nhắn Zalo Ngay</a>
     </div>
-
-    <div class="process-grid">
-      
-      <div class="card">
-        <h3 style="color: var(--primary);">1.3 triệu</h3>
-        <p style="margin: 8px 0; font-weight: 600;">Gói Khởi Đầu</p>
-        <p style="font-size: 0.85rem;">Landing page đơn giản</p>
-        <p style="font-size: 0.85rem; color: var(--primary);">🎁 Tặng tên miền + hosting 3 tháng</p>
-      </div>
-
-      <div class="card">
-        <h3 style="color: var(--primary);">2.5 triệu</h3>
-        <p style="margin: 8px 0; font-weight: 600;">Gói Cơ Bản</p>
-        <p style="font-size: 0.85rem;">Website 3 trang</p>
-        <p style="font-size: 0.85rem; color: var(--primary);">🎁 Tặng tên miền + hosting 6 tháng + email</p>
-      </div>
-
-      <div class="card highlight">
-        <h3 style="color: var(--primary);">4.2 triệu</h3>
-        <p style="margin: 8px 0; font-weight: 600;">Gói Tiêu Chuẩn ⭐</p>
-        <p style="font-size: 0.85rem;">Website 5-7 trang</p>
-        <p style="font-size: 0.85rem; color: var(--primary);">🎁 Tặng tên miền + hosting 1 năm + 5 email + banner</p>
-      </div>
-
-      <div class="card">
-        <h3 style="color: var(--primary);">6 triệu</h3>
-        <p style="margin: 8px 0; font-weight: 600;">Gói Chuyên Nghiệp</p>
-        <p style="font-size: 0.85rem;">Website 8-12 trang</p>
-        <p style="font-size: 0.85rem; color: var(--primary);">🎁 Tặng tên miền 2 năm + 10 email + logo + fanpage</p>
-      </div>
-
-    </div>
-
-    <div class="text-center mt-40">
-      <a href="/website-3-ngay/pricing/" class="btn btn-primary">Xem chi tiết bảng giá đầy đủ</a>
+    <div class="trust-row sr">
+      <div class="trust-item"><span class="trust-ico">⚡</span><span class="trust-txt">Phản hồi<br>30 phút</span></div>
+      <div class="trust-item"><span class="trust-ico">💯</span><span class="trust-txt">Hoàn tiền<br>nếu không OK</span></div>
+      <div class="trust-item"><span class="trust-ico">🔒</span><span class="trust-txt">Bảo mật<br>thông tin</span></div>
+      <div class="trust-item"><span class="trust-ico">📋</span><span class="trust-txt">Hợp đồng<br>minh bạch</span></div>
     </div>
   </div>
 </section>
 
-<!-- ================= TESTIMONIALS ================= -->
-<section class="section section-light">
-  <div class="container">
-    <div class="section-head">
-      <h2>Khách hàng nói gì về dịch vụ?</h2>
-      <p>Phản hồi thật từ những khách hàng đã sử dụng dịch vụ</p>
-    </div>
-
-    <div class="value-grid">
-      
-      <div class="card" style="padding: 28px; text-align: left;">
-        <p style="font-size: 0.95rem; margin-bottom: 16px; font-style: italic;">
-          "Mình làm mỹ phẩm, cần web gấp để chạy ads. Anh làm đúng 3 ngày như cam kết, 
-          giao diện đẹp, load nhanh. Quan trọng là tỉ lệ chốt đơn tăng hẳn so với trước."
-        </p>
-        <p style="font-weight: 600; color: var(--primary); margin: 0;">— Chị Minh Anh</p>
-        <p style="font-size: 0.85rem; margin: 0;">Chủ shop mỹ phẩm tại TP.HCM</p>
-      </div>
-
-      <div class="card" style="padding: 28px; text-align: left;">
-        <p style="font-size: 0.95rem; margin-bottom: 16px; font-style: italic;">
-          "Giá hợp lý, làm nhanh, quan trọng là anh tư vấn thẳng thắn luôn. 
-          Mình không rành kỹ thuật nhưng vẫn tự cập nhật nội dung được. Rất hài lòng!"
-        </p>
-        <p style="font-weight: 600; color: var(--primary); margin: 0;">— Anh Tuấn</p>
-        <p style="font-size: 0.85rem; margin: 0;">Freelancer thiết kế nội thất</p>
-      </div>
-
-      <div class="card" style="padding: 28px; text-align: left;">
-        <p style="font-size: 0.95rem; margin-bottom: 16px; font-style: italic;">
-          "Trước làm web ở chỗ khác mãi không xong, chuyển qua đây 5 ngày có web ngay. 
-          Responsive chuẩn, SEO ok, hỗ trợ nhiệt tình. Recommend!"
-        </p>
-        <p style="font-weight: 600; color: var(--primary); margin: 0;">— Chị Hương</p>
-        <p style="font-size: 0.85rem; margin: 0;">Giám đốc công ty tư vấn du học</p>
-      </div>
-
-    </div>
+<!-- FOOTER -->
+<footer class="site-footer">
+  <span class="footer-logo">Pixel<span class="footer-logo-dot">.</span>Forge</span>
+  <p class="footer-desc">Chuyên thiết kế website chuyên nghiệp, chuẩn SEO, tốc độ cao — giúp doanh nghiệp Việt bứt phá doanh thu online.</p>
+  <div class="footer-cols">
+    <div class="footer-col"><h5>Dịch Vụ</h5><ul><li><a href="#">Landing Page</a></li><li><a href="#">Web Doanh Nghiệp</a></li><li><a href="#">E-Commerce</a></li><li><a href="#">SEO</a></li><li><a href="#">Bảo Trì</a></li></ul></div>
+    <div class="footer-col"><h5>Liên Hệ</h5><ul><li><a href="tel:0373453757">📞 037.345.3757</a></li><li><a href="https://zalo.me/0373453757">💬 Zalo Chat</a></li><li><a href="#">📍 Hà Nội, VN</a></li><li><a href="#">🕐 T2–T7: 8–18h</a></li></ul></div>
   </div>
-</section>
+  <div class="footer-hr"></div>
+  <p class="footer-copy">© 2025 PixelForge Studio. All rights reserved.<br>Made with ❤️ in Vietnam 🇻🇳</p>
+</footer>
 
-<!-- ================= PROCESS ================= -->
-<section class="section section-soft">
-  <div class="container">
-    <div class="section-head">
-      <h2>Quy trình làm việc minh bạch</h2>
-      <p>Làm từng bước rõ ràng – không mập mờ – không phát sinh chi phí – bàn giao đúng hẹn</p>
-    </div>
+<div class="float-spacer"></div>
 
-    <div class="process-grid">
-      <div class="card">
-        <h4 style="margin-bottom: 8px;">1️⃣ Tư vấn & định hướng</h4>
-        <p style="font-size: 0.85rem; margin: 0;">
-          Chat Zalo để trao đổi nhu cầu. Tư vấn thẳng thắn: nên làm gói nào, có phù hợp không.
-        </p>
-      </div>
-      <div class="card">
-        <h4 style="margin-bottom: 8px;">2️⃣ Thiết kế giao diện</h4>
-        <p style="font-size: 0.85rem; margin: 0;">
-          Thiết kế theo ngành nghề, tối ưu bố cục. Bạn xem & góp ý trước khi code.
-        </p>
-      </div>
-      <div class="card">
-        <h4 style="margin-bottom: 8px;">3️⃣ Lập trình & tối ưu</h4>
-        <p style="font-size: 0.85rem; margin: 0;">
-          Code chuẩn, tối ưu tốc độ, SEO cơ bản. Test kỹ trên mọi thiết bị trước khi bàn giao.
-        </p>
-      </div>
-      <div class="card">
-        <h4 style="margin-bottom: 8px;">4️⃣ Bàn giao & hỗ trợ</h4>
-        <p style="font-size: 0.85rem; margin: 0;">
-          Hướng dẫn sử dụng chi tiết. Hỗ trợ 1-3 tháng sau bàn giao tùy gói.
-        </p>
-      </div>
-    </div>
+<!-- FLOAT BAR -->
+<div class="float-bar" id="floatBar">
+  <a href="tel:0373453757" class="float-btn float-call">
+    <div class="float-ava">📞</div>
+    <div class="float-label">Gọi Ngay<small>037.345.3757</small></div>
+  </a>
+  <a href="https://zalo.me/0373453757" target="_blank" rel="noopener" class="float-btn float-zalo-btn">
+    <div class="float-ava">💬</div>
+    <div class="float-label">Zalo Chat<small>037.345.3757</small></div>
+  </a>
+</div>
 
-    <div class="fit-box mt-40 text-center">
-      <p style="font-size: 1rem; margin-bottom: 20px;">
-        <strong>Thanh toán:</strong> 50% đặt cọc khi bắt đầu – 50% khi hoàn thành và bạn hài lòng<br>
-        <strong>Cam kết:</strong> Hoàn tiền 100% nếu không đúng cam kết về thời gian và chất lượng
-      </p>
-    </div>
-  </div>
-</section>
+<script>
+(function(){
+  'use strict';
 
-<!-- ================= FAQ ================= -->
-<section class="section section-light">
-  <div class="container">
-    <div class="section-head">
-      <h2>Câu hỏi thường gặp</h2>
-      <p>Giải đáp nhanh các thắc mắc phổ biến</p>
-    </div>
+  // Package accordion
+  function togglePkg(btn){
+    var item=btn.closest('.pkg-item');
+    var isOpen=item.classList.contains('is-open');
+    document.querySelectorAll('.pkg-item').forEach(function(el){el.classList.remove('is-open')});
+    if(!isOpen){
+      item.classList.add('is-open');
+      setTimeout(function(){item.scrollIntoView({behavior:'smooth',block:'nearest'})},50);
+    }
+  }
+  window.togglePkg=togglePkg;
 
-    <div class="value-grid">
-      
-      <div class="card" style="padding: 24px; text-align: left;">
-        <h4 style="margin-bottom: 12px; color: var(--primary);">Tôi cần chuẩn bị gì?</h4>
-        <p style="font-size: 0.9rem; margin: 0;">
-          Chỉ cần: nội dung văn bản, hình ảnh (logo, sản phẩm), thông tin liên hệ. 
-          Chưa có đầy đủ? Chúng tôi hỗ trợ tư vấn.
-        </p>
-      </div>
+  // Tab filter
+  function filterPkg(cat,tabEl){
+    document.querySelectorAll('.pkg-tab').forEach(function(t){t.classList.remove('active')});
+    tabEl.classList.add('active');
+    document.querySelectorAll('.pkg-item').forEach(function(item){
+      var itemCat=item.getAttribute('data-cat');
+      if(cat==='all'||itemCat===cat){item.style.display=''}
+      else{item.style.display='none';item.classList.remove('is-open')}
+    });
+  }
+  window.filterPkg=filterPkg;
 
-      <div class="card" style="padding: 24px; text-align: left;">
-        <h4 style="margin-bottom: 12px; color: var(--primary);">3 ngày có kịp không?</h4>
-        <p style="font-size: 0.9rem; margin: 0;">
-          Gói đơn giản: 2-3 ngày. Gói phức tạp: 5-7 ngày. 
-          Thời gian tính từ khi nhận đủ nội dung từ bạn.
-        </p>
-      </div>
+  // Compare table
+  function toggleCompare(){
+    var table=document.getElementById('cmpTable');
+    var btn=document.getElementById('cmpToggle');
+    if(table.classList.contains('show')){
+      table.classList.remove('show');
+      btn.textContent='📊 Xem Bảng So Sánh Tính Năng';
+    }else{
+      table.classList.add('show');
+      btn.textContent='📊 Ẩn Bảng So Sánh';
+      setTimeout(function(){table.scrollIntoView({behavior:'smooth',block:'start'})},80);
+    }
+  }
+  window.toggleCompare=toggleCompare;
 
-      <div class="card" style="padding: 24px; text-align: left;">
-        <h4 style="margin-bottom: 12px; color: var(--primary);">Có hỗ trợ sau bàn giao?</h4>
-        <p style="font-size: 0.9rem; margin: 0;">
-          Có! Hỗ trợ 1-3 tháng tùy gói: sửa lỗi, cập nhật nội dung nhỏ, hướng dẫn sử dụng.
-        </p>
-      </div>
+  // FAQ
+  function toggleFaq(btn){
+    var item=btn.closest('.faq-item');
+    var isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(el){el.classList.remove('open')});
+    if(!isOpen)item.classList.add('open');
+  }
+  window.toggleFaq=toggleFaq;
 
-      <div class="card" style="padding: 24px; text-align: left;">
-        <h4 style="margin-bottom: 12px; color: var(--primary);">Có chạy được ads không?</h4>
-        <p style="font-size: 0.9rem; margin: 0;">
-          Hoàn toàn có thể! Website tối ưu tốc độ, responsive chuẩn, 
-          sẵn sàng chạy Facebook Ads/Google Ads ngay.
-        </p>
-      </div>
+  // Scroll reveal
+  var srItems=document.querySelectorAll('.sr');
+  if('IntersectionObserver' in window){
+    var srObs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');srObs.unobserve(e.target)}});
+    },{threshold:.1,rootMargin:'0px 0px -32px 0px'});
+    srItems.forEach(function(el){srObs.observe(el)});
+  }else{srItems.forEach(function(el){el.classList.add('on')})}
 
-      <div class="card" style="padding: 24px; text-align: left;">
-        <h4 style="margin-bottom: 12px; color: var(--primary);">Có được sở hữu code không?</h4>
-        <p style="font-size: 0.9rem; margin: 0;">
-          Có! Bạn sở hữu 100% code, tên miền, hosting. 
-          Muốn chuyển đi đâu cũng được.
-        </p>
-      </div>
+  // Count up
+  function runCount(el){
+    var target=parseInt(el.getAttribute('data-target'),10);
+    var suffix=el.getAttribute('data-suffix')||'';
+    var count=0,step=target/55;
+    var id=setInterval(function(){
+      count+=step;
+      if(count>=target){count=target;clearInterval(id)}
+      el.textContent=Math.floor(count)+suffix;
+    },22);
+  }
+  var statsEl=document.querySelector('.hero-stats');
+  if(statsEl&&'IntersectionObserver' in window){
+    var cObs=new IntersectionObserver(function(entries){
+      if(entries[0].isIntersecting){statsEl.querySelectorAll('[data-target]').forEach(runCount);cObs.disconnect()}
+    },{threshold:.5});
+    cObs.observe(statsEl);
+  }
 
-      <div class="card" style="padding: 24px; text-align: left;">
-        <h4 style="margin-bottom: 12px; color: var(--primary);">Có mở rộng được sau này?</h4>
-        <p style="font-size: 0.9rem; margin: 0;">
-          Có! Dễ dàng nâng cấp thêm: giỏ hàng, đặt lịch online, 
-          tích hợp CRM khi doanh nghiệp phát triển.
-        </p>
-      </div>
+  // Float bar hide near footer
+  var floatBar=document.getElementById('floatBar');
+  var footerEl=document.querySelector('.site-footer');
+  if(floatBar&&footerEl&&'IntersectionObserver' in window){
+    var fObs=new IntersectionObserver(function(entries){
+      if(entries[0].isIntersecting)floatBar.classList.add('hidden');
+      else floatBar.classList.remove('hidden');
+    },{threshold:.05});
+    fObs.observe(footerEl);
+  }
 
-    </div>
-  </div>
-</section>
+  // Navbar darker on scroll
+  var navbar=document.querySelector('.navbar-inner');
+  if(navbar){
+    window.addEventListener('scroll',function(){
+      navbar.style.background=window.scrollY>30?'rgba(8,8,16,0.97)':'rgba(8,8,16,0.85)';
+    },{passive:true});
+  }
 
-<!-- ================= URGENCY CTA ================= -->
-<section class="section section-soft">
-  <div class="container">
-    <div class="fit-box text-center" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 2px solid #f59e0b;">
-      <h3 style="color: var(--text); margin-bottom: 12px;">🔥 Ưu đãi tháng này</h3>
-      <p style="font-size: 1.05rem; color: var(--text); margin-bottom: 20px;">
-        Đặt làm website trong tháng 02/2026 được <strong>giảm 10%</strong> toàn bộ gói + 
-        <strong>Tặng thêm 3 tháng hosting</strong> (giá trị 300.000đ)
-      </p>
-      <p style="font-size: 0.9rem; color: var(--text-muted);">
-        ⏰ Ưu đãi kết thúc 28/02/2026 – Chỉ áp dụng cho 20 khách hàng đầu tiên
-      </p>
-      <a href="https://zalo.me/0373453757" class="btn btn-primary mt-20">Nhận ưu đãi ngay</a>
-    </div>
-  </div>
-</section>
+  // Smooth anchor
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href'),target=document.querySelector(id);
+      if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'})}
+    });
+  });
 
-<!-- ================= FINAL CTA ================= -->
-<section class="cta">
-  <div class="container text-center">
-    <img src="/assets/img/global/logo.png" class="cta-logo" alt="Website 3 Ngày">
-    <h2>Bạn đang cần một website làm nghiêm túc?</h2>
-    <p>
-      Chat Zalo để được tư vấn thẳng thắn – miễn phí:<br>
-      <strong>Làm được hay không – Gói nào phù hợp – Nói rõ ngay từ đầu.</strong>
-    </p>
-    <a href="https://zalo.me/0373453757" class="btn btn-outline">Chat Zalo ngay (Miễn phí)</a>
-    <small class="cta-note">🔒 Tư vấn miễn phí – Không ràng buộc – Không spam – Phản hồi trong 5 phút</small>
-  </div>
-</section>
+  // Touch feedback on service rows
+  document.querySelectorAll('.svc-row').forEach(function(row){
+    row.addEventListener('touchstart',function(){row.classList.add('touched')},{passive:true});
+    row.addEventListener('touchend',function(){setTimeout(function(){row.classList.remove('touched')},350)},{passive:true});
+    row.addEventListener('touchcancel',function(){row.classList.remove('touched')},{passive:true});
+  });
 
-<script src="/assets/js/main.js"></script>
+})();
+</script>
 </body>
 </html>
